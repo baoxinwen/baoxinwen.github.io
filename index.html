@@ -126,9 +126,19 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -202,8 +212,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-07-10 13:03:39" itemprop="dateCreated datePublished" datetime="2022-07-10T13:03:39+08:00">2022-07-10</time>
+      <time title="创建时间：2022-07-10 13:03:39 / 修改时间：14:49:12" itemprop="dateCreated datePublished" datetime="2022-07-10T13:03:39+08:00">2022-07-10</time>
     </span>
 
   
@@ -262,6 +273,865 @@
 
 
 
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://baoxinwen.github.io/posts/44745.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/baoxinwen.png">
+      <meta itemprop="name" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/44745.html" class="post-title-link" itemprop="url">Markdown基本语法（二）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-05 22:32:02" itemprop="dateCreated datePublished" datetime="2022-04-05T22:32:02+08:00">2022-04-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Markdown-代码语法"><a href="#Markdown-代码语法" class="headerlink" title="Markdown 代码语法"></a>Markdown 代码语法</h1><p>要将单词或短语表示为代码，请将其包裹在反引号 (&#96;&#96;&#96;) 中。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>At the command prompt, type </code>nano<code>.</code></td>
+<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
+<td>At the command prompt, type <code>nano</code>.</td>
+</tr>
+</tbody></table>
+<h2 id="转义反引号"><a href="#转义反引号" class="headerlink" title="转义反引号"></a>转义反引号</h2><p>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(&#96;&#96;&#96;&#96;)中。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Use `code` in your Markdown file.</code></td>
+<td><code>&lt;code&gt;Use </code>code<code> in your Markdown file.&lt;/code&gt;</code></td>
+<td><code>Use </code>code<code> in your Markdown file.</code></td>
+</tr>
+</tbody></table>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Note:</strong> 要创建不用缩进的代码块，请使用围栏式代码块（fenced code blocks)</p>
+<h1 id="Markdown-分隔线语法"><a href="#Markdown-分隔线语法" class="headerlink" title="Markdown 分隔线语法"></a>Markdown 分隔线语法</h1><p>要创建分隔线，请在单独一行上使用三个或多个星号 (<code>***</code>)、破折号 (<code>---</code>) 或下划线 (<code>___</code>) ，并且不能包含其他内容。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">_________________</span><br></pre></td></tr></table></figure>
+
+<p>以上三个分隔线的渲染效果看起来都一样：</p>
+<hr>
+<h2 id="分隔线（Horizontal-Rule）用法最佳实践"><a href="#分隔线（Horizontal-Rule）用法最佳实践" class="headerlink" title="分隔线（Horizontal Rule）用法最佳实践"></a>分隔线（Horizontal Rule）用法最佳实践</h2><p>为了兼容性，请在分隔线的前后均添加空白行。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Try to put a blank line before...---...and after a horizontal rule.</code></td>
+<td><code>Without blank lines, this would be a heading.---Don&#39;t do this!</code></td>
+</tr>
+</tbody></table>
+<h1 id="Markdown-链接语法"><a href="#Markdown-链接语法" class="headerlink" title="Markdown 链接语法"></a>Markdown 链接语法</h1><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
+<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn)。</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p>这是一个链接 <a target="_blank" rel="noopener" href="https://markdown.com.cn/">Markdown语法</a>。</p>
+<h2 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h2><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)。</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p>这是一个链接 <a target="_blank" rel="noopener" href="https://markdown.com.cn/">Markdown语法</a>。</p>
+<h2 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h2><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p><a target="_blank" rel="noopener" href="https://markdown.com.cn/">https://markdown.com.cn</a><br><a href="mailto:fake@example.com">fake@example.com</a></p>
+<h2 id="带格式化的链接"><a href="#带格式化的链接" class="headerlink" title="带格式化的链接"></a>带格式化的链接</h2><p>强调链接, 在链接语法前后增加星号。 要将链接表示为代码，请在方括号中添加反引号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I love supporting the **[EFF](https://eff.org)**.</span><br><span class="line">This is the *[Markdown Guide](https://www.markdownguide.org)*.</span><br><span class="line">See the section on [`code`](#code).</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p>I love supporting the <strong><a target="_blank" rel="noopener" href="https://eff.org/">EFF</a></strong>.<br>This is the <em><a target="_blank" rel="noopener" href="https://www.markdownguide.org/">Markdown Guide</a></em>.<br>See the section on <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/links.html#code"><code>code</code></a>.</p>
+<h2 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h2><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
+<h3 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h3><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
+<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
+<p>以下示例格式对于链接的第一部分效果相同：</p>
+<ul>
+<li><code>[hobbit-hole][1]</code></li>
+<li><code>[hobbit-hole] [1]</code></li>
+</ul>
+<h3 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h3><p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<ol>
+<li>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如<code>[label]:</code>）。</li>
+<li>链接的URL，可以选择将其括在尖括号中。</li>
+<li>链接的可选标题，可以将其括在双引号，单引号或括号中。</li>
+</ol>
+<p>以下示例格式对于链接的第二部分效果相同：</p>
+<ul>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle &quot;Hobbit lifestyles&quot;</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle &#39;Hobbit lifestyles&#39;</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle (Hobbit lifestyles)</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; &quot;Hobbit lifestyles&quot;</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; &#39;Hobbit lifestyles&#39;</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; (Hobbit lifestyles)</code></li>
+</ul>
+<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
+<h3 id="链接最佳实践"><a href="#链接最佳实践" class="headerlink" title="链接最佳实践"></a>链接最佳实践</h3><p>不同的 Markdown 应用程序处理URL中间的空格方式不一样。为了兼容性，请尽量使用%20代替空格。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[link](https://www.example.com/my%20great%20page)</code></td>
+<td><code>[link](https://www.example.com/my great page)</code></td>
+</tr>
+</tbody></table>
+<h1 id="Markdown-图片语法"><a href="#Markdown-图片语法" class="headerlink" title="Markdown 图片语法"></a>Markdown 图片语法</h1><p>要添加图像，请使用感叹号 (<code>!</code>), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![这是图片](/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p><img data-src="https://markdown.com.cn/assets/img/philly-magic-garden.9c0b4415.jpg" alt="这是图片"></p>
+<h2 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h2><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[![沙漠中的岩石图片](/assets/img/shiprock.jpg &quot;Shiprock&quot;)](https://markdown.com.cn)</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p><a target="_blank" rel="noopener" href="https://markdown.com.cn/"><img data-src="https://markdown.com.cn/assets/img/shiprock.c3b9a023.jpg" alt="沙漠中的岩石图片"></a></p>
+<h1 id="Markdown-转义字符语法"><a href="#Markdown-转义字符语法" class="headerlink" title="Markdown 转义字符语法"></a>Markdown 转义字符语法</h1><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\* Without the backslash, this would be a bullet in an unordered list.</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<p>* Without the backslash, this would be a bullet in an unordered list.</p>
+<h2 id="可做转义的字符"><a href="#可做转义的字符" class="headerlink" title="可做转义的字符"></a>可做转义的字符</h2><p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>backslash</td>
+</tr>
+<tr>
+<td>&#96;</td>
+<td>backtick (see also <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/escaping-characters.html#escaping-backticks">escaping backticks in code</a>)</td>
+</tr>
+<tr>
+<td>*</td>
+<td>asterisk</td>
+</tr>
+<tr>
+<td>_</td>
+<td>underscore</td>
+</tr>
+<tr>
+<td>{ }</td>
+<td>curly braces</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>brackets</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>parentheses</td>
+</tr>
+<tr>
+<td>#</td>
+<td>pound sign</td>
+</tr>
+<tr>
+<td>+</td>
+<td>plus sign</td>
+</tr>
+<tr>
+<td>-</td>
+<td>minus sign (hyphen)</td>
+</tr>
+<tr>
+<td>.</td>
+<td>dot</td>
+</tr>
+<tr>
+<td>!</td>
+<td>exclamation mark</td>
+</tr>
+<tr>
+<td>|</td>
+<td>pipe (see also <a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/escaping-pipe-characters-in-tables.html">escaping pipe in tables</a>)</td>
+</tr>
+</tbody></table>
+<h2 id="特殊字符自动转义"><a href="#特殊字符自动转义" class="headerlink" title="特殊字符自动转义"></a>特殊字符自动转义</h2><p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML 实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是 <code>&lt;</code> 和 <code>&amp;</code>。</p>
+<p><code>&amp;</code> 符号其实很容易让写作网页文件的人感到困扰，如果你要打「AT&amp;T」 ，你必须要写成「<code>AT&amp;T</code>」 ，还得转换网址内的 <code>&amp;</code> 符号，如果你要链接到：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="regexp">//im</span>ages.google.com/images?num=<span class="number">30</span>&amp;q=larry+bird</span><br></pre></td></tr></table></figure>
+
+<p>你必须要把网址转成：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="regexp">//im</span>ages.google.com/images?num=<span class="number">30</span>&amp;amp;q=larry+bird</span><br></pre></td></tr></table></figure>
+
+<p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忘记，这也可能是 HTML 标准检查所检查到的错误中，数量最多的。</p>
+<p>Markdown 允许你直接使用这些符号，它帮你自动转义字符。如果你使用 <code>&amp;</code> 符号的作为 HTML 实体的一部分，那么它不会被转换，而在其它情况下，它则会被转换成 <code>&amp;</code>。所以你如果要在文件中插入一个著作权的符号，你可以这样写：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&amp;copy;</span></span><br></pre></td></tr></table></figure>
+
+<p>Markdown 将不会对这段文字做修改，但是如果你这样写：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AT<span class="meta">&amp;T</span></span><br></pre></td></tr></table></figure>
+
+<p>Markdown 就会将它转为：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">AT</span>&amp;amp<span class="comment">;T</span></span><br></pre></td></tr></table></figure>
+
+<p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 支持 <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/#%E5%86%85%E8%81%94-html">行内 HTML</a> ，如果你使用 <code>&lt;</code> 符号作为 HTML 标签的分隔符，那 Markdown 也不会对它做任何转换，但是如果你是写：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">4 </span>&lt; <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>Markdown 将会把它转换为：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">4 </span>&amp;lt; <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>需要特别注意的是，在 Markdown 的块级元素和内联元素中， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都会被自动转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML。（在 HTML 语法中，你要手动把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体。）</p>
+<h1 id="Markdown-内嵌-HTML-标签"><a href="#Markdown-内嵌-HTML-标签" class="headerlink" title="Markdown 内嵌 HTML 标签"></a>Markdown 内嵌 HTML 标签</h1><p>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML 本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML 标签添加到 Markdown 文本中即可。</p>
+<h2 id="行级內联标签"><a href="#行级內联标签" class="headerlink" title="行级內联标签"></a>行级內联标签</h2><p>HTML 的行级內联标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 不受限制，可以在 Markdown 的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown 格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用 HTML 标签更方便些。</p>
+<p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown 的语法是可以解析的。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下:</p>
+<p>This <strong>word</strong> is bold. This <em>word</em> is italic.</p>
+<h2 id="区块标签"><a href="#区块标签" class="headerlink" title="区块标签"></a>区块标签</h2><p>区块元素──比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用 tab 或是空白来缩进。Markdown 会自动识别这区块元素，避免在区块标签前后加上没有必要的 <code>&lt;p&gt;</code> 标签。</p>
+<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">This <span class="literal">is</span> a regular paragraph.</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span><span class="language-xml"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        </span><span class="language-xml"><span class="tag">&lt;<span class="name">td</span>&gt;</span>Foo<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">This <span class="literal">is</span> another regular paragraph.</span><br></pre></td></tr></table></figure>
+
+<p>请注意，Markdown 语法在 HTML 区块标签中将不会被进行处理。例如，你无法在 HTML 区块内使用 Markdown 形式的<code>*强调*</code>。</p>
+<h3 id="HTML-用法最佳实践"><a href="#HTML-用法最佳实践" class="headerlink" title="HTML 用法最佳实践"></a>HTML 用法最佳实践</h3><p>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加 HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持 HTML 标签的子集。</p>
+<p>对于 HTML 的块级元素 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code> 和 <code>&lt;p&gt;</code>，请在其前后使用空行（blank lines）与其它内容进行分隔。尽量不要使用制表符（tabs）或空格（spaces）对 HTML 标签做缩进，否则将影响格式。</p>
+<p>在 HTML 块级标签内不能使用 Markdown 语法。例如 <code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://baoxinwen.github.io/posts/16051.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/baoxinwen.png">
+      <meta itemprop="name" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/16051.html" class="post-title-link" itemprop="url">Markdown基本语法（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-04 22:44:18" itemprop="dateCreated datePublished" datetime="2022-04-04T22:44:18+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h1><p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
+<p>在线体验一下 <a target="_blank" rel="noopener" href="https://markdown.com.cn/editor/">Markdown在线编辑器</a>。</p>
+<p>千万不要被「标记」、「语言」吓到，Markdown的语法十分简单，常用的标记符号不超过十个，用于日常写作记录绰绰有余，不到半小时就能完全掌握。</p>
+<p>就是这十个不到的标记符号，却能让人<strong>优雅地沉浸式记录，专注内容而不是纠结排版</strong>，达到「心中无尘，码字入神」的境界。</p>
+<p>让我们从 <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/headings.html">Markdown 标题语法</a>开始学习吧。</p>
+<h1 id="Markdown-标题语法"><a href="#Markdown-标题语法" class="headerlink" title="Markdown 标题语法"></a>Markdown 标题语法</h1><p>要创建标题，请在单词或短语前面添加井号 (<code>#</code>) 。<code>#</code> 的数量代表了标题的级别。例如，添加三个 <code>#</code> 表示创建一个三级标题 (<code>&lt;h3&gt;</code>) (例如：<code>### My Header</code>)。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code># Heading level 1</code></td>
+<td><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;</code></td>
+</tr>
+<tr>
+<td><code>## Heading level 2</code></td>
+<td><code>&lt;h2&gt;Heading level 2&lt;/h2&gt;</code></td>
+</tr>
+<tr>
+<td><code>### Heading level 3</code></td>
+<td><code>&lt;h3&gt;Heading level 3&lt;/h3&gt;</code></td>
+</tr>
+<tr>
+<td><code>#### Heading level 4</code></td>
+<td><code>&lt;h4&gt;Heading level 4&lt;/h4&gt;</code></td>
+</tr>
+<tr>
+<td><code>##### Heading level 5</code></td>
+<td><code>&lt;h5&gt;Heading level 5&lt;/h5&gt;</code></td>
+</tr>
+<tr>
+<td><code>###### Heading level 6</code></td>
+<td><code>&lt;h6&gt;Heading level 6&lt;/h6&gt;</code></td>
+</tr>
+</tbody></table>
+<h2 id="可选语法"><a href="#可选语法" class="headerlink" title="可选语法"></a>可选语法</h2><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Heading level 1===============</code></td>
+<td><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;</code></td>
+</tr>
+<tr>
+<td><code>Heading level 2---------------</code></td>
+<td><code>&lt;h2&gt;Heading level 2&lt;/h2&gt;</code></td>
+</tr>
+</tbody></table>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>不同的 Markdown 应用程序处理 <code>#</code> 和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在 <code>#</code> 和标题之间进行分隔。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code># Here&#39;s a Heading</code></td>
+<td><code>#Here&#39;s a Heading</code></td>
+</tr>
+</tbody></table>
+<h1 id="Markdown-段落语法"><a href="#Markdown-段落语法" class="headerlink" title="Markdown 段落语法"></a>Markdown 段落语法</h1><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>I really like using Markdown.I think I&#39;ll use it to format all of my documents from now on.</code></td>
+<td><code>&lt;p&gt;I really like using Markdown.&lt;/p&gt;&lt;p&gt;I think I&#39;ll use it to format all of my documents from now on.&lt;/p&gt;</code></td>
+</tr>
+</tbody></table>
+<h2 id="段落（Paragraph）用法的最佳实践"><a href="#段落（Paragraph）用法的最佳实践" class="headerlink" title="段落（Paragraph）用法的最佳实践"></a>段落（Paragraph）用法的最佳实践</h2><p>不要用空格（spaces）或制表符（ tabs）缩进段落。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Don&#39;t put tabs or spaces in front of your paragraphs.Keep lines left-aligned like this.</code></td>
+<td><code>  This can result in unexpected formatting problems. Don&#39;t add tabs or spaces in front of paragraphs.</code></td>
+</tr>
+</tbody></table>
+<h1 id="Markdown-换行语法"><a href="#Markdown-换行语法" class="headerlink" title="Markdown 换行语法"></a>Markdown 换行语法</h1><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(<code>&lt;br&gt;</code>)。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>This is the first line.  And this is the second line.</code></td>
+<td><code>&lt;p&gt;This is the first line.&lt;br&gt;And this is the second line.&lt;/p&gt;</code></td>
+<td>This is the first line.<br/>And this is the second line.</td>
+</tr>
+</tbody></table>
+<h2 id="最佳实践-1"><a href="#最佳实践-1" class="headerlink" title="最佳实践"></a>最佳实践</h2><p>几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为 <code>结尾空格（trailing whitespace)</code> 的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个 Markdown 应用程序都支持另一种换行方式：HTML 的 <code>&lt;br&gt;</code> 标签。</p>
+<p>为了兼容性，请在行尾添加“结尾空格”或 HTML 的 <code>&lt;br&gt;</code> 标签来实现换行。</p>
+<p>还有两种其他方式我并不推荐使用。CommonMark 和其它几种轻量级标记语言支持在行尾添加反斜杠 (<code>\</code>) 的方式实现换行，但是并非所有 Markdown 应用程序都支持此种方式，因此从兼容性的角度来看，不推荐使用。并且至少有两种轻量级标记语言支持无须在行尾添加任何内容，只须键入回车键（<code>return</code>）即可实现换行。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>First line with two spaces after.  And the next line.First line with the HTML tag after.&lt;br&gt;And the next line.</code></td>
+<td><code>First line with a backslash after.\And the next line.First line with nothing after.And the next line.</code></td>
+</tr>
+</tbody></table>
+<h1 id="Markdown-强调语法"><a href="#Markdown-强调语法" class="headerlink" title="Markdown 强调语法"></a>Markdown 强调语法</h1><p>通过将文本设置为粗体或斜体来强调其重要性。</p>
+<h2 id="粗体（Bold）"><a href="#粗体（Bold）" class="headerlink" title="粗体（Bold）"></a>粗体（Bold）</h2><p>要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>I just love **bold text**.</code></td>
+<td><code>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</code></td>
+<td>I just love <strong>bold text</strong>.</td>
+</tr>
+<tr>
+<td><code>I just love __bold text__.</code></td>
+<td><code>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</code></td>
+<td>I just love <strong>bold text</strong>.</td>
+</tr>
+<tr>
+<td><code>Love**is**bold</code></td>
+<td><code>Love&lt;strong&gt;is&lt;/strong&gt;bold</code></td>
+<td>Love<strong>is</strong>bold</td>
+</tr>
+</tbody></table>
+<h3 id="粗体（Bold）用法最佳实践"><a href="#粗体（Bold）用法最佳实践" class="headerlink" title="粗体（Bold）用法最佳实践"></a>粗体（Bold）用法最佳实践</h3><p>Markdown 应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Love**is**bold</code></td>
+<td><code>Love__is__bold</code></td>
+</tr>
+</tbody></table>
+<h2 id="斜体（Italic）"><a href="#斜体（Italic）" class="headerlink" title="斜体（Italic）"></a>斜体（Italic）</h2><p>要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Italicized text is the *cat&#39;s meow*.</code></td>
+<td><code>Italicized text is the &lt;em&gt;cat&#39;s meow&lt;/em&gt;.</code></td>
+<td>Italicized text is the <em>cat’s meow</em>.</td>
+</tr>
+<tr>
+<td><code>Italicized text is the _cat&#39;s meow_.</code></td>
+<td><code>Italicized text is the &lt;em&gt;cat&#39;s meow&lt;/em&gt;.</code></td>
+<td>Italicized text is the <em>cat’s meow</em>.</td>
+</tr>
+<tr>
+<td><code>A*cat*meow</code></td>
+<td><code>A&lt;em&gt;cat&lt;/em&gt;meow</code></td>
+<td>A<em>cat</em>meow</td>
+</tr>
+</tbody></table>
+<h3 id="斜体（Italic）用法的最佳实践"><a href="#斜体（Italic）用法的最佳实践" class="headerlink" title="斜体（Italic）用法的最佳实践"></a>斜体（Italic）用法的最佳实践</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>A*cat*meow</code></td>
+<td><code>A_cat_meow</code></td>
+</tr>
+</tbody></table>
+<h2 id="粗体（Bold）和斜体（Italic）"><a href="#粗体（Bold）和斜体（Italic）" class="headerlink" title="粗体（Bold）和斜体（Italic）"></a>粗体（Bold）和斜体（Italic）</h2><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>This text is ***really important***.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr>
+<td><code>This text is ___really important___.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr>
+<td><code>This text is __*really important*__.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr>
+<td><code>This text is **_really important_**.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr>
+<td><code>This is really***very***important text.</code></td>
+<td><code>This is really&lt;strong&gt;&lt;em&gt;very&lt;/em&gt;&lt;/strong&gt;important text.</code></td>
+<td>This is really***very***important text.</td>
+</tr>
+</tbody></table>
+<h3 id="粗体（Bold）和斜体（Italic）用法的最佳实践"><a href="#粗体（Bold）和斜体（Italic）用法的最佳实践" class="headerlink" title="粗体（Bold）和斜体（Italic）用法的最佳实践"></a>粗体（Bold）和斜体（Italic）用法的最佳实践</h3><p>Markdown 应用程序在处理单词或短语中间添加的下划线上并不一致。为了实现兼容性，请使用星号将单词或短语的中间部分加粗并以斜体显示，以示重要。</p>
+<table>
+<thead>
+<tr>
+<th>✅ Do this</th>
+<th>❌ Don’t do this</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>This is really***very***important text.</code></td>
+<td><code>This is really___very___important text.</code></td>
+</tr>
+</tbody></table>
+<h1 id="Markdown-引用语法"><a href="#Markdown-引用语法" class="headerlink" title="Markdown 引用语法"></a>Markdown 引用语法</h1><p>要创建块引用，请在段落前添加一个 <code>&gt;</code> 符号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下所示：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+</blockquote>
+<h2 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h2><p>块引用可以包含多个段落。为段落之间的空白行添加一个 <code>&gt;</code> 符号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br><span class="line">&gt;</span><br><span class="line">&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
+</blockquote>
+<h2 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h2><p>块引用可以嵌套。在要嵌套的段落前添加一个 <code>&gt;&gt;</code> 符号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+<blockquote>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</p>
+</blockquote>
+</blockquote>
+<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
+
+<p>渲染效果如下：</p>
+<blockquote>
+<h4 id="The-quarterly-results-look-great"><a href="#The-quarterly-results-look-great" class="headerlink" title="The quarterly results look great!"></a>The quarterly results look great!</h4><ul>
+<li>Revenue was off the chart.</li>
+<li>Profits were higher than ever.</li>
+</ul>
+<p><em>Everything</em> is going according to <strong>plan</strong>.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://baoxinwen.github.io/posts/12323.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/baoxinwen.png">
+      <meta itemprop="name" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/12323.html" class="post-title-link" itemprop="url">从零开始搭建自己的博客</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-03 01:09:51" itemprop="dateCreated datePublished" datetime="2022-04-03T01:09:51+08:00">2022-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p><strong>博客</strong>：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。</p>
+<p>在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用 Hexo 框架搭建我的个人博客。</p>
+<h1 id="Hexo-框架介绍"><a href="#Hexo-框架介绍" class="headerlink" title="Hexo 框架介绍"></a>Hexo 框架介绍</h1><p>Hexo 是一个快速，简单和强大的博客框架。你用<a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章， Hexo 会在几秒钟内生成具有漂亮主题的静态网页。</p>
+<h2 id="选择-Hexo-的原因"><a href="#选择-Hexo-的原因" class="headerlink" title="选择 Hexo 的原因"></a>选择 Hexo 的原因</h2><ul>
+<li>速度极快：Node.js 所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
+<li>支持MarkDown：Hexo 支持 GitHub Flavored Markdown 的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
+<li>一键部署：只需一条指令即可部署到 GitHub Pages, Heroku 或其他平台。</li>
+<li>插件和可扩展性：这个也是hexo很强大的一个地方，强大的 API 带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less&#x2F;Sass）轻易集成。</li>
+</ul>
+<h1 id="Hexo博客框架搭建步骤"><a href="#Hexo博客框架搭建步骤" class="headerlink" title="Hexo博客框架搭建步骤"></a>Hexo博客框架搭建步骤</h1><h2 id="Node-js-安装"><a href="#Node-js-安装" class="headerlink" title="Node.js 安装"></a>Node.js 安装</h2><p>Hexo 是使用 Node.js 开发的，所以我们安装 Hexo 之前需要先安装 Node.js 环境。</p>
+<p>Node.js 是什么？简单的说 Node.js 就是运行在服务端的 JavaScript 。安装了 Node.js 环境，就可以不用依赖浏览器就可以运行 js 代码，其实它也是基于 Chrome 引擎开发的一个开源项目。简单理解， Node.js 对于 js 代码的作用类似 Python 解释器对于 Python 代码的作用。</p>
+<p>这里注意，不是说博客框架必须用 Node.js 来开发，博客框架本质上是一个网站，可以用任何语言开发，也有用 Python 的 Flask&#x2F;Django 或者 Java 开发的博客框架，只是没有 Hexo 这么流行。</p>
+<p>Windows：进入<a target="_blank" rel="noopener" href="https://nodejs.org/en/"> Node.js </a>官网点击下载，下载完成后，傻瓜式下一步即可</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/baoxinwen/cloudimg@main/blog-images/2022/04/08/2316f8d577766596e149601ecde8b00b-nodejs%E5%AE%98%E7%BD%91-5f0c3b.png"></p>
+<p>Linux：使用以下两行代码进行安装</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install nodejs</span><br><span class="line">sudo apt-<span class="built_in">get</span> install npm</span><br></pre></td></tr></table></figure>
+
+<p>安装完成之后，输入以下两行命令查看版本</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Git-安装"><a href="#Git-安装" class="headerlink" title="Git 安装"></a>Git 安装</h2><p>Git 是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的 hexo 博客文章，上传到 GitHub 的工具。</p>
+<p>Windows：进入<a target="_blank" rel="noopener" href="https://git-scm.com/"> Git 官网</a>点击下载即可，下载完成之后会有一个 Git Bush 的命令行工具用来使用 Git</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/baoxinwen/cloudimg@main/blog-images/2022/04/08/05d904347db810ef8c9435e3735f82d3-git%E5%AE%98%E7%BD%91-037d79.png"></p>
+<p>Linux：对于Linux来说更加简单，只需要输入一行代码</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install git</span><br></pre></td></tr></table></figure>
+
+<p>输入以下代码查看版本</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><p>前文中已经成功安装了 Node.js 和 Git 后，就可以进行 Hexo 的安装了，我们需要先创建一个文件夹 Blog （用来存放你的个人博客的文件），然后进入该文件夹，右键打开 Git Bush </p>
+<p>输入以下命令进行安装</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成之后，使用以下命令查看版本</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo -v</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来进行 Hexo 的初始化</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">init</span></span><br></pre></td></tr></table></figure>
+
+<p>在初始化结束之后，我们能看到 Blog 文件夹多出以下文件</p>
+<ul>
+<li>node_modules: 依赖包</li>
+<li>public：公共文件夹，用于存放生产的站点文件</li>
+<li>scaffolds：模板文件夹</li>
+<li>source：资源文件夹，用来存放内容</li>
+<li>themes：主题文件夹</li>
+<li>_config.yml：博客的配置文件</li>
+<li>package.json ：应用程序的信息</li>
+</ul>
+<p>在这之后，我们启动本地博客服务</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo s</span></span><br></pre></td></tr></table></figure>
+
+<p>结果如下</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line"><span class="keyword">INFO</span>  Validating config</span><br><span class="line"><span class="keyword">INFO</span>  <span class="keyword">Start</span> processing</span><br><span class="line"><span class="keyword">INFO</span>  Hexo <span class="keyword">is</span> running at http://localhost:<span class="number">4000</span> . Press Ctrl+C <span class="keyword">to</span> stop.</span><br></pre></td></tr></table></figure>
+
+<p>然后打开游览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 就可以看到生成的个人博客了。</p>
+<p>到此为止，我们已经完成了 Hexo 的简单部署。</p>
+<h2 id="Hexo-主题美化"><a href="#Hexo-主题美化" class="headerlink" title="Hexo 主题美化"></a>Hexo 主题美化</h2><p>在第一次初始化的时候 Hexo 已经帮我们写了一篇名为 Hello World 的文章，默认的主题比较丑，既然是我们的个人博客，我们肯定想要其更加美观，更有意思，更有个性，所以我们需要安装各种不同风格的主题。</p>
+<h4 id="找到合适的-Hexo-主题"><a href="#找到合适的-Hexo-主题" class="headerlink" title="找到合适的 Hexo 主题"></a>找到合适的 Hexo 主题</h4><p>Hexo 官网上</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 </div>
   </main>
@@ -284,14 +1154,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">14k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
   </span>
 </div>
 
