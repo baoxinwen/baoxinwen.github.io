@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Markdown 基本语法（一） Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。 在线体验一下 Markdown在线编辑器。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown基本语法（一）">
+<meta property="og:url" content="http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="包黑蛋">
+<meta property="og:description" content="Markdown 基本语法（一） Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。 在线体验一下 Markdown在线编辑器。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-04T14:44:18.000Z">
+<meta property="article:modified_time" content="2022-04-04T14:44:18.000Z">
+<meta property="article:author" content="Bao Xinwen">
+<meta property="article:tag" content="Markdown基本语法">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/","path":"2022/04/04/Markdown基本语法/","title":"Markdown基本语法（一）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Markdown基本语法（一） | 包黑蛋</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?301ec0008b45c6f7060cac3933b09a42"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">包黑蛋</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">Markdown 基本语法（一）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">Markdown 标题语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E8%AF%AD%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">可选语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">2.2.</span> <span class="nav-text">最佳实践</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E6%AE%B5%E8%90%BD%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">Markdown 段落语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E8%90%BDparagraph%E7%94%A8%E6%B3%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">3.1.</span> <span class="nav-text">段落（Paragraph）用法的最佳实践</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">Markdown 换行语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-1"><span class="nav-number">4.1.</span> <span class="nav-text">最佳实践</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">Markdown 强调语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%97%E4%BD%93bold"><span class="nav-number">5.1.</span> <span class="nav-text">粗体（Bold）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%97%E4%BD%93bold%E7%94%A8%E6%B3%95%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">5.1.1.</span> <span class="nav-text">粗体（Bold）用法最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%9C%E4%BD%93italic"><span class="nav-number">5.2.</span> <span class="nav-text">斜体（Italic）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%9C%E4%BD%93italic%E7%94%A8%E6%B3%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">5.2.1.</span> <span class="nav-text">斜体（Italic）用法的最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%97%E4%BD%93bold%E5%92%8C%E6%96%9C%E4%BD%93italic"><span class="nav-number">5.3.</span> <span class="nav-text">粗体（Bold）和斜体（Italic）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%97%E4%BD%93bold%E5%92%8C%E6%96%9C%E4%BD%93italic%E7%94%A8%E6%B3%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">5.3.1.</span> <span class="nav-text">粗体（Bold）和斜体（Italic）用法的最佳实践</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">Markdown 引用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">6.1.</span> <span class="nav-text">多个段落的块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">6.2.</span> <span class="nav-text">嵌套块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E6%9C%89%E5%85%B6%E5%AE%83%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">6.3.</span> <span class="nav-text">带有其它元素的块引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-quarterly-results-look-great"><span class="nav-number">6.3.0.1.</span> <span class="nav-text">The quarterly results look
+great!</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bao Xinwen"
+      src="/images/baoxinwen3.png">
+  <p class="site-author-name" itemprop="name">Bao Xinwen</p>
+  <div class="site-description" itemprop="description">Bao Xinwen</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button class="js-gitter-toggle-chat-button"><i class="fa fa-comment"></i>
+      Chat
+    </button>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/baoxinwen" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;baoxinwen" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:baoxinwen_personal@163.com" title="E-Mail → mailto:baoxinwen_personal@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+          <div id="myCanvasContainer" class="widget tagcloud">
+              <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" rel="tag">Markdown基本语法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1/" rel="tag">一生所爱</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a><span class="tag-list-count">1</span></li></ul>
+              </canvas>
+          </div>
+      </div>
+      
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/baoxinwen" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/baoxinwen3.png">
+      <meta itemprop="name" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="包黑蛋">
+      <meta itemprop="description" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Markdown基本语法（一） | 包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Markdown基本语法（一）<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-04 22:44:18" itemprop="dateCreated datePublished" datetime="2022-04-04T22:44:18+08:00">2022-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="markdown-基本语法一">Markdown 基本语法（一）</h1>
+<p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出
+HTML、PDF 以及本身的 .md
+格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
+<p>在线体验一下 <a
+target="_blank" rel="noopener" href="https://markdown.com.cn/editor/">Markdown在线编辑器</a>。</p>
+<span id="more"></span>
+<p>千万不要被「标记」、「语言」吓到，Markdown的语法十分简单，常用的标记符号不超过十个，用于日常写作记录绰绰有余，不到半小时就能完全掌握。</p>
+<p>就是这十个不到的标记符号，却能让人<strong>优雅地沉浸式记录，专注内容而不是纠结排版</strong>，达到「心中无尘，码字入神」的境界。</p>
+<p>让我们从 <a
+target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/headings.html">Markdown
+标题语法</a>开始学习吧。</p>
+<h1 id="markdown-标题语法">Markdown 标题语法</h1>
+<p>要创建标题，请在单词或短语前面添加井号 (<code>#</code>)
+。<code>#</code> 的数量代表了标题的级别。例如，添加三个 <code>#</code>
+表示创建一个三级标题 (<code>&lt;h3&gt;</code>)
+(例如：<code>### My Header</code>)。</p>
+<table>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code># Heading level 1</code></td>
+<td><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>## Heading level 2</code></td>
+<td><code>&lt;h2&gt;Heading level 2&lt;/h2&gt;</code></td>
+</tr>
+<tr class="odd">
+<td><code>### Heading level 3</code></td>
+<td><code>&lt;h3&gt;Heading level 3&lt;/h3&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>#### Heading level 4</code></td>
+<td><code>&lt;h4&gt;Heading level 4&lt;/h4&gt;</code></td>
+</tr>
+<tr class="odd">
+<td><code>##### Heading level 5</code></td>
+<td><code>&lt;h5&gt;Heading level 5&lt;/h5&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>###### Heading level 6</code></td>
+<td><code>&lt;h6&gt;Heading level 6&lt;/h6&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="可选语法">可选语法</h2>
+<p>还可以在文本下方添加任意数量的 == 号来标识一级标题，或者 --
+号来标识二级标题。</p>
+<table>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Heading level 1===============</code></td>
+<td><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>Heading level 2---------------</code></td>
+<td><code>&lt;h2&gt;Heading level 2&lt;/h2&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="最佳实践">最佳实践</h2>
+<p>不同的 Markdown 应用程序处理 <code>#</code>
+和标题之间的空格方式并不一致。为了兼容考虑，请用一个空格在
+<code>#</code> 和标题之间进行分隔。</p>
+<table>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code># Here's a Heading</code></td>
+<td><code>#Here's a Heading</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-段落语法">Markdown 段落语法</h1>
+<p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>I really like using Markdown.I think I'll use it to format all of my documents from now on.</code></td>
+<td><code>&lt;p&gt;I really like using Markdown.&lt;/p&gt;&lt;p&gt;I think I'll use it to format all of my documents from now on.&lt;/p&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2
+id="段落paragraph用法的最佳实践">段落（Paragraph）用法的最佳实践</h2>
+<p>不要用空格（spaces）或制表符（ tabs）缩进段落。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Don't put tabs or spaces in front of your paragraphs.Keep lines left-aligned like this.</code></td>
+<td><code>This can result in unexpected formatting problems. Don't add tabs or spaces in front of paragraphs.</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-换行语法">Markdown 换行语法</h1>
+<p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(<code>&lt;br&gt;</code>)。</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 35%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>This is the first line.  And this is the second line.</code></td>
+<td><code>&lt;p&gt;This is the first line.&lt;br&gt;And this is the second line.&lt;/p&gt;</code></td>
+<td>This is the first line.<br/>And this is the second line.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="最佳实践-1">最佳实践</h2>
+<p>几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为
+<code>结尾空格（trailing whitespace)</code>
+的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个
+Markdown 应用程序都支持另一种换行方式：HTML 的 <code>&lt;br&gt;</code>
+标签。</p>
+<p>为了兼容性，请在行尾添加“结尾空格”或 HTML 的 <code>&lt;br&gt;</code>
+标签来实现换行。</p>
+<p>还有两种其他方式我并不推荐使用。CommonMark
+和其它几种轻量级标记语言支持在行尾添加反斜杠 (<code>\</code>)
+的方式实现换行，但是并非所有 Markdown
+应用程序都支持此种方式，因此从兼容性的角度来看，不推荐使用。并且至少有两种轻量级标记语言支持无须在行尾添加任何内容，只须键入回车键（<code>return</code>）即可实现换行。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>First line with two spaces after.  And the next line.First line with the HTML tag after.&lt;br&gt;And the next line.</code></td>
+<td><code>First line with a backslash after.\And the next line.First line with nothing after.And the next line.</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-强调语法">Markdown 强调语法</h1>
+<p>通过将文本设置为粗体或斜体来强调其重要性。</p>
+<h2 id="粗体bold">粗体（Bold）</h2>
+<p>要加粗文本，请在单词或短语的前后各添加两个星号（asterisks）或下划线（underscores）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（asterisks）。</p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 43%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>I just love **bold text**.</code></td>
+<td><code>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</code></td>
+<td>I just love <strong>bold text</strong>.</td>
+</tr>
+<tr class="even">
+<td><code>I just love __bold text__.</code></td>
+<td><code>I just love &lt;strong&gt;bold text&lt;/strong&gt;.</code></td>
+<td>I just love <strong>bold text</strong>.</td>
+</tr>
+<tr class="odd">
+<td><code>Love**is**bold</code></td>
+<td><code>Love&lt;strong&gt;is&lt;/strong&gt;bold</code></td>
+<td>Love<strong>is</strong>bold</td>
+</tr>
+</tbody>
+</table>
+<h3 id="粗体bold用法最佳实践">粗体（Bold）用法最佳实践</h3>
+<p>Markdown
+应用程序在如何处理单词或短语中间的下划线上并不一致。为兼容考虑，在单词或短语中间部分加粗的话，请使用星号（asterisks）。</p>
+<table>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Love**is**bold</code></td>
+<td><code>Love__is__bold</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="斜体italic">斜体（Italic）</h2>
+<p>要用斜体显示文本，请在单词或短语前后添加一个星号（asterisk）或下划线（underscore）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 37%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Italicized text is the *cat's meow*.</code></td>
+<td><code>Italicized text is the &lt;em&gt;cat's meow&lt;/em&gt;.</code></td>
+<td>Italicized text is the <em>cat’s meow</em>.</td>
+</tr>
+<tr class="even">
+<td><code>Italicized text is the _cat's meow_.</code></td>
+<td><code>Italicized text is the &lt;em&gt;cat's meow&lt;/em&gt;.</code></td>
+<td>Italicized text is the <em>cat’s meow</em>.</td>
+</tr>
+<tr class="odd">
+<td><code>A*cat*meow</code></td>
+<td><code>A&lt;em&gt;cat&lt;/em&gt;meow</code></td>
+<td>A<em>cat</em>meow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="斜体italic用法的最佳实践">斜体（Italic）用法的最佳实践</h3>
+<p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<table>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>A*cat*meow</code></td>
+<td><code>A_cat_meow</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="粗体bold和斜体italic">粗体（Bold）和斜体（Italic）</h2>
+<p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 42%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>This text is ***really important***.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr class="even">
+<td><code>This text is ___really important___.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr class="odd">
+<td><code>This text is __*really important*__.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr class="even">
+<td><code>This text is **_really important_**.</code></td>
+<td><code>This text is &lt;strong&gt;&lt;em&gt;really important&lt;/em&gt;&lt;/strong&gt;.</code></td>
+<td>This text is *<strong>really important*</strong>.</td>
+</tr>
+<tr class="odd">
+<td><code>This is really***very***important text.</code></td>
+<td><code>This is really&lt;strong&gt;&lt;em&gt;very&lt;/em&gt;&lt;/strong&gt;important text.</code></td>
+<td>This is really*<strong>very*</strong>important text.</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="粗体bold和斜体italic用法的最佳实践">粗体（Bold）和斜体（Italic）用法的最佳实践</h3>
+<p>Markdown
+应用程序在处理单词或短语中间添加的下划线上并不一致。为了实现兼容性，请使用星号将单词或短语的中间部分加粗并以斜体显示，以示重要。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>This is really***very***important text.</code></td>
+<td><code>This is really___very___important text.</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-引用语法">Markdown 引用语法</h1>
+<p>要创建块引用，请在段落前添加一个 <code>&gt;</code> 符号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下所示：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her
+castle.</p>
+</blockquote>
+<h2 id="多个段落的块引用">多个段落的块引用</h2>
+<p>块引用可以包含多个段落。为段落之间的空白行添加一个 <code>&gt;</code>
+符号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br><span class="line">&gt;</span><br><span class="line">&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her
+castle.</p>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and
+keep the fire fed with wood.</p>
+</blockquote>
+<h2 id="嵌套块引用">嵌套块引用</h2>
+<p>块引用可以嵌套。在要嵌套的段落前添加一个 <code>&gt;&gt;</code>
+符号。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Dorothy followed her through many of the beautiful rooms in her castle.</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<blockquote>
+<p>Dorothy followed her through many of the beautiful rooms in her
+castle.</p>
+<blockquote>
+<p>The Witch bade her clean the pots and kettles and sweep the floor and
+keep the fire fed with wood.</p>
+</blockquote>
+</blockquote>
+<h2 id="带有其它元素的块引用">带有其它元素的块引用</h2>
+<p>块引用可以包含其他 Markdown
+格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<blockquote>
+<h4 id="the-quarterly-results-look-great">The quarterly results look
+great!</h4>
+<ul>
+<li>Revenue was off the chart.</li>
+<li>Profits were higher than ever.</li>
+</ul>
+<p><em>Everything</em> is going according to <strong>plan</strong>.</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2022-04-05</div>
+      <div class="popular-posts-title"><a href="2022/04/05/Markdown基本语法（二）/" rel="bookmark">Markdown基本语法（二）</a></div>
+        <div class="popular-posts-excerpt"><p><h1 id="markdown-代码语法">Markdown 代码语法</h1>
+<p>要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>At the command prompt, type</code>nano<code>.</code></td>
+<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
+<td>At the command prompt, type <code>nano</code>.</td>
+</tr>
+</tbody>
+</table></p></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Bao Xinwen 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Bao Xinwen 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.png">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> Markdown基本语法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/" rel="prev" title="从零开始搭建自己的博客">
+                  <i class="fa fa-chevron-left"></i> 从零开始搭建自己的博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="next" title="Markdown基本语法（二）">
+                  Markdown基本语法（二） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="选择语言">
+      
+        <option value="zh-CN" data-href="/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bao Xinwen</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">14k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">13 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="gitter" type="application/json">{"enable":true,"room":"blog_hexo/community"}</script>
+<script src="/js/third-party/chat/gitter.js"></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.6/mermaid.min.js","integrity":"sha256-ZfzwelSToHk5YAcr9wbXAmWgyn9Jyq08fSLrLhZE89w="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"f8d884e99fdd57719a313f51fe261ffb"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
