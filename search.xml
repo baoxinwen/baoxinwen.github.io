@@ -1,355 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Markdown基本语法（二）</title>
-    <url>/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="markdown-代码语法">Markdown 代码语法</h1>
-<p>要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。</p>
-<table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 40%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>At the command prompt, type</code>nano<code>.</code></td>
-<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
-<td>At the command prompt, type <code>nano</code>.</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-<h2 id="转义反引号">转义反引号</h2>
-<p>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(````)中。</p>
-<table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 39%" />
-<col style="width: 28%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>Use `code` in your Markdown file.</code></td>
-<td><code>&lt;code&gt;Use</code>code<code>in your Markdown file.&lt;/code&gt;</code></td>
-<td><code>Use</code>code<code>in your Markdown file.</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="代码块">代码块</h2>
-<p>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong>
-要创建不用缩进的代码块，请使用围栏式代码块（fenced code blocks)</p>
-<h1 id="markdown-分隔线语法">Markdown 分隔线语法</h1>
-<p>要创建分隔线，请在单独一行上使用三个或多个星号
-(<code>***</code>)、破折号 (<code>---</code>) 或下划线
-(<code>___</code>) ，并且不能包含其他内容。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">_________________</span><br></pre></td></tr></table></figure>
-<p>以上三个分隔线的渲染效果看起来都一样：</p>
-<hr />
-<h2 id="分隔线horizontal-rule用法最佳实践">分隔线（Horizontal
-Rule）用法最佳实践</h2>
-<p>为了兼容性，请在分隔线的前后均添加空白行。</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>✅ Do this</th>
-<th>❌ Don't do this</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>Try to put a blank line before...---...and after a horizontal rule.</code></td>
-<td><code>Without blank lines, this would be a heading.---Don't do this!</code></td>
-</tr>
-</tbody>
-</table>
-<h1 id="markdown-链接语法">Markdown 链接语法</h1>
-<p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
-<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 "超链接title")</code></p>
-<p>对应的HTML代码：<code>&lt;a href="超链接地址" title="超链接title"&gt;超链接显示名&lt;/a&gt;</code></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn)。</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>这是一个链接 <a
-href="https://markdown.com.cn/">Markdown语法</a>。</p>
-<h2 id="给链接增加-title">给链接增加 Title</h2>
-<p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)。</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>这是一个链接 <a
-href="https://markdown.com.cn/">Markdown语法</a>。</p>
-<h2 id="网址和email地址">网址和Email地址</h2>
-<p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p><a href="https://markdown.com.cn/">https://markdown.com.cn</a> <a
-href="mailto:fake@example.com">fake@example.com</a></p>
-<h2 id="带格式化的链接">带格式化的链接</h2>
-<p>强调链接, 在链接语法前后增加星号。
-要将链接表示为代码，请在方括号中添加反引号。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">I love supporting the **[EFF](https://eff.org)**.</span><br><span class="line">This is the *[Markdown Guide](https://www.markdownguide.org)*.</span><br><span class="line">See the section on [`code`](#code).</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>I love supporting the <strong><a
-href="https://eff.org/">EFF</a></strong>. This is the <em><a
-href="https://www.markdownguide.org/">Markdown Guide</a></em>. See the
-section on <a
-href="https://markdown.com.cn/basic-syntax/links.html#code"><code>code</code></a>.</p>
-<h2 id="引用类型链接">引用类型链接</h2>
-<p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
-<h3 id="链接的第一部分格式">链接的第一部分格式</h3>
-<p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
-<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
-<p>以下示例格式对于链接的第一部分效果相同：</p>
-<ul>
-<li><code>[hobbit-hole][1]</code></li>
-<li><code>[hobbit-hole] [1]</code></li>
-</ul>
-<h3 id="链接的第二部分格式">链接的第二部分格式</h3>
-<p>引用类型链接的第二部分使用以下属性设置格式：</p>
-<ol type="1">
-<li>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如<code>[label]:</code>）。</li>
-<li>链接的URL，可以选择将其括在尖括号中。</li>
-<li>链接的可选标题，可以将其括在双引号，单引号或括号中。</li>
-</ol>
-<p>以下示例格式对于链接的第二部分效果相同：</p>
-<ul>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle</code></li>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"</code></li>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle 'Hobbit lifestyles'</code></li>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle (Hobbit lifestyles)</code></li>
-<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; "Hobbit lifestyles"</code></li>
-<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; 'Hobbit lifestyles'</code></li>
-<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; (Hobbit lifestyles)</code></li>
-</ul>
-<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
-<h3 id="链接最佳实践">链接最佳实践</h3>
-<p>不同的 Markdown
-应用程序处理URL中间的空格方式不一样。为了兼容性，请尽量使用%20代替空格。</p>
-<table>
-<colgroup>
-<col style="width: 52%" />
-<col style="width: 47%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>✅ Do this</th>
-<th>❌ Don't do this</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>[link](https://www.example.com/my%20great%20page)</code></td>
-<td><code>[link](https://www.example.com/my great page)</code></td>
-</tr>
-</tbody>
-</table>
-<h1 id="markdown-图片语法">Markdown 图片语法</h1>
-<p>要添加图像，请使用感叹号 (<code>!</code>),
-然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
-<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 "图片title")</code>。</p>
-<p>对应的HTML代码：<code>&lt;img src="图片链接" alt="图片alt" title="图片title"&gt;</code></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">![这是图片](/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;)</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<figure>
-<img data-src="https://markdown.com.cn/assets/img/philly-magic-garden.9c0b4415.jpg"
-alt="这是图片" />
-<figcaption aria-hidden="true">这是图片</figcaption>
-</figure>
-<h2 id="链接图片">链接图片</h2>
-<p>给图片增加链接，请将图像的Markdown
-括在方括号中，然后将链接添加在圆括号中。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[![沙漠中的岩石图片](/assets/img/shiprock.jpg &quot;Shiprock&quot;)](https://markdown.com.cn)</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p><a href="https://markdown.com.cn/"><img data-src="https://markdown.com.cn/assets/img/shiprock.c3b9a023.jpg"
-alt="沙漠中的岩石图片" /></a></p>
-<h1 id="markdown-转义字符语法">Markdown 转义字符语法</h1>
-<p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符
- 。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\* Without the backslash, this would be a bullet in an unordered list.</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>* Without the backslash, this would be a bullet in an unordered
-list.</p>
-<h2 id="可做转义的字符">可做转义的字符</h2>
-<p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。</p>
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 86%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Character</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>\</td>
-<td>backslash</td>
-</tr>
-<tr class="even">
-<td>`</td>
-<td>backtick (see also <a
-href="https://markdown.com.cn/basic-syntax/escaping-characters.html#escaping-backticks">escaping
-backticks in code</a>)</td>
-</tr>
-<tr class="odd">
-<td>*</td>
-<td>asterisk</td>
-</tr>
-<tr class="even">
-<td>_</td>
-<td>underscore</td>
-</tr>
-<tr class="odd">
-<td>{ }</td>
-<td>curly braces</td>
-</tr>
-<tr class="even">
-<td>[ ]</td>
-<td>brackets</td>
-</tr>
-<tr class="odd">
-<td>( )</td>
-<td>parentheses</td>
-</tr>
-<tr class="even">
-<td>#</td>
-<td>pound sign</td>
-</tr>
-<tr class="odd">
-<td>+</td>
-<td>plus sign</td>
-</tr>
-<tr class="even">
-<td>-</td>
-<td>minus sign (hyphen)</td>
-</tr>
-<tr class="odd">
-<td>.</td>
-<td>dot</td>
-</tr>
-<tr class="even">
-<td>!</td>
-<td>exclamation mark</td>
-</tr>
-<tr class="odd">
-<td>|</td>
-<td>pipe (see also <a
-href="https://markdown.com.cn/extended-syntax/escaping-pipe-characters-in-tables.html">escaping
-pipe in tables</a>)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="特殊字符自动转义">特殊字符自动转义</h2>
-<p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和
-<code>&amp;</code> 。 <code>&lt;</code>
-符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML
-实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是
-<code>&lt;</code> 和 <code>&amp;</code>。</p>
-<p><code>&amp;</code>
-符号其实很容易让写作网页文件的人感到困扰，如果你要打「AT&amp;T」
-，你必须要写成「<code>AT&amp;T</code>」 ，还得转换网址内的
-<code>&amp;</code> 符号，如果你要链接到：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;q=larry+bird</span><br></pre></td></tr></table></figure>
-<p>你必须要把网址转成：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;amp;q=larry+bird</span><br></pre></td></tr></table></figure>
-<p>才能放到链接标签的 <code>href</code>
-属性里。不用说也知道这很容易忘记，这也可能是 HTML
-标准检查所检查到的错误中，数量最多的。</p>
-<p>Markdown 允许你直接使用这些符号，它帮你自动转义字符。如果你使用
-<code>&amp;</code> 符号的作为 HTML
-实体的一部分，那么它不会被转换，而在其它情况下，它则会被转换成
-<code>&amp;</code>。所以你如果要在文件中插入一个著作权的符号，你可以这样写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&amp;copy;</span><br></pre></td></tr></table></figure>
-<p>Markdown 将不会对这段文字做修改，但是如果你这样写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;T</span><br></pre></td></tr></table></figure>
-<p>Markdown 就会将它转为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;amp;T</span><br></pre></td></tr></table></figure>
-<p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 支持 <a
-href="https://markdown.com.cn/basic-syntax/#内联-html">行内 HTML</a>
-，如果你使用 <code>&lt;</code> 符号作为 HTML 标签的分隔符，那 Markdown
-也不会对它做任何转换，但是如果你是写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &lt; 5</span><br></pre></td></tr></table></figure>
-<p>Markdown 将会把它转换为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &amp;lt; 5</span><br></pre></td></tr></table></figure>
-<p>需要特别注意的是，在 Markdown 的块级元素和内联元素中，
-<code>&lt;</code> 和 <code>&amp;</code> 两个符号都会被自动转换成 HTML
-实体，这项特性让你可以很容易地用 Markdown 写 HTML。（在 HTML
-语法中，你要手动把所有的 <code>&lt;</code> 和 <code>&amp;</code>
-都转换为 HTML 实体。）</p>
-<h1 id="markdown-内嵌-html-标签">Markdown 内嵌 HTML 标签</h1>
-<p>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML
-本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML
-标签添加到 Markdown 文本中即可。</p>
-<h2 id="行级內联标签">行级內联标签</h2>
-<p>HTML 的行级內联标签如
-<code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code>
-不受限制，可以在 Markdown
-的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown
-格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的
-<code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code>
-标签，可以直接使用这些标签，而不用 Markdown
-提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用
-HTML 标签更方便些。</p>
-<p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown
-的语法是可以解析的。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下:</p>
-<p>This <strong>word</strong> is bold. This <em>word</em> is italic.</p>
-<h2 id="区块标签">区块标签</h2>
-<p>区块元素──比如
-<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code>
-等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用
-tab 或是空白来缩进。Markdown
-会自动识别这区块元素，避免在区块标签前后加上没有必要的
-<code>&lt;p&gt;</code> 标签。</p>
-<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">This is a regular paragraph.</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;Foo&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">This is another regular paragraph.</span><br></pre></td></tr></table></figure>
-<p>请注意，Markdown 语法在 HTML
-区块标签中将不会被进行处理。例如，你无法在 HTML 区块内使用 Markdown
-形式的<code>*强调*</code>。</p>
-<h3 id="html-用法最佳实践">HTML 用法最佳实践</h3>
-<p>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加
-HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持
-HTML 标签的子集。</p>
-<p>对于 HTML 的块级元素
-<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>
-和 <code>&lt;p&gt;</code>，请在其前后使用空行（blank
-lines）与其它内容进行分隔。尽量不要使用制表符（tabs）或空格（spaces）对
-HTML 标签做缩进，否则将影响格式。</p>
-<p>在 HTML 块级标签内不能使用 Markdown 语法。例如
-<code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>Markdown基本语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdown基本语法（一）</title>
     <url>/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="markdown-基本语法一">Markdown 基本语法（一）</h1>
@@ -757,6 +408,417 @@ great!</h4>
       </tags>
   </entry>
   <entry>
+    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
+    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
+    <content><![CDATA[<h1
+id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
+<h2 id="问题描述">问题描述</h2>
+<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
+<span id="more"></span>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
+<h2 id="原因">原因</h2>
+<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
+<h2 id="解决步骤">解决步骤</h2>
+<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+<p>进入<code>.deploy_git</code>文件夹
+（<code>.deploy_git</code>是隐藏文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
+<p>进入<code>.git</code>文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
+<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
+<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
+<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
+<p>然后重新整理思路</p>
+<p>删除本地的<code>.deploy_git</code>目录</p>
+<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
+<p>打开github查看，问题解决！</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个特殊的人</title>
+    <url>/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="7265566d0fb98cd1334c95de578ba69a320473ee50e0666cfd6e0ea8870d5968">9e60957532baee991e944ab8c631029a28a17d109efc5ce194ca8fede1e603715ff1f07acad538a387ce87f092b78f912025b975a376360f9b453f5767a1df94d508aac796a2d375624a59eda2a989c675ff819f2004840b2cc18635e3d2163c9dc4214555e25237f701c832532d3857b030e3a2f14a43136e7b677c3190710cfeb7edef7b535292783bb3a243ab394e0c64f7224dcc5e4198ffc21ee123f9b38d670c22d58313c1672a18d11500f28e8c95dde805f32b503323f434e38410f934168c189966e4c94ba48d7a514cc43d254ca5290703ca476f5b1aa2eea322c9010fde3e7e3bef12db2ea3a3aba5be733b98696575405fc53537e78a1f3a5db0b87acda7b2886ce6478337191dbcc7d7da123d3c86e35f4baf130e3121dbbd8c370a9b9df5b7b9466027420538d2a5b1dfa41b142fe24747fd8c69195c9c4f901ef7fe3a25d92fe5ab411e8f902a8e8447f2bbb598db6fa6af3361c49585d31b14e598251864c77040ba121203e73b47eaa43c9b0c4e4ea106fbabbc9c3f79f0044c62369ef6c5f2e9dbc65b3d988eb9123d9fa6f52592ecc259a63f7e009820f494764359c76e256dde90d99441c7555e5bb4dcc6ad23d89d34754f7c4ef8dba5f6bfe5336dbccb78bd26ce4b1f7bb9f25541770c38a96aaaef48a420aea46f33b34ac760b6066c0ceda269bb683c3fa2a8b2787560e536f24c358f17217c86446289ad73aa22d674a666c68ac0b79d2cfb6e07b6f2d16b53e7f9054d62e27920a913805cafb06f2c5880e1e01dacdd90a830c3cecb0a329cebc6380edef6d85c0826ad2f7233a86d2013eaaeb9b91fca621054f07e4b61eff7431645297e46857ea460ec7ba18f0178cc2a1b8a72b7f8c2309bdd523b45f6569a6680c0937f646087c7c4677da71f2f5b52352b814b05a7056db3fc640cc6a1678df78d7ad620e6c9a6d9915120bf5f2b78394fa07970ec6530407a55329c7021480c2a79b31548908b7af53162690e56844704e7b9e071d86b89770b5b1ee8712c9ddd334c6459d695f75d370f3e0027415c779b68bf04dbb7fbbcd510214b673461c907ae2493e669cbfc6b4b7b524ec9ab9f55d0a830399423a26a470aa77feef9654c9b90653954c9906f9f14d2d0406b0a2fbff2f88a11674d66274e15eb19ad597bf57bc2aac8032dda03c4e219d64fd3e454bb4001eecfd9b20fff4e0023303f977aa3a6a824dc57e895c4b615fe688944fcbcf4755f2fa73ab5b4c76a7930c0a5e4563bb6f578c781c152e54d950dd5679cca3b347b3b2c69610b9c30f80ac7ce0de57ede27454f260a318a1d720eb379e6cec3f64bed03661d8ddf229007a8b8c84a98a6d6446120dd9d0c8851b36e829835c81c493838c91079fd83ddd8343e4ee58bd548c0bf7a74264cc66beaffafb775d5a112a5060d5369d37ecfc77a82f44073cfcde76e15017fb6a2f4b8394d140afdc3a57fba444f310f87f0a7d0326a9b9e4d9218bf3fabfb7c000ee5c30c52faa8aa7d1a2e45a9995c40c721fe57a4211a0a5c65eb285f97176c80f0853554189bfacddc8bb6dfee182bd8c04ec486fe6108f5c82a21989364b30110d6c00ae6d53ba628c6e2d0921781ada1ae9673e703e4dacad27b100f07e49786b44cd6fdc739fa5a54ae1730688a094254f55e97b32fb4741da3e533826cb4d150b11ea0d276d689b5c0194e6f353290eb22988be222c872da8ea9201211afc3bbf5c869f4523b2ee8287425839fb0cd68be49ad14383cd6311ec92933deff26de77d253a4e3d338480125b2d97aebd5cdf28cc7e0c970c2413753c6a227918df1aee09ee4061bca34e3e32215bb54986247ce259a34bcaeb301eb4b7a579c9f48afe2e87886cae6e2924c1aa57ede9400e4a9195b9db3097dd1edd4881fe51c0d5b91b670de52fbc39dba3e3d064d20ccfd7c3ec6205b46807a513816f4982d591c870d9484b0eb3d62d3c81a80932793f2ea228a5c61415a018aba1fbb92036a24360c741697c6786aa5ef50865603b03ce5d73bb19d275c08033107adc24fa0b33c9fd7980a3224ac4598f0d281bb5b54e44de7f1eae80f3a528392ab698b4895e2430f02b40840f9fd0240f9673e947cf5fa3fbea8f96270616fd4b54114a5d1ce88e03eabcf44c85b117ed0533eda75df1a049ab8655300870d5fbfa161330841ce0eba17401967855b609e1ddb777c13789abc2ed390aa84d66072036ffb22c88ab9d3b0a1852b783546837d75de9646aef5311ac6a6dc59deae8149b4cefae4b3e2a0ef28da3512eafff8bc249dac384d1ceaadacfdefc27a488c35e0fce9c036aef007cd2e4746cddae1861a6374db9475487c468b67aff90a982b12cf1a8a8b632481887f3e56e0452992a8666de18bd7c7f3cb87ec8761480e2b3f53de176812d711c64f8c6a09d16dcedcfae062c6de208894e55415a950508264c4b42726b8ede4e20a0fc4ef964577f1d27fc626e268de94d0055fc8dacfa25998e1164e79b2692da47f6de6bb187888912ba7b467291cf3f5ac24f4901b2829227bb3b6ba793da1e4c33a1d49c70c9598d6f626f780d6f36b72c0645448b481386ca97c633e3b98a19eeea63adc388a0270a4f152c3f261b02d65421eb3e5961800f9ac91b7168b3f5a5e27442519ec952cd30b485de9981298bf510a01550d092152acd0f00d2441da4574eef34a3a976815a5b688988f4805f8adfd27d817c0b2ebb18d83979de2001df198f2dac70e99e9f40cfb550888ace13f580e30586f8739d0316f3d5822c7f4a7fbf36c52bc33471e55076f1828bd7f53b465391546d5bffae2c3e18b994418ced4c09c66ff6b050c29f59da42eb23f67c1b0b8c1c811b56648891d8be084ee567fd37efc9bc65d69fff7f897346731a97de32a415ecbc66bfb12bafe99831c3d1a9749a527b3862564b7400f07108593887e29d11c62a006bb32d58a33d6e9a88a78896943af077bc68164be6388fa31e2249bc64237f9ee71a6eb7d27870984729a2255bf699586fbebf8229ae22bc9d78c6d54e6ae7395d455282cfd1aff00bee191d5d5c14e4e95d7b6566043b575cb60e93f0314841838e06bf12b91e9854e8653a73f9135945093cb9dea30c0ae692663f106470deeb2f2c5914bc454b77fd395d26dde0a73f1096a2983f8eba28b6ebf1d0d447bd21c67ca7acc94af2808fdd8b0ea210774e73355dfd309e3d6af5daa77796d3521a1f6c76ced529f310a9d395b3dfd470bf97718718b65eb9f9d5221344dc0e165f67309f07fdca684aacd5e42e9eeacabadc875924f679e67bc984a671c4c21490adb78b4cd720eeff2f38370763796a2a22482b9cf8c74990e9eabff144d898412a8e30a8a192c0d0b48cdfc1a56705167ac7109c51810988bc04af56bd85839fcf1f908ae129b2ae49407441315354167153020f260ecb44808b3e499ad5c1890487fee7c48802da861be66c62b5d389ba230ba920e0747d54c8cbfac02c4017aebc7ba57e4144124d56554c4401ca44abbcecf7258d1d6715ba1a8f5031a52725cdc9dc508a49af9da36eb89e75259fd711e13c89f3d3c4fb23a6bc64514d24849bd90177f4a25574dd9d7a1c9e538cb26ee45e0a4ba49e95ac875888b34b56db3a32c1089f17c74f8e9c65c9419e9b6f2f6126d5dc142eb946d594a555e48a3026743f1dd77c33c36920640f06e2f3f3517519c529d46ac96bf7321573955f284f781645fe1e5122e9dbcaf694715413d15c5a776fee1f59225964f7f43a5be3073612e951eb2bc587cbb026f19da76df515582abc034e945324cf4cf015fab83e5dffb1d64827b0adedc3aa3ab41bda9feb6ff7e97781be7bfc2c7341226e1bbacf6f2b51e33586b772eaa7839f461aa07af27d3dbd94c7c4c2783ec62d451342b1e84b129ee65fc9d74940154d760a13f7ec97f48d20dd80432abaeb019546d9f85bb398db95e01929d3c948d40552e08377b7f75e051c33758d25faee699c5fd43489460f50a742f095f6109bf67cbe5ca96b8af46a1fab8599dd34493f508f6135bb10d461dd8871d3811e2d57a15dae69d8a0a6081c2a1571ccfc83b3249f86bfbf64f6eb506c579ca51d7e4ecea9b05e06c029ba7a17f2af721d72c523c1a09aa3cc2cb40bee609a3fdc871de8eabb261c4af0627c70d34a20ac6d8346870bb66890dd21f53ac3a3d8bfcf188ca6eaedf87be303a3a4eb0310ac3c72c1160841cfb2454d8b67727ed875b8a4d2ba350464beee4148967f9d2f3dcc5aab16b7019eb277701335a0c8a46ae8c095be6f5053cf4225a1c3ed743883c8bb8e8ef41b33dd28d3cafceba54e9a7992264b82cf7e9c5ba83353a6eece31a3c87e68d841e5f25f9154c767cacb9dd3ab56943e539850c638109216de9bef209eb0bcd71688c7d94d13cd597edb65fd9da1b58f30c76bd3810d9e5c391cd863680c05cb228d31cb6b8432f8b7305b1c4127c510f80d838c4afe0b5dd7e1d14e6a9de86f418bf51931d6d5f03af660c4be2be2947635ff4954f524d6712913ee522a78fac036f292c07ff9b1b13d1682ab97777811e35fa20075e5f12c1e63ea7adde55f373edb1c7ae12fe2218134a29c55550a59f7abaf082f85fa95a00f5c04cc49bc18c58cb8cab4728563f514baca299ce50b134adf39fd036d629d390cb8ae51b4c8fd820d8aa8460936bd87a38c080d22a5c374da25b2941e9879c3ffe98316eeac03ba728e129191b1c1ed1c1670e818a64b8cd18d0a3e5a27d60ffa954dbac91508f9dadb8aa6576c688aa99effcd14910d4642e141a72d7d10e54e2740814d9c4364f5b4beaa7cb0ac9f72c968d8c3d397fb65dcb1d72f89e3de2ef7eb011d663429be24af60bf9821162aa616fcde763a1eeb2b0e725cbadeb5ab1a00f5530422d66eb17c55aa8fa17eee41e9745dd013c479a257623b168fc1ca4677f93e9a3550f217c8761f667364723b236602108b5c7f685c86e715367c3e46b1bc54a7bf2da9dec0156d575f4c727b1a41d10e1b9680c3927c5be5a0fceeb6c6ddc92a6edf58b6edc819582105fce73b49f211f9e30470e5a86e9a24fd17ff1436e6dcbd5a69f2bcafba02c86ba13af5ea763f65fb9a5d7d2699810e558b8b7c05e627475678888fc4ed5748b875b8521ea3c996013285916d9cc23ba56a6ba300a82b0a354dd34372e93f52c546f98b0973c58d997f05b39f3c8f7a8c9f3ea9e300c5fcc18ec9a29a270891bcfcacd0dd1cc055e39a2734c0b40a83e6421938b33147c9c1ce94d9ab731583e36a2a0a3f9394306f0cf4afd8abe0b27ec31848e165d42b6fd3bc8d38be2425c47036c31ab28cc1724b6cfe61745376848c26f689fa67e375430c1e1bdb8e66942</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-flip">
+      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="当前文章暂不对外可见，请输入密码后查看！">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>路路</category>
+      </categories>
+      <tags>
+        <tag>一生所爱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown基本语法（二）</title>
+    <url>/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="markdown-代码语法">Markdown 代码语法</h1>
+<p>要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>At the command prompt, type</code>nano<code>.</code></td>
+<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
+<td>At the command prompt, type <code>nano</code>.</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="转义反引号">转义反引号</h2>
+<p>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(````)中。</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 39%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Use `code` in your Markdown file.</code></td>
+<td><code>&lt;code&gt;Use</code>code<code>in your Markdown file.&lt;/code&gt;</code></td>
+<td><code>Use</code>code<code>in your Markdown file.</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码块">代码块</h2>
+<p>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong>
+要创建不用缩进的代码块，请使用围栏式代码块（fenced code blocks)</p>
+<h1 id="markdown-分隔线语法">Markdown 分隔线语法</h1>
+<p>要创建分隔线，请在单独一行上使用三个或多个星号
+(<code>***</code>)、破折号 (<code>---</code>) 或下划线
+(<code>___</code>) ，并且不能包含其他内容。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">_________________</span><br></pre></td></tr></table></figure>
+<p>以上三个分隔线的渲染效果看起来都一样：</p>
+<hr />
+<h2 id="分隔线horizontal-rule用法最佳实践">分隔线（Horizontal
+Rule）用法最佳实践</h2>
+<p>为了兼容性，请在分隔线的前后均添加空白行。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Try to put a blank line before...---...and after a horizontal rule.</code></td>
+<td><code>Without blank lines, this would be a heading.---Don't do this!</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-链接语法">Markdown 链接语法</h1>
+<p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 "超链接title")</code></p>
+<p>对应的HTML代码：<code>&lt;a href="超链接地址" title="超链接title"&gt;超链接显示名&lt;/a&gt;</code></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn)。</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>这是一个链接 <a
+href="https://markdown.com.cn/">Markdown语法</a>。</p>
+<h2 id="给链接增加-title">给链接增加 Title</h2>
+<p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)。</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>这是一个链接 <a
+href="https://markdown.com.cn/">Markdown语法</a>。</p>
+<h2 id="网址和email地址">网址和Email地址</h2>
+<p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p><a href="https://markdown.com.cn/">https://markdown.com.cn</a> <a
+href="mailto:fake@example.com">fake@example.com</a></p>
+<h2 id="带格式化的链接">带格式化的链接</h2>
+<p>强调链接, 在链接语法前后增加星号。
+要将链接表示为代码，请在方括号中添加反引号。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">I love supporting the **[EFF](https://eff.org)**.</span><br><span class="line">This is the *[Markdown Guide](https://www.markdownguide.org)*.</span><br><span class="line">See the section on [`code`](#code).</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>I love supporting the <strong><a
+href="https://eff.org/">EFF</a></strong>. This is the <em><a
+href="https://www.markdownguide.org/">Markdown Guide</a></em>. See the
+section on <a
+href="https://markdown.com.cn/basic-syntax/links.html#code"><code>code</code></a>.</p>
+<h2 id="引用类型链接">引用类型链接</h2>
+<p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
+<h3 id="链接的第一部分格式">链接的第一部分格式</h3>
+<p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
+<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
+<p>以下示例格式对于链接的第一部分效果相同：</p>
+<ul>
+<li><code>[hobbit-hole][1]</code></li>
+<li><code>[hobbit-hole] [1]</code></li>
+</ul>
+<h3 id="链接的第二部分格式">链接的第二部分格式</h3>
+<p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<ol type="1">
+<li>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如<code>[label]:</code>）。</li>
+<li>链接的URL，可以选择将其括在尖括号中。</li>
+<li>链接的可选标题，可以将其括在双引号，单引号或括号中。</li>
+</ol>
+<p>以下示例格式对于链接的第二部分效果相同：</p>
+<ul>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle 'Hobbit lifestyles'</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle (Hobbit lifestyles)</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; "Hobbit lifestyles"</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; 'Hobbit lifestyles'</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; (Hobbit lifestyles)</code></li>
+</ul>
+<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
+<h3 id="链接最佳实践">链接最佳实践</h3>
+<p>不同的 Markdown
+应用程序处理URL中间的空格方式不一样。为了兼容性，请尽量使用%20代替空格。</p>
+<table>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[link](https://www.example.com/my%20great%20page)</code></td>
+<td><code>[link](https://www.example.com/my great page)</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-图片语法">Markdown 图片语法</h1>
+<p>要添加图像，请使用感叹号 (<code>!</code>),
+然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 "图片title")</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src="图片链接" alt="图片alt" title="图片title"&gt;</code></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">![这是图片](/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;)</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<figure>
+<img data-src="https://markdown.com.cn/assets/img/philly-magic-garden.9c0b4415.jpg"
+alt="这是图片" />
+<figcaption aria-hidden="true">这是图片</figcaption>
+</figure>
+<h2 id="链接图片">链接图片</h2>
+<p>给图片增加链接，请将图像的Markdown
+括在方括号中，然后将链接添加在圆括号中。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[![沙漠中的岩石图片](/assets/img/shiprock.jpg &quot;Shiprock&quot;)](https://markdown.com.cn)</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p><a href="https://markdown.com.cn/"><img data-src="https://markdown.com.cn/assets/img/shiprock.c3b9a023.jpg"
+alt="沙漠中的岩石图片" /></a></p>
+<h1 id="markdown-转义字符语法">Markdown 转义字符语法</h1>
+<p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符
+ 。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\* Without the backslash, this would be a bullet in an unordered list.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>* Without the backslash, this would be a bullet in an unordered
+list.</p>
+<h2 id="可做转义的字符">可做转义的字符</h2>
+<p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。</p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Character</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>\</td>
+<td>backslash</td>
+</tr>
+<tr class="even">
+<td>`</td>
+<td>backtick (see also <a
+href="https://markdown.com.cn/basic-syntax/escaping-characters.html#escaping-backticks">escaping
+backticks in code</a>)</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>asterisk</td>
+</tr>
+<tr class="even">
+<td>_</td>
+<td>underscore</td>
+</tr>
+<tr class="odd">
+<td>{ }</td>
+<td>curly braces</td>
+</tr>
+<tr class="even">
+<td>[ ]</td>
+<td>brackets</td>
+</tr>
+<tr class="odd">
+<td>( )</td>
+<td>parentheses</td>
+</tr>
+<tr class="even">
+<td>#</td>
+<td>pound sign</td>
+</tr>
+<tr class="odd">
+<td>+</td>
+<td>plus sign</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>minus sign (hyphen)</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>dot</td>
+</tr>
+<tr class="even">
+<td>!</td>
+<td>exclamation mark</td>
+</tr>
+<tr class="odd">
+<td>|</td>
+<td>pipe (see also <a
+href="https://markdown.com.cn/extended-syntax/escaping-pipe-characters-in-tables.html">escaping
+pipe in tables</a>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="特殊字符自动转义">特殊字符自动转义</h2>
+<p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和
+<code>&amp;</code> 。 <code>&lt;</code>
+符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML
+实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是
+<code>&lt;</code> 和 <code>&amp;</code>。</p>
+<p><code>&amp;</code>
+符号其实很容易让写作网页文件的人感到困扰，如果你要打「AT&amp;T」
+，你必须要写成「<code>AT&amp;T</code>」 ，还得转换网址内的
+<code>&amp;</code> 符号，如果你要链接到：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;q=larry+bird</span><br></pre></td></tr></table></figure>
+<p>你必须要把网址转成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;amp;q=larry+bird</span><br></pre></td></tr></table></figure>
+<p>才能放到链接标签的 <code>href</code>
+属性里。不用说也知道这很容易忘记，这也可能是 HTML
+标准检查所检查到的错误中，数量最多的。</p>
+<p>Markdown 允许你直接使用这些符号，它帮你自动转义字符。如果你使用
+<code>&amp;</code> 符号的作为 HTML
+实体的一部分，那么它不会被转换，而在其它情况下，它则会被转换成
+<code>&amp;</code>。所以你如果要在文件中插入一个著作权的符号，你可以这样写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&amp;copy;</span><br></pre></td></tr></table></figure>
+<p>Markdown 将不会对这段文字做修改，但是如果你这样写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;T</span><br></pre></td></tr></table></figure>
+<p>Markdown 就会将它转为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;amp;T</span><br></pre></td></tr></table></figure>
+<p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 支持 <a
+href="https://markdown.com.cn/basic-syntax/#内联-html">行内 HTML</a>
+，如果你使用 <code>&lt;</code> 符号作为 HTML 标签的分隔符，那 Markdown
+也不会对它做任何转换，但是如果你是写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &lt; 5</span><br></pre></td></tr></table></figure>
+<p>Markdown 将会把它转换为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &amp;lt; 5</span><br></pre></td></tr></table></figure>
+<p>需要特别注意的是，在 Markdown 的块级元素和内联元素中，
+<code>&lt;</code> 和 <code>&amp;</code> 两个符号都会被自动转换成 HTML
+实体，这项特性让你可以很容易地用 Markdown 写 HTML。（在 HTML
+语法中，你要手动把所有的 <code>&lt;</code> 和 <code>&amp;</code>
+都转换为 HTML 实体。）</p>
+<h1 id="markdown-内嵌-html-标签">Markdown 内嵌 HTML 标签</h1>
+<p>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML
+本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML
+标签添加到 Markdown 文本中即可。</p>
+<h2 id="行级內联标签">行级內联标签</h2>
+<p>HTML 的行级內联标签如
+<code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code>
+不受限制，可以在 Markdown
+的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown
+格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的
+<code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code>
+标签，可以直接使用这些标签，而不用 Markdown
+提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用
+HTML 标签更方便些。</p>
+<p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown
+的语法是可以解析的。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下:</p>
+<p>This <strong>word</strong> is bold. This <em>word</em> is italic.</p>
+<h2 id="区块标签">区块标签</h2>
+<p>区块元素──比如
+<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code>
+等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用
+tab 或是空白来缩进。Markdown
+会自动识别这区块元素，避免在区块标签前后加上没有必要的
+<code>&lt;p&gt;</code> 标签。</p>
+<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">This is a regular paragraph.</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;Foo&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">This is another regular paragraph.</span><br></pre></td></tr></table></figure>
+<p>请注意，Markdown 语法在 HTML
+区块标签中将不会被进行处理。例如，你无法在 HTML 区块内使用 Markdown
+形式的<code>*强调*</code>。</p>
+<h3 id="html-用法最佳实践">HTML 用法最佳实践</h3>
+<p>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加
+HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持
+HTML 标签的子集。</p>
+<p>对于 HTML 的块级元素
+<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>
+和 <code>&lt;p&gt;</code>，请在其前后使用空行（blank
+lines）与其它内容进行分隔。尽量不要使用制表符（tabs）或空格（spaces）对
+HTML 标签做缩进，否则将影响格式。</p>
+<p>在 HTML 块级标签内不能使用 Markdown 语法。例如
+<code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Markdown基本语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始搭建自己的博客</title>
     <url>/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</url>
     <content><![CDATA[<blockquote>
@@ -850,68 +912,6 @@ Git</p>
       </categories>
       <tags>
         <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个特殊的人</title>
-    <url>/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="7265566d0fb98cd1334c95de578ba69a320473ee50e0666cfd6e0ea8870d5968">9e60957532baee991e944ab8c631029a28a17d109efc5ce194ca8fede1e603715ff1f07acad538a387ce87f092b78f912025b975a376360f9b453f5767a1df94d508aac796a2d375624a59eda2a989c675ff819f2004840b2cc18635e3d2163c9dc4214555e25237f701c832532d3857b030e3a2f14a43136e7b677c3190710cfeb7edef7b535292783bb3a243ab394e0c64f7224dcc5e4198ffc21ee123f9b38d670c22d58313c1672a18d11500f28e8c95dde805f32b503323f434e38410f934168c189966e4c94ba48d7a514cc43d254ca5290703ca476f5b1aa2eea322c9010fde3e7e3bef12db2ea3a3aba5be733b98696575405fc53537e78a1f3a5db0b87acda7b2886ce6478337191dbcc7d7da123d3c86e35f4baf130e3121dbbd8c370a9b9df5b7b9466027420538d2a5b1dfa41b142fe24747fd8c69195c9c4f901ef7fe3a25d92fe5ab411e8f902a8e8447f2bbb598db6fa6af3361c49585d31b14e598251864c77040ba121203e73b47eaa43c9b0c4e4ea106fbabbc9c3f79f0044c62369ef6c5f2e9dbc65b3d988eb9123d9fa6f52592ecc259a63f7e009820f494764359c76e256dde90d99441c7555e5bb4dcc6ad23d89d34754f7c4ef8dba5f6bfe5336dbccb78bd26ce4b1f7bb9f25541770c38a96aaaef48a420aea46f33b34ac760b6066c0ceda269bb683c3fa2a8b2787560e536f24c358f17217c86446289ad73aa22d674a666c68ac0b79d2cfb6e07b6f2d16b53e7f9054d62e27920a913805cafb06f2c5880e1e01dacdd90a830c3cecb0a329cebc6380edef6d85c0826ad2f7233a86d2013eaaeb9b91fca621054f07e4b61eff7431645297e46857ea460ec7ba18f0178cc2a1b8a72b7f8c2309bdd523b45f6569a6680c0937f646087c7c4677da71f2f5b52352b814b05a7056db3fc640cc6a1678df78d7ad620e6c9a6d9915120bf5f2b78394fa07970ec6530407a55329c7021480c2a79b31548908b7af53162690e56844704e7b9e071d86b89770b5b1ee8712c9ddd334c6459d695f75d370f3e0027415c779b68bf04dbb7fbbcd510214b673461c907ae2493e669cbfc6b4b7b524ec9ab9f55d0a830399423a26a470aa77feef9654c9b90653954c9906f9f14d2d0406b0a2fbff2f88a11674d66274e15eb19ad597bf57bc2aac8032dda03c4e219d64fd3e454bb4001eecfd9b20fff4e0023303f977aa3a6a824dc57e895c4b615fe688944fcbcf4755f2fa73ab5b4c76a7930c0a5e4563bb6f578c781c152e54d950dd5679cca3b347b3b2c69610b9c30f80ac7ce0de57ede27454f260a318a1d720eb379e6cec3f64bed03661d8ddf229007a8b8c84a98a6d6446120dd9d0c8851b36e829835c81c493838c91079fd83ddd8343e4ee58bd548c0bf7a74264cc66beaffafb775d5a112a5060d5369d37ecfc77a82f44073cfcde76e15017fb6a2f4b8394d140afdc3a57fba444f310f87f0a7d0326a9b9e4d9218bf3fabfb7c000ee5c30c52faa8aa7d1a2e45a9995c40c721fe57a4211a0a5c65eb285f97176c80f0853554189bfacddc8bb6dfee182bd8c04ec486fe6108f5c82a21989364b30110d6c00ae6d53ba628c6e2d0921781ada1ae9673e703e4dacad27b100f07e49786b44cd6fdc739fa5a54ae1730688a094254f55e97b32fb4741da3e533826cb4d150b11ea0d276d689b5c0194e6f353290eb22988be222c872da8ea9201211afc3bbf5c869f4523b2ee8287425839fb0cd68be49ad14383cd6311ec92933deff26de77d253a4e3d338480125b2d97aebd5cdf28cc7e0c970c2413753c6a227918df1aee09ee4061bca34e3e32215bb54986247ce259a34bcaeb301eb4b7a579c9f48afe2e87886cae6e2924c1aa57ede9400e4a9195b9db3097dd1edd4881fe51c0d5b91b670de52fbc39dba3e3d064d20ccfd7c3ec6205b46807a513816f4982d591c870d9484b0eb3d62d3c81a80932793f2ea228a5c61415a018aba1fbb92036a24360c741697c6786aa5ef50865603b03ce5d73bb19d275c08033107adc24fa0b33c9fd7980a3224ac4598f0d281bb5b54e44de7f1eae80f3a528392ab698b4895e2430f02b40840f9fd0240f9673e947cf5fa3fbea8f96270616fd4b54114a5d1ce88e03eabcf44c85b117ed0533eda75df1a049ab8655300870d5fbfa161330841ce0eba17401967855b609e1ddb777c13789abc2ed390aa84d66072036ffb22c88ab9d3b0a1852b783546837d75de9646aef5311ac6a6dc59deae8149b4cefae4b3e2a0ef28da3512eafff8bc249dac384d1ceaadacfdefc27a488c35e0fce9c036aef007cd2e4746cddae1861a6374db9475487c468b67aff90a982b12cf1a8a8b632481887f3e56e0452992a8666de18bd7c7f3cb87ec8761480e2b3f53de176812d711c64f8c6a09d16dcedcfae062c6de208894e55415a950508264c4b42726b8ede4e20a0fc4ef964577f1d27fc626e268de94d0055fc8dacfa25998e1164e79b2692da47f6de6bb187888912ba7b467291cf3f5ac24f4901b2829227bb3b6ba793da1e4c33a1d49c70c9598d6f626f780d6f36b72c0645448b481386ca97c633e3b98a19eeea63adc388a0270a4f152c3f261b02d65421eb3e5961800f9ac91b7168b3f5a5e27442519ec952cd30b485de9981298bf510a01550d092152acd0f00d2441da4574eef34a3a976815a5b688988f4805f8adfd27d817c0b2ebb18d83979de2001df198f2dac70e99e9f40cfb550888ace13f580e30586f8739d0316f3d5822c7f4a7fbf36c52bc33471e55076f1828bd7f53b465391546d5bffae2c3e18b994418ced4c09c66ff6b050c29f59da42eb23f67c1b0b8c1c811b56648891d8be084ee567fd37efc9bc65d69fff7f897346731a97de32a415ecbc66bfb12bafe99831c3d1a9749a527b3862564b7400f07108593887e29d11c62a006bb32d58a33d6e9a88a78896943af077bc68164be6388fa31e2249bc64237f9ee71a6eb7d27870984729a2255bf699586fbebf8229ae22bc9d78c6d54e6ae7395d455282cfd1aff00bee191d5d5c14e4e95d7b6566043b575cb60e93f0314841838e06bf12b91e9854e8653a73f9135945093cb9dea30c0ae692663f106470deeb2f2c5914bc454b77fd395d26dde0a73f1096a2983f8eba28b6ebf1d0d447bd21c67ca7acc94af2808fdd8b0ea210774e73355dfd309e3d6af5daa77796d3521a1f6c76ced529f310a9d395b3dfd470bf97718718b65eb9f9d5221344dc0e165f67309f07fdca684aacd5e42e9eeacabadc875924f679e67bc984a671c4c21490adb78b4cd720eeff2f38370763796a2a22482b9cf8c74990e9eabff144d898412a8e30a8a192c0d0b48cdfc1a56705167ac7109c51810988bc04af56bd85839fcf1f908ae129b2ae49407441315354167153020f260ecb44808b3e499ad5c1890487fee7c48802da861be66c62b5d389ba230ba920e0747d54c8cbfac02c4017aebc7ba57e4144124d56554c4401ca44abbcecf7258d1d6715ba1a8f5031a52725cdc9dc508a49af9da36eb89e75259fd711e13c89f3d3c4fb23a6bc64514d24849bd90177f4a25574dd9d7a1c9e538cb26ee45e0a4ba49e95ac875888b34b56db3a32c1089f17c74f8e9c65c9419e9b6f2f6126d5dc142eb946d594a555e48a3026743f1dd77c33c36920640f06e2f3f3517519c529d46ac96bf7321573955f284f781645fe1e5122e9dbcaf694715413d15c5a776fee1f59225964f7f43a5be3073612e951eb2bc587cbb026f19da76df515582abc034e945324cf4cf015fab83e5dffb1d64827b0adedc3aa3ab41bda9feb6ff7e97781be7bfc2c7341226e1bbacf6f2b51e33586b772eaa7839f461aa07af27d3dbd94c7c4c2783ec62d451342b1e84b129ee65fc9d74940154d760a13f7ec97f48d20dd80432abaeb019546d9f85bb398db95e01929d3c948d40552e08377b7f75e051c33758d25faee699c5fd43489460f50a742f095f6109bf67cbe5ca96b8af46a1fab8599dd34493f508f6135bb10d461dd8871d3811e2d57a15dae69d8a0a6081c2a1571ccfc83b3249f86bfbf64f6eb506c579ca51d7e4ecea9b05e06c029ba7a17f2af721d72c523c1a09aa3cc2cb40bee609a3fdc871de8eabb261c4af0627c70d34a20ac6d8346870bb66890dd21f53ac3a3d8bfcf188ca6eaedf87be303a3a4eb0310ac3c72c1160841cfb2454d8b67727ed875b8a4d2ba350464beee4148967f9d2f3dcc5aab16b7019eb277701335a0c8a46ae8c095be6f5053cf4225a1c3ed743883c8bb8e8ef41b33dd28d3cafceba54e9a7992264b82cf7e9c5ba83353a6eece31a3c87e68d841e5f25f9154c767cacb9dd3ab56943e539850c638109216de9bef209eb0bcd71688c7d94d13cd597edb65fd9da1b58f30c76bd3810d9e5c391cd863680c05cb228d31cb6b8432f8b7305b1c4127c510f80d838c4afe0b5dd7e1d14e6a9de86f418bf51931d6d5f03af660c4be2be2947635ff4954f524d6712913ee522a78fac036f292c07ff9b1b13d1682ab97777811e35fa20075e5f12c1e63ea7adde55f373edb1c7ae12fe2218134a29c55550a59f7abaf082f85fa95a00f5c04cc49bc18c58cb8cab4728563f514baca299ce50b134adf39fd036d629d390cb8ae51b4c8fd820d8aa8460936bd87a38c080d22a5c374da25b2941e9879c3ffe98316eeac03ba728e129191b1c1ed1c1670e818a64b8cd18d0a3e5a27d60ffa954dbac91508f9dadb8aa6576c688aa99effcd14910d4642e141a72d7d10e54e2740814d9c4364f5b4beaa7cb0ac9f72c968d8c3d397fb65dcb1d72f89e3de2ef7eb011d663429be24af60bf9821162aa616fcde763a1eeb2b0e725cbadeb5ab1a00f5530422d66eb17c55aa8fa17eee41e9745dd013c479a257623b168fc1ca4677f93e9a3550f217c8761f667364723b236602108b5c7f685c86e715367c3e46b1bc54a7bf2da9dec0156d575f4c727b1a41d10e1b9680c3927c5be5a0fceeb6c6ddc92a6edf58b6edc819582105fce73b49f211f9e30470e5a86e9a24fd17ff1436e6dcbd5a69f2bcafba02c86ba13af5ea763f65fb9a5d7d2699810e558b8b7c05e627475678888fc4ed5748b875b8521ea3c996013285916d9cc23ba56a6ba300a82b0a354dd34372e93f52c546f98b0973c58d997f05b39f3c8f7a8c9f3ea9e300c5fcc18ec9a29a270891bcfcacd0dd1cc055e39a2734c0b40a83e6421938b33147c9c1ce94d9ab731583e36a2a0a3f9394306f0cf4afd8abe0b27ec31848e165d42b6fd3bc8d38be2425c47036c31ab28cc1724b6cfe61745376848c26f689fa67e375430c1e1bdb8e66942</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-flip">
-      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="当前文章暂不对外可见，请输入密码后查看！">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>路路</category>
-      </categories>
-      <tags>
-        <tag>一生所爱</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
-    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
-    <content><![CDATA[<h1
-id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
-<h2 id="问题描述">问题描述</h2>
-<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
-<span id="more"></span>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
-<h2 id="原因">原因</h2>
-<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
-<h2 id="解决步骤">解决步骤</h2>
-<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
-<p>进入<code>.deploy_git</code>文件夹
-（<code>.deploy_git</code>是隐藏文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
-<p>进入<code>.git</code>文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
-<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
-<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
-<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
-<p>然后重新整理思路</p>
-<p>删除本地的<code>.deploy_git</code>目录</p>
-<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
-<p>打开github查看，问题解决！</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
