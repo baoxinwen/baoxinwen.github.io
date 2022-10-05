@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>包黑蛋</title>
+  <icon>http://example.com/images/favicon_200x200.png</icon>
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-10-04T14:16:21.608Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Bao Xinwen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
+    <link href="http://example.com/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/"/>
+    <id>http://example.com/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</id>
+    <published>2022-10-03T14:37:54.000Z</published>
+    <updated>2022-10-04T14:16:21.608Z</updated>
+    
+    
+    <summary type="html">&lt;h1
+id=&quot;hexo部署到github后文件夹名大小写引起的问题&quot;&gt;Hexo部署到Github后文件夹名大小写引起的问题&lt;/h1&gt;
+&lt;h2 id=&quot;问题描述&quot;&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;最近一直在使用&lt;code&gt;Hexo&lt;/code&gt;搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现&lt;code&gt;Tags&lt;/code&gt;和&lt;code&gt;Categories&lt;/code&gt;页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用&lt;code&gt;hexo s&lt;/code&gt;进行预览，发现一切正常。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一个特殊的人</title>
+    <link href="http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/"/>
+    <id>http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</id>
+    <published>2022-09-17T12:51:22.000Z</published>
+    <updated>2022-10-03T14:02:56.542Z</updated>
+    
+    
+    <summary type="html">这是一篇加密文章，涉及隐私或付费服务，请通过留言或邮箱联系我获取密码！</summary>
+    
+    
+    
+    <category term="路路" scheme="http://example.com/categories/%E8%B7%AF%E8%B7%AF/"/>
+    
+    
+    <category term="一生所爱" scheme="http://example.com/tags/%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown基本语法（二）</title>
+    <link href="http://example.com/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://example.com/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/</id>
+    <published>2022-04-05T14:32:02.000Z</published>
+    <updated>2022-04-05T14:32:02.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;markdown-代码语法&quot;&gt;Markdown 代码语法&lt;/h1&gt;
+&lt;p&gt;要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 30%&quot; /&gt;
+&lt;col style=&quot;width: 40%&quot; /&gt;
+&lt;col style=&quot;width: 29%&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&quot;header&quot;&gt;
+&lt;th&gt;Markdown语法&lt;/th&gt;
+&lt;th&gt;HTML&lt;/th&gt;
+&lt;th&gt;预览效果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td&gt;&lt;code&gt;At the command prompt, type&lt;/code&gt;nano&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;At the command prompt, type &amp;lt;code&amp;gt;nano&amp;lt;/code&amp;gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Markdown基本语法" scheme="http://example.com/tags/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown基本语法（一）</title>
+    <link href="http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</id>
+    <published>2022-04-04T14:44:18.000Z</published>
+    <updated>2022-04-04T14:44:18.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;markdown-基本语法一&quot;&gt;Markdown 基本语法（一）&lt;/h1&gt;
+&lt;p&gt;Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出
+HTML、PDF 以及本身的 .md
+格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。&lt;/p&gt;
+&lt;p&gt;在线体验一下 &lt;a
+href=&quot;https://markdown.com.cn/editor/&quot;&gt;Markdown在线编辑器&lt;/a&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Markdown基本语法" scheme="http://example.com/tags/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始搭建自己的博客</title>
+    <link href="http://example.com/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/"/>
+    <id>http://example.com/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</id>
+    <published>2022-04-02T17:09:51.000Z</published>
+    <updated>2022-04-02T17:09:51.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;博客&lt;/strong&gt;：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。&lt;/p&gt;
+&lt;p&gt;在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用
+Hexo 框架搭建我的个人博客。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="博客搭建" scheme="http://example.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+</feed>
