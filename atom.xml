@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-04T14:16:21.608Z</updated>
+  <updated>2022-10-06T09:55:15.661Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DVWA靶场搭建</title>
+    <link href="http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/"/>
+    <id>http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/</id>
+    <published>2022-10-06T07:37:46.000Z</published>
+    <updated>2022-10-06T09:55:15.661Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在近些年网络安全的高速发展中，初学者已经很难找到一个网站进行渗透了，曾几何时，一个漏洞，一个工具就可以在网上找到很多有漏洞的网站去体验，当然渗透一个未经授权的系统是非法的。因此，为了能够较为真实地学习Web渗透的各种技术，就需要找一个专门用于学习的Web演练平台，人们将这种用于练习渗透的平台称为“靶场”。&lt;/p&gt;
+&lt;p&gt;本文介绍如何搭建由PHP+MySQL编写开发的一套靶场系统DVWA，由于该系统提供了多个安全演练级别，因此可以逐步地来提高Web渗透的技术。DVWA是一套开源的系统，在练习Web渗透技术的同时，也可以通过阅读源码学习到对于各种漏洞的安全防护编码。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="网络安全" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="漏洞防范" scheme="http://example.com/tags/%E6%BC%8F%E6%B4%9E%E9%98%B2%E8%8C%83/"/>
+    
+  </entry>
   
   <entry>
     <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>

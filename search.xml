@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>DVWA靶场搭建</title>
+    <url>/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="前言">前言</h1>
+<p>在近些年网络安全的高速发展中，初学者已经很难找到一个网站进行渗透了，曾几何时，一个漏洞，一个工具就可以在网上找到很多有漏洞的网站去体验，当然渗透一个未经授权的系统是非法的。因此，为了能够较为真实地学习Web渗透的各种技术，就需要找一个专门用于学习的Web演练平台，人们将这种用于练习渗透的平台称为“靶场”。</p>
+<p>本文介绍如何搭建由PHP+MySQL编写开发的一套靶场系统DVWA，由于该系统提供了多个安全演练级别，因此可以逐步地来提高Web渗透的技术。DVWA是一套开源的系统，在练习Web渗透技术的同时，也可以通过阅读源码学习到对于各种漏洞的安全防护编码。</p>
+<span id="more"></span>
+<h2 id="一dvwa介绍">一、DVWA介绍</h2>
+<p>DVWA（Damn Vulnerable Web
+Application）是一个用来进行安全脆弱性鉴定的PHP/MySQL
+Web应用，旨在为安全专业人员测试自己的专业技能和工具提供合法的环境，帮助web开发者更好的理解web应用安全防范的过程。</p>
+<p>DVWA共有十三个模块，分别是</p>
+<ol type="1">
+<li><p>Brute Force</p></li>
+<li><p>Command Injection</p></li>
+<li><p>CSRF</p></li>
+<li><p>File Inclusion</p></li>
+<li><p>File Upload</p></li>
+<li><p>Insecure CAPTCHA</p></li>
+<li><p>SQL Injection</p></li>
+<li><p>SQL Injection（Blind）</p></li>
+<li><p>XSS（DOM）</p></li>
+<li><p>XSS（Reflected）</p></li>
+<li><p>XSS（Stored）</p></li>
+<li><p>CSP Bypass</p></li>
+<li><p>Javascript</p></li>
+</ol>
+<h2 id="二phpstudy安装部署">二、phpStudy安装部署</h2>
+<p>首先，为模拟真实的web环境，安装DVWA靶场前需要安装相应的WAMP；</p>
+<ul>
+<li>W：windows</li>
+<li>A：Apache</li>
+<li>M：MySQL</li>
+<li>P：PHP</li>
+</ul>
+<p>其中phpstudy提供一站式安装，以下为详细安装部署步骤</p>
+<h4 id="官网下载安装包">官网下载安装包</h4>
+<p>官网：<a href="https://www.xp.cn/">phpStudy官网</a></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/phpStudy官网.png" /></p>
+<p>下载对应的版本，本文使用的是phpStudy 2018版</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/下载phpStudy2018版.png" /></p>
+<p>安装完毕后可以直接启动相关服务，极大的节省了环境部署的时间</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/启动phpStudy.png" /></p>
+<h2 id="三dvwa安装部署">三、DVWA安装部署</h2>
+<h3 id="官网下载安装包-1">官网下载安装包</h3>
+<p>官网：<a
+href="https://github.com/digininja/DVWA/archive/master.zip">DVWA官网</a></p>
+<p>下载DVWA环境后，将其解压并放置在phpStudy安装路径下的WWW子目录下</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/DVWA下载并解压.png" /></p>
+<p>再将DVWA目录下的config子目录中的<code>config.inc.php.dist</code>文件的.dist后缀删除</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/修改config文件名.png" /></p>
+<p>然后打开该文件并修改参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$_DVWA = array();</span><br><span class="line">$_DVWA[ &#x27;db_server&#x27; ]   = &#x27;127.0.0.1&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_database&#x27; ] = &#x27;dvwa&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_user&#x27; ]     = &#x27;root&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_password&#x27; ] = &#x27;root&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_port&#x27;] = &#x27;3306&#x27;;</span><br></pre></td></tr></table></figure>
+<p>然后打开游览器访问<code>127.0.0.1</code>，如果出现以下界面，则说明DVWA部署成功</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/127.0.0.1.png" /></p>
+<p>然后访问<code>127.0.0.1/DVWA/setup.php</code>，将会看到以下界面</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/setup.png" /></p>
+<p>点击最下方的创建数据库</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/创建数据库.png" /></p>
+<p>创建完成后稍微等待一会将会转到登陆界面，也可以手动访问<code>127.0.0.1/DVWA/login.php</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/登陆DVWA.png" /></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">用户名：admin</span><br><span class="line">密码：password</span><br></pre></td></tr></table></figure>
+<p>登陆成功之后就可以进入靶场了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/靶场.png" /></p>
+<p>到此DVWA的安装部署就成功了。</p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+        <tag>漏洞防范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
+    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
+    <content><![CDATA[<h1
+id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
+<h2 id="问题描述">问题描述</h2>
+<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
+<span id="more"></span>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
+<h2 id="原因">原因</h2>
+<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
+<h2 id="解决步骤">解决步骤</h2>
+<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+<p>进入<code>.deploy_git</code>文件夹
+（<code>.deploy_git</code>是隐藏文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
+<p>进入<code>.git</code>文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
+<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
+<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
+<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
+<p>然后重新整理思路</p>
+<p>删除本地的<code>.deploy_git</code>目录</p>
+<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
+<p>打开github查看，问题解决！</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown基本语法（一）</title>
     <url>/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="markdown-基本语法一">Markdown 基本语法（一）</h1>
@@ -405,6 +519,28 @@ great!</h4>
       </categories>
       <tags>
         <tag>Markdown基本语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个特殊的人</title>
+    <url>/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="7265566d0fb98cd1334c95de578ba69a320473ee50e0666cfd6e0ea8870d5968">9e60957532baee991e944ab8c631029a28a17d109efc5ce194ca8fede1e603715ff1f07acad538a387ce87f092b78f912025b975a376360f9b453f5767a1df94d508aac796a2d375624a59eda2a989c675ff819f2004840b2cc18635e3d2163c9dc4214555e25237f701c832532d3857b030e3a2f14a43136e7b677c3190710cfeb7edef7b535292783bb3a243ab394e0c64f7224dcc5e4198ffc21ee123f9b38d670c22d58313c1672a18d11500f28e8c95dde805f32b503323f434e38410f934168c189966e4c94ba48d7a514cc43d254ca5290703ca476f5b1aa2eea322c9010fde3e7e3bef12db2ea3a3aba5be733b98696575405fc53537e78a1f3a5db0b87acda7b2886ce6478337191dbcc7d7da123d3c86e35f4baf130e3121dbbd8c370a9b9df5b7b9466027420538d2a5b1dfa41b142fe24747fd8c69195c9c4f901ef7fe3a25d92fe5ab411e8f902a8e8447f2bbb598db6fa6af3361c49585d31b14e598251864c77040ba121203e73b47eaa43c9b0c4e4ea106fbabbc9c3f79f0044c62369ef6c5f2e9dbc65b3d988eb9123d9fa6f52592ecc259a63f7e009820f494764359c76e256dde90d99441c7555e5bb4dcc6ad23d89d34754f7c4ef8dba5f6bfe5336dbccb78bd26ce4b1f7bb9f25541770c38a96aaaef48a420aea46f33b34ac760b6066c0ceda269bb683c3fa2a8b2787560e536f24c358f17217c86446289ad73aa22d674a666c68ac0b79d2cfb6e07b6f2d16b53e7f9054d62e27920a913805cafb06f2c5880e1e01dacdd90a830c3cecb0a329cebc6380edef6d85c0826ad2f7233a86d2013eaaeb9b91fca621054f07e4b61eff7431645297e46857ea460ec7ba18f0178cc2a1b8a72b7f8c2309bdd523b45f6569a6680c0937f646087c7c4677da71f2f5b52352b814b05a7056db3fc640cc6a1678df78d7ad620e6c9a6d9915120bf5f2b78394fa07970ec6530407a55329c7021480c2a79b31548908b7af53162690e56844704e7b9e071d86b89770b5b1ee8712c9ddd334c6459d695f75d370f3e0027415c779b68bf04dbb7fbbcd510214b673461c907ae2493e669cbfc6b4b7b524ec9ab9f55d0a830399423a26a470aa77feef9654c9b90653954c9906f9f14d2d0406b0a2fbff2f88a11674d66274e15eb19ad597bf57bc2aac8032dda03c4e219d64fd3e454bb4001eecfd9b20fff4e0023303f977aa3a6a824dc57e895c4b615fe688944fcbcf4755f2fa73ab5b4c76a7930c0a5e4563bb6f578c781c152e54d950dd5679cca3b347b3b2c69610b9c30f80ac7ce0de57ede27454f260a318a1d720eb379e6cec3f64bed03661d8ddf229007a8b8c84a98a6d6446120dd9d0c8851b36e829835c81c493838c91079fd83ddd8343e4ee58bd548c0bf7a74264cc66beaffafb775d5a112a5060d5369d37ecfc77a82f44073cfcde76e15017fb6a2f4b8394d140afdc3a57fba444f310f87f0a7d0326a9b9e4d9218bf3fabfb7c000ee5c30c52faa8aa7d1a2e45a9995c40c721fe57a4211a0a5c65eb285f97176c80f0853554189bfacddc8bb6dfee182bd8c04ec486fe6108f5c82a21989364b30110d6c00ae6d53ba628c6e2d0921781ada1ae9673e703e4dacad27b100f07e49786b44cd6fdc739fa5a54ae1730688a094254f55e97b32fb4741da3e533826cb4d150b11ea0d276d689b5c0194e6f353290eb22988be222c872da8ea9201211afc3bbf5c869f4523b2ee8287425839fb0cd68be49ad14383cd6311ec92933deff26de77d253a4e3d338480125b2d97aebd5cdf28cc7e0c970c2413753c6a227918df1aee09ee4061bca34e3e32215bb54986247ce259a34bcaeb301eb4b7a579c9f48afe2e87886cae6e2924c1aa57ede9400e4a9195b9db3097dd1edd4881fe51c0d5b91b670de52fbc39dba3e3d064d20ccfd7c3ec6205b46807a513816f4982d591c870d9484b0eb3d62d3c81a80932793f2ea228a5c61415a018aba1fbb92036a24360c741697c6786aa5ef50865603b03ce5d73bb19d275c08033107adc24fa0b33c9fd7980a3224ac4598f0d281bb5b54e44de7f1eae80f3a528392ab698b4895e2430f02b40840f9fd0240f9673e947cf5fa3fbea8f96270616fd4b54114a5d1ce88e03eabcf44c85b117ed0533eda75df1a049ab8655300870d5fbfa161330841ce0eba17401967855b609e1ddb777c13789abc2ed390aa84d66072036ffb22c88ab9d3b0a1852b783546837d75de9646aef5311ac6a6dc59deae8149b4cefae4b3e2a0ef28da3512eafff8bc249dac384d1ceaadacfdefc27a488c35e0fce9c036aef007cd2e4746cddae1861a6374db9475487c468b67aff90a982b12cf1a8a8b632481887f3e56e0452992a8666de18bd7c7f3cb87ec8761480e2b3f53de176812d711c64f8c6a09d16dcedcfae062c6de208894e55415a950508264c4b42726b8ede4e20a0fc4ef964577f1d27fc626e268de94d0055fc8dacfa25998e1164e79b2692da47f6de6bb187888912ba7b467291cf3f5ac24f4901b2829227bb3b6ba793da1e4c33a1d49c70c9598d6f626f780d6f36b72c0645448b481386ca97c633e3b98a19eeea63adc388a0270a4f152c3f261b02d65421eb3e5961800f9ac91b7168b3f5a5e27442519ec952cd30b485de9981298bf510a01550d092152acd0f00d2441da4574eef34a3a976815a5b688988f4805f8adfd27d817c0b2ebb18d83979de2001df198f2dac70e99e9f40cfb550888ace13f580e30586f8739d0316f3d5822c7f4a7fbf36c52bc33471e55076f1828bd7f53b465391546d5bffae2c3e18b994418ced4c09c66ff6b050c29f59da42eb23f67c1b0b8c1c811b56648891d8be084ee567fd37efc9bc65d69fff7f897346731a97de32a415ecbc66bfb12bafe99831c3d1a9749a527b3862564b7400f07108593887e29d11c62a006bb32d58a33d6e9a88a78896943af077bc68164be6388fa31e2249bc64237f9ee71a6eb7d27870984729a2255bf699586fbebf8229ae22bc9d78c6d54e6ae7395d455282cfd1aff00bee191d5d5c14e4e95d7b6566043b575cb60e93f0314841838e06bf12b91e9854e8653a73f9135945093cb9dea30c0ae692663f106470deeb2f2c5914bc454b77fd395d26dde0a73f1096a2983f8eba28b6ebf1d0d447bd21c67ca7acc94af2808fdd8b0ea210774e73355dfd309e3d6af5daa77796d3521a1f6c76ced529f310a9d395b3dfd470bf97718718b65eb9f9d5221344dc0e165f67309f07fdca684aacd5e42e9eeacabadc875924f679e67bc984a671c4c21490adb78b4cd720eeff2f38370763796a2a22482b9cf8c74990e9eabff144d898412a8e30a8a192c0d0b48cdfc1a56705167ac7109c51810988bc04af56bd85839fcf1f908ae129b2ae49407441315354167153020f260ecb44808b3e499ad5c1890487fee7c48802da861be66c62b5d389ba230ba920e0747d54c8cbfac02c4017aebc7ba57e4144124d56554c4401ca44abbcecf7258d1d6715ba1a8f5031a52725cdc9dc508a49af9da36eb89e75259fd711e13c89f3d3c4fb23a6bc64514d24849bd90177f4a25574dd9d7a1c9e538cb26ee45e0a4ba49e95ac875888b34b56db3a32c1089f17c74f8e9c65c9419e9b6f2f6126d5dc142eb946d594a555e48a3026743f1dd77c33c36920640f06e2f3f3517519c529d46ac96bf7321573955f284f781645fe1e5122e9dbcaf694715413d15c5a776fee1f59225964f7f43a5be3073612e951eb2bc587cbb026f19da76df515582abc034e945324cf4cf015fab83e5dffb1d64827b0adedc3aa3ab41bda9feb6ff7e97781be7bfc2c7341226e1bbacf6f2b51e33586b772eaa7839f461aa07af27d3dbd94c7c4c2783ec62d451342b1e84b129ee65fc9d74940154d760a13f7ec97f48d20dd80432abaeb019546d9f85bb398db95e01929d3c948d40552e08377b7f75e051c33758d25faee699c5fd43489460f50a742f095f6109bf67cbe5ca96b8af46a1fab8599dd34493f508f6135bb10d461dd8871d3811e2d57a15dae69d8a0a6081c2a1571ccfc83b3249f86bfbf64f6eb506c579ca51d7e4ecea9b05e06c029ba7a17f2af721d72c523c1a09aa3cc2cb40bee609a3fdc871de8eabb261c4af0627c70d34a20ac6d8346870bb66890dd21f53ac3a3d8bfcf188ca6eaedf87be303a3a4eb0310ac3c72c1160841cfb2454d8b67727ed875b8a4d2ba350464beee4148967f9d2f3dcc5aab16b7019eb277701335a0c8a46ae8c095be6f5053cf4225a1c3ed743883c8bb8e8ef41b33dd28d3cafceba54e9a7992264b82cf7e9c5ba83353a6eece31a3c87e68d841e5f25f9154c767cacb9dd3ab56943e539850c638109216de9bef209eb0bcd71688c7d94d13cd597edb65fd9da1b58f30c76bd3810d9e5c391cd863680c05cb228d31cb6b8432f8b7305b1c4127c510f80d838c4afe0b5dd7e1d14e6a9de86f418bf51931d6d5f03af660c4be2be2947635ff4954f524d6712913ee522a78fac036f292c07ff9b1b13d1682ab97777811e35fa20075e5f12c1e63ea7adde55f373edb1c7ae12fe2218134a29c55550a59f7abaf082f85fa95a00f5c04cc49bc18c58cb8cab4728563f514baca299ce50b134adf39fd036d629d390cb8ae51b4c8fd820d8aa8460936bd87a38c080d22a5c374da25b2941e9879c3ffe98316eeac03ba728e129191b1c1ed1c1670e818a64b8cd18d0a3e5a27d60ffa954dbac91508f9dadb8aa6576c688aa99effcd14910d4642e141a72d7d10e54e2740814d9c4364f5b4beaa7cb0ac9f72c968d8c3d397fb65dcb1d72f89e3de2ef7eb011d663429be24af60bf9821162aa616fcde763a1eeb2b0e725cbadeb5ab1a00f5530422d66eb17c55aa8fa17eee41e9745dd013c479a257623b168fc1ca4677f93e9a3550f217c8761f667364723b236602108b5c7f685c86e715367c3e46b1bc54a7bf2da9dec0156d575f4c727b1a41d10e1b9680c3927c5be5a0fceeb6c6ddc92a6edf58b6edc819582105fce73b49f211f9e30470e5a86e9a24fd17ff1436e6dcbd5a69f2bcafba02c86ba13af5ea763f65fb9a5d7d2699810e558b8b7c05e627475678888fc4ed5748b875b8521ea3c996013285916d9cc23ba56a6ba300a82b0a354dd34372e93f52c546f98b0973c58d997f05b39f3c8f7a8c9f3ea9e300c5fcc18ec9a29a270891bcfcacd0dd1cc055e39a2734c0b40a83e6421938b33147c9c1ce94d9ab731583e36a2a0a3f9394306f0cf4afd8abe0b27ec31848e165d42b6fd3bc8d38be2425c47036c31ab28cc1724b6cfe61745376848c26f689fa67e375430c1e1bdb8e66942</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-flip">
+      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="当前文章暂不对外可见，请输入密码后查看！">当前文章暂不对外可见，请输入密码后查看！</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>路路</category>
+      </categories>
+      <tags>
+        <tag>一生所爱</tag>
       </tags>
   </entry>
   <entry>
@@ -850,68 +986,6 @@ HTML 标签做缩进，否则将影响格式。</p>
       </categories>
       <tags>
         <tag>Markdown基本语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
-    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
-    <content><![CDATA[<h1
-id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
-<h2 id="问题描述">问题描述</h2>
-<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
-<span id="more"></span>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
-<h2 id="原因">原因</h2>
-<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
-<h2 id="解决步骤">解决步骤</h2>
-<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
-<p>进入<code>.deploy_git</code>文件夹
-（<code>.deploy_git</code>是隐藏文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
-<p>进入<code>.git</code>文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
-<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
-<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
-<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
-<p>然后重新整理思路</p>
-<p>删除本地的<code>.deploy_git</code>目录</p>
-<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
-<p>打开github查看，问题解决！</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个特殊的人</title>
-    <url>/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="7265566d0fb98cd1334c95de578ba69a320473ee50e0666cfd6e0ea8870d5968">9e60957532baee991e944ab8c631029a28a17d109efc5ce194ca8fede1e603715ff1f07acad538a387ce87f092b78f912025b975a376360f9b453f5767a1df94d508aac796a2d375624a59eda2a989c675ff819f2004840b2cc18635e3d2163c9dc4214555e25237f701c832532d3857b030e3a2f14a43136e7b677c3190710cfeb7edef7b535292783bb3a243ab394e0c64f7224dcc5e4198ffc21ee123f9b38d670c22d58313c1672a18d11500f28e8c95dde805f32b503323f434e38410f934168c189966e4c94ba48d7a514cc43d254ca5290703ca476f5b1aa2eea322c9010fde3e7e3bef12db2ea3a3aba5be733b98696575405fc53537e78a1f3a5db0b87acda7b2886ce6478337191dbcc7d7da123d3c86e35f4baf130e3121dbbd8c370a9b9df5b7b9466027420538d2a5b1dfa41b142fe24747fd8c69195c9c4f901ef7fe3a25d92fe5ab411e8f902a8e8447f2bbb598db6fa6af3361c49585d31b14e598251864c77040ba121203e73b47eaa43c9b0c4e4ea106fbabbc9c3f79f0044c62369ef6c5f2e9dbc65b3d988eb9123d9fa6f52592ecc259a63f7e009820f494764359c76e256dde90d99441c7555e5bb4dcc6ad23d89d34754f7c4ef8dba5f6bfe5336dbccb78bd26ce4b1f7bb9f25541770c38a96aaaef48a420aea46f33b34ac760b6066c0ceda269bb683c3fa2a8b2787560e536f24c358f17217c86446289ad73aa22d674a666c68ac0b79d2cfb6e07b6f2d16b53e7f9054d62e27920a913805cafb06f2c5880e1e01dacdd90a830c3cecb0a329cebc6380edef6d85c0826ad2f7233a86d2013eaaeb9b91fca621054f07e4b61eff7431645297e46857ea460ec7ba18f0178cc2a1b8a72b7f8c2309bdd523b45f6569a6680c0937f646087c7c4677da71f2f5b52352b814b05a7056db3fc640cc6a1678df78d7ad620e6c9a6d9915120bf5f2b78394fa07970ec6530407a55329c7021480c2a79b31548908b7af53162690e56844704e7b9e071d86b89770b5b1ee8712c9ddd334c6459d695f75d370f3e0027415c779b68bf04dbb7fbbcd510214b673461c907ae2493e669cbfc6b4b7b524ec9ab9f55d0a830399423a26a470aa77feef9654c9b90653954c9906f9f14d2d0406b0a2fbff2f88a11674d66274e15eb19ad597bf57bc2aac8032dda03c4e219d64fd3e454bb4001eecfd9b20fff4e0023303f977aa3a6a824dc57e895c4b615fe688944fcbcf4755f2fa73ab5b4c76a7930c0a5e4563bb6f578c781c152e54d950dd5679cca3b347b3b2c69610b9c30f80ac7ce0de57ede27454f260a318a1d720eb379e6cec3f64bed03661d8ddf229007a8b8c84a98a6d6446120dd9d0c8851b36e829835c81c493838c91079fd83ddd8343e4ee58bd548c0bf7a74264cc66beaffafb775d5a112a5060d5369d37ecfc77a82f44073cfcde76e15017fb6a2f4b8394d140afdc3a57fba444f310f87f0a7d0326a9b9e4d9218bf3fabfb7c000ee5c30c52faa8aa7d1a2e45a9995c40c721fe57a4211a0a5c65eb285f97176c80f0853554189bfacddc8bb6dfee182bd8c04ec486fe6108f5c82a21989364b30110d6c00ae6d53ba628c6e2d0921781ada1ae9673e703e4dacad27b100f07e49786b44cd6fdc739fa5a54ae1730688a094254f55e97b32fb4741da3e533826cb4d150b11ea0d276d689b5c0194e6f353290eb22988be222c872da8ea9201211afc3bbf5c869f4523b2ee8287425839fb0cd68be49ad14383cd6311ec92933deff26de77d253a4e3d338480125b2d97aebd5cdf28cc7e0c970c2413753c6a227918df1aee09ee4061bca34e3e32215bb54986247ce259a34bcaeb301eb4b7a579c9f48afe2e87886cae6e2924c1aa57ede9400e4a9195b9db3097dd1edd4881fe51c0d5b91b670de52fbc39dba3e3d064d20ccfd7c3ec6205b46807a513816f4982d591c870d9484b0eb3d62d3c81a80932793f2ea228a5c61415a018aba1fbb92036a24360c741697c6786aa5ef50865603b03ce5d73bb19d275c08033107adc24fa0b33c9fd7980a3224ac4598f0d281bb5b54e44de7f1eae80f3a528392ab698b4895e2430f02b40840f9fd0240f9673e947cf5fa3fbea8f96270616fd4b54114a5d1ce88e03eabcf44c85b117ed0533eda75df1a049ab8655300870d5fbfa161330841ce0eba17401967855b609e1ddb777c13789abc2ed390aa84d66072036ffb22c88ab9d3b0a1852b783546837d75de9646aef5311ac6a6dc59deae8149b4cefae4b3e2a0ef28da3512eafff8bc249dac384d1ceaadacfdefc27a488c35e0fce9c036aef007cd2e4746cddae1861a6374db9475487c468b67aff90a982b12cf1a8a8b632481887f3e56e0452992a8666de18bd7c7f3cb87ec8761480e2b3f53de176812d711c64f8c6a09d16dcedcfae062c6de208894e55415a950508264c4b42726b8ede4e20a0fc4ef964577f1d27fc626e268de94d0055fc8dacfa25998e1164e79b2692da47f6de6bb187888912ba7b467291cf3f5ac24f4901b2829227bb3b6ba793da1e4c33a1d49c70c9598d6f626f780d6f36b72c0645448b481386ca97c633e3b98a19eeea63adc388a0270a4f152c3f261b02d65421eb3e5961800f9ac91b7168b3f5a5e27442519ec952cd30b485de9981298bf510a01550d092152acd0f00d2441da4574eef34a3a976815a5b688988f4805f8adfd27d817c0b2ebb18d83979de2001df198f2dac70e99e9f40cfb550888ace13f580e30586f8739d0316f3d5822c7f4a7fbf36c52bc33471e55076f1828bd7f53b465391546d5bffae2c3e18b994418ced4c09c66ff6b050c29f59da42eb23f67c1b0b8c1c811b56648891d8be084ee567fd37efc9bc65d69fff7f897346731a97de32a415ecbc66bfb12bafe99831c3d1a9749a527b3862564b7400f07108593887e29d11c62a006bb32d58a33d6e9a88a78896943af077bc68164be6388fa31e2249bc64237f9ee71a6eb7d27870984729a2255bf699586fbebf8229ae22bc9d78c6d54e6ae7395d455282cfd1aff00bee191d5d5c14e4e95d7b6566043b575cb60e93f0314841838e06bf12b91e9854e8653a73f9135945093cb9dea30c0ae692663f106470deeb2f2c5914bc454b77fd395d26dde0a73f1096a2983f8eba28b6ebf1d0d447bd21c67ca7acc94af2808fdd8b0ea210774e73355dfd309e3d6af5daa77796d3521a1f6c76ced529f310a9d395b3dfd470bf97718718b65eb9f9d5221344dc0e165f67309f07fdca684aacd5e42e9eeacabadc875924f679e67bc984a671c4c21490adb78b4cd720eeff2f38370763796a2a22482b9cf8c74990e9eabff144d898412a8e30a8a192c0d0b48cdfc1a56705167ac7109c51810988bc04af56bd85839fcf1f908ae129b2ae49407441315354167153020f260ecb44808b3e499ad5c1890487fee7c48802da861be66c62b5d389ba230ba920e0747d54c8cbfac02c4017aebc7ba57e4144124d56554c4401ca44abbcecf7258d1d6715ba1a8f5031a52725cdc9dc508a49af9da36eb89e75259fd711e13c89f3d3c4fb23a6bc64514d24849bd90177f4a25574dd9d7a1c9e538cb26ee45e0a4ba49e95ac875888b34b56db3a32c1089f17c74f8e9c65c9419e9b6f2f6126d5dc142eb946d594a555e48a3026743f1dd77c33c36920640f06e2f3f3517519c529d46ac96bf7321573955f284f781645fe1e5122e9dbcaf694715413d15c5a776fee1f59225964f7f43a5be3073612e951eb2bc587cbb026f19da76df515582abc034e945324cf4cf015fab83e5dffb1d64827b0adedc3aa3ab41bda9feb6ff7e97781be7bfc2c7341226e1bbacf6f2b51e33586b772eaa7839f461aa07af27d3dbd94c7c4c2783ec62d451342b1e84b129ee65fc9d74940154d760a13f7ec97f48d20dd80432abaeb019546d9f85bb398db95e01929d3c948d40552e08377b7f75e051c33758d25faee699c5fd43489460f50a742f095f6109bf67cbe5ca96b8af46a1fab8599dd34493f508f6135bb10d461dd8871d3811e2d57a15dae69d8a0a6081c2a1571ccfc83b3249f86bfbf64f6eb506c579ca51d7e4ecea9b05e06c029ba7a17f2af721d72c523c1a09aa3cc2cb40bee609a3fdc871de8eabb261c4af0627c70d34a20ac6d8346870bb66890dd21f53ac3a3d8bfcf188ca6eaedf87be303a3a4eb0310ac3c72c1160841cfb2454d8b67727ed875b8a4d2ba350464beee4148967f9d2f3dcc5aab16b7019eb277701335a0c8a46ae8c095be6f5053cf4225a1c3ed743883c8bb8e8ef41b33dd28d3cafceba54e9a7992264b82cf7e9c5ba83353a6eece31a3c87e68d841e5f25f9154c767cacb9dd3ab56943e539850c638109216de9bef209eb0bcd71688c7d94d13cd597edb65fd9da1b58f30c76bd3810d9e5c391cd863680c05cb228d31cb6b8432f8b7305b1c4127c510f80d838c4afe0b5dd7e1d14e6a9de86f418bf51931d6d5f03af660c4be2be2947635ff4954f524d6712913ee522a78fac036f292c07ff9b1b13d1682ab97777811e35fa20075e5f12c1e63ea7adde55f373edb1c7ae12fe2218134a29c55550a59f7abaf082f85fa95a00f5c04cc49bc18c58cb8cab4728563f514baca299ce50b134adf39fd036d629d390cb8ae51b4c8fd820d8aa8460936bd87a38c080d22a5c374da25b2941e9879c3ffe98316eeac03ba728e129191b1c1ed1c1670e818a64b8cd18d0a3e5a27d60ffa954dbac91508f9dadb8aa6576c688aa99effcd14910d4642e141a72d7d10e54e2740814d9c4364f5b4beaa7cb0ac9f72c968d8c3d397fb65dcb1d72f89e3de2ef7eb011d663429be24af60bf9821162aa616fcde763a1eeb2b0e725cbadeb5ab1a00f5530422d66eb17c55aa8fa17eee41e9745dd013c479a257623b168fc1ca4677f93e9a3550f217c8761f667364723b236602108b5c7f685c86e715367c3e46b1bc54a7bf2da9dec0156d575f4c727b1a41d10e1b9680c3927c5be5a0fceeb6c6ddc92a6edf58b6edc819582105fce73b49f211f9e30470e5a86e9a24fd17ff1436e6dcbd5a69f2bcafba02c86ba13af5ea763f65fb9a5d7d2699810e558b8b7c05e627475678888fc4ed5748b875b8521ea3c996013285916d9cc23ba56a6ba300a82b0a354dd34372e93f52c546f98b0973c58d997f05b39f3c8f7a8c9f3ea9e300c5fcc18ec9a29a270891bcfcacd0dd1cc055e39a2734c0b40a83e6421938b33147c9c1ce94d9ab731583e36a2a0a3f9394306f0cf4afd8abe0b27ec31848e165d42b6fd3bc8d38be2425c47036c31ab28cc1724b6cfe61745376848c26f689fa67e375430c1e1bdb8e66942</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-flip">
-      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="当前文章暂不对外可见，请输入密码后查看！">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>路路</category>
-      </categories>
-      <tags>
-        <tag>一生所爱</tag>
       </tags>
   </entry>
 </search>

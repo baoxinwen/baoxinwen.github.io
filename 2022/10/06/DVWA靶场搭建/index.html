@@ -22,25 +22,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Bao Xinwen">
-<meta property="og:type" content="website">
-<meta property="og:title" content="包黑蛋">
-<meta property="og:url" content="http://example.com/tags/Hexo/index.html">
+    <meta name="description" content="前言 在近些年网络安全的高速发展中，初学者已经很难找到一个网站进行渗透了，曾几何时，一个漏洞，一个工具就可以在网上找到很多有漏洞的网站去体验，当然渗透一个未经授权的系统是非法的。因此，为了能够较为真实地学习Web渗透的各种技术，就需要找一个专门用于学习的Web演练平台，人们将这种用于练习渗透的平台称为“靶场”。 本文介绍如何搭建由PHP+MySQL编写开发的一套靶场系统DVWA，由于该系统提供">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DVWA靶场搭建">
+<meta property="og:url" content="http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="包黑蛋">
-<meta property="og:description" content="Bao Xinwen">
+<meta property="og:description" content="前言 在近些年网络安全的高速发展中，初学者已经很难找到一个网站进行渗透了，曾几何时，一个漏洞，一个工具就可以在网上找到很多有漏洞的网站去体验，当然渗透一个未经授权的系统是非法的。因此，为了能够较为真实地学习Web渗透的各种技术，就需要找一个专门用于学习的Web演练平台，人们将这种用于练习渗透的平台称为“靶场”。 本文介绍如何搭建由PHP+MySQL编写开发的一套靶场系统DVWA，由于该系统提供">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-06T07:37:46.000Z">
+<meta property="article:modified_time" content="2022-10-06T09:55:15.661Z">
 <meta property="article:author" content="Bao Xinwen">
+<meta property="article:tag" content="网络安全">
+<meta property="article:tag" content="漏洞防范">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/Hexo/">
+<link rel="canonical" href="http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/Hexo/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/","path":"2022/10/06/DVWA靶场搭建/","title":"DVWA靶场搭建"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: Hexo | 包黑蛋</title>
+<title>DVWA靶场搭建 | 包黑蛋</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -133,7 +137,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,6 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80dvwa%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">一、DVWA介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8Cphpstudy%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2"><span class="nav-number">1.2.</span> <span class="nav-text">二、phpStudy安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">官网下载安装包</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89dvwa%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2"><span class="nav-number">1.3.</span> <span class="nav-text">三、DVWA安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">官网下载安装包</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,51 +245,234 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Hexo
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/baoxinwen3.png">
+      <meta itemprop="name" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="包黑蛋">
+      <meta itemprop="description" content="Bao Xinwen">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DVWA靶场搭建 | 包黑蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DVWA靶场搭建<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-10-06 15:37:46 / 修改时间：17:55:15" itemprop="dateCreated datePublished" datetime="2022-10-06T15:37:46+08:00">2022-10-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">网络安全</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言">前言</h1>
+<p>在近些年网络安全的高速发展中，初学者已经很难找到一个网站进行渗透了，曾几何时，一个漏洞，一个工具就可以在网上找到很多有漏洞的网站去体验，当然渗透一个未经授权的系统是非法的。因此，为了能够较为真实地学习Web渗透的各种技术，就需要找一个专门用于学习的Web演练平台，人们将这种用于练习渗透的平台称为“靶场”。</p>
+<p>本文介绍如何搭建由PHP+MySQL编写开发的一套靶场系统DVWA，由于该系统提供了多个安全演练级别，因此可以逐步地来提高Web渗透的技术。DVWA是一套开源的系统，在练习Web渗透技术的同时，也可以通过阅读源码学习到对于各种漏洞的安全防护编码。</p>
+<span id="more"></span>
+<h2 id="一dvwa介绍">一、DVWA介绍</h2>
+<p>DVWA（Damn Vulnerable Web
+Application）是一个用来进行安全脆弱性鉴定的PHP/MySQL
+Web应用，旨在为安全专业人员测试自己的专业技能和工具提供合法的环境，帮助web开发者更好的理解web应用安全防范的过程。</p>
+<p>DVWA共有十三个模块，分别是</p>
+<ol type="1">
+<li><p>Brute Force</p></li>
+<li><p>Command Injection</p></li>
+<li><p>CSRF</p></li>
+<li><p>File Inclusion</p></li>
+<li><p>File Upload</p></li>
+<li><p>Insecure CAPTCHA</p></li>
+<li><p>SQL Injection</p></li>
+<li><p>SQL Injection（Blind）</p></li>
+<li><p>XSS（DOM）</p></li>
+<li><p>XSS（Reflected）</p></li>
+<li><p>XSS（Stored）</p></li>
+<li><p>CSP Bypass</p></li>
+<li><p>Javascript</p></li>
+</ol>
+<h2 id="二phpstudy安装部署">二、phpStudy安装部署</h2>
+<p>首先，为模拟真实的web环境，安装DVWA靶场前需要安装相应的WAMP；</p>
+<ul>
+<li>W：windows</li>
+<li>A：Apache</li>
+<li>M：MySQL</li>
+<li>P：PHP</li>
+</ul>
+<p>其中phpstudy提供一站式安装，以下为详细安装部署步骤</p>
+<h4 id="官网下载安装包">官网下载安装包</h4>
+<p>官网：<a target="_blank" rel="noopener" href="https://www.xp.cn/">phpStudy官网</a></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/phpStudy官网.png" /></p>
+<p>下载对应的版本，本文使用的是phpStudy 2018版</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/下载phpStudy2018版.png" /></p>
+<p>安装完毕后可以直接启动相关服务，极大的节省了环境部署的时间</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/启动phpStudy.png" /></p>
+<h2 id="三dvwa安装部署">三、DVWA安装部署</h2>
+<h3 id="官网下载安装包-1">官网下载安装包</h3>
+<p>官网：<a
+target="_blank" rel="noopener" href="https://github.com/digininja/DVWA/archive/master.zip">DVWA官网</a></p>
+<p>下载DVWA环境后，将其解压并放置在phpStudy安装路径下的WWW子目录下</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/DVWA下载并解压.png" /></p>
+<p>再将DVWA目录下的config子目录中的<code>config.inc.php.dist</code>文件的.dist后缀删除</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/修改config文件名.png" /></p>
+<p>然后打开该文件并修改参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$_DVWA = array();</span><br><span class="line">$_DVWA[ &#x27;db_server&#x27; ]   = &#x27;127.0.0.1&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_database&#x27; ] = &#x27;dvwa&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_user&#x27; ]     = &#x27;root&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_password&#x27; ] = &#x27;root&#x27;;</span><br><span class="line">$_DVWA[ &#x27;db_port&#x27;] = &#x27;3306&#x27;;</span><br></pre></td></tr></table></figure>
+<p>然后打开游览器访问<code>127.0.0.1</code>，如果出现以下界面，则说明DVWA部署成功</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/127.0.0.1.png" /></p>
+<p>然后访问<code>127.0.0.1/DVWA/setup.php</code>，将会看到以下界面</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/setup.png" /></p>
+<p>点击最下方的创建数据库</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/创建数据库.png" /></p>
+<p>创建完成后稍微等待一会将会转到登陆界面，也可以手动访问<code>127.0.0.1/DVWA/login.php</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/登陆DVWA.png" /></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户名：admin</span><br><span class="line">密码：password</span><br></pre></td></tr></table></figure>
+<p>登陆成功之后就可以进入靶场了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/靶场.png" /></p>
+<p>到此DVWA的安装部署就成功了。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-10-03T22:37:54+08:00"
-              content="2022-10-03">
-          10-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/" itemprop="url">
-            <span itemprop="name">“Hexo部署到Github后文件夹名大小写引起的问题”</span>
-          </a>
-      </div>
-
+    
+    
+    
       
-    </header>
-  </article>
 
-    </div>
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Bao Xinwen 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Bao Xinwen 支付宝">
+        <span>支付宝</span>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.png">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"><i class="fa fa-tag"></i> 网络安全</a>
+              <a href="/tags/%E6%BC%8F%E6%B4%9E%E9%98%B2%E8%8C%83/" rel="tag"><i class="fa fa-tag"></i> 漏洞防范</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/" rel="prev" title="“Hexo部署到Github后文件夹名大小写引起的问题”">
+                  <i class="fa fa-chevron-left"></i> “Hexo部署到Github后文件夹名大小写引起的问题”
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -298,11 +486,11 @@
     </label>
     <select class="lang-select" data-canonical="" aria-label="选择语言">
       
-        <option value="zh-CN" data-href="/tags/Hexo/index.html" selected="">
+        <option value="zh-CN" data-href="/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/tags/Hexo/index.html" selected="">
+        <option value="en" data-href="/en/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/" selected="">
           English
         </option>
       
@@ -394,11 +582,11 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/tags/Hexo/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"7237274eeb46d719122ece7101759624"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"0ae3dd622f8a5b7fdb2c8a55fe8ddaf0"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
