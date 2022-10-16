@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-06T09:55:15.661Z</updated>
+  <updated>2022-10-16T13:00:27.539Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows与网络基础-04-安装GNS3软件环境</title>
+    <link href="http://example.com/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"/>
+    <id>http://example.com/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</id>
+    <published>2022-10-13T11:45:46.000Z</published>
+    <updated>2022-10-16T13:00:27.539Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;准备&quot;&gt;准备&lt;/h1&gt;
+&lt;p&gt;在安装&lt;code&gt;GNS3&lt;/code&gt;软件环境之前首先要安装&lt;code&gt;WinPcap&lt;/code&gt;和&lt;code&gt;Wireshark&lt;/code&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="网络安全" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>DVWA靶场搭建</title>
