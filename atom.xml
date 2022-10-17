@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-16T13:03:00.707Z</updated>
+  <updated>2022-10-17T11:31:41.979Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,10 +21,20 @@
     <link href="http://example.com/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"/>
     <id>http://example.com/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</id>
     <published>2022-10-13T11:45:46.000Z</published>
-    <updated>2022-10-16T13:03:00.707Z</updated>
+    <updated>2022-10-17T11:31:41.979Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;准备&quot;&gt;准备&lt;/h1&gt;
+    <summary type="html">&lt;h1
+id=&quot;windows与网络基础-04-安装gns3软件环境&quot;&gt;windows与网络基础-04-安装GNS3软件环境&lt;/h1&gt;
+&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;主机系统：Windows 10 专业版 21H2&lt;/li&gt;
+&lt;li&gt;虚拟机版本：VMware Workstation 16 Pro&lt;/li&gt;
+&lt;li&gt;GNS3版本：GNS3-2.2.34-all-in-one-regular&lt;/li&gt;
+&lt;li&gt;WinPcap版本：WinPcap_4_1_3&lt;/li&gt;
+&lt;li&gt;Wireshark版本：Wireshark-win64-4.0.0&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;在windows下安装gns3的步骤&quot;&gt;在Windows下安装GNS3的步骤&lt;/h2&gt;
 &lt;p&gt;在安装&lt;code&gt;GNS3&lt;/code&gt;软件环境之前首先要安装&lt;code&gt;WinPcap&lt;/code&gt;和&lt;code&gt;Wireshark&lt;/code&gt;&lt;/p&gt;</summary>
     
     
