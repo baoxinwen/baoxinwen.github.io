@@ -482,93 +482,139 @@ great!</h4>
       </tags>
   </entry>
   <entry>
-    <title>windows与网络基础-04-安装GNS3软件环境</title>
-    <url>/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
+    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
+    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
     <content><![CDATA[<h1
-id="windows与网络基础-04-安装gns3软件环境">windows与网络基础-04-安装GNS3软件环境</h1>
-<h2 id="准备工作">准备工作</h2>
-<ol type="1">
-<li>主机系统：Windows 10 专业版 21H2</li>
-<li>虚拟机版本：VMware Workstation 16 Pro</li>
-<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
-<li>WinPcap版本：WinPcap_4_1_3</li>
-<li>Wireshark版本：Wireshark-win64-4.0.0</li>
-</ol>
-<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
-<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
+id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
+<h2 id="问题描述">问题描述</h2>
+<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
 <span id="more"></span>
-<h3 id="winpcap安装">WinPcap安装</h3>
-<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
-<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
-<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
-<p><code>Automatically start the WinPcap driver at boot time</code>
-是将WinPcap设置为自启</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
-<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
-<h3 id="wireshark安装">Wireshark安装</h3>
-<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
-<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
-<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
-<p>这里是阅读协议内容，直接点击下一步。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
-<p>这里选择默认安装即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
-<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
-勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
-<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
-<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
-<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
-<p>然后开始安装<code>Wireshark</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
-<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
-<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
-<p>然后默认即可，点击<code>install</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
-<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
-<p>等待片刻后<code>Wireshark</code>安装完成</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
-<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
-<h3 id="gns3安装部署">GNS3安装部署</h3>
-<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
-<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
-<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
-<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
-<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
-<p>然后等待安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
-<p>安装完成之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
-<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
-<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
-<p>到此我们的<code>GNS3</code>就安装成功了。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
+<h2 id="原因">原因</h2>
+<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
+<h2 id="解决步骤">解决步骤</h2>
+<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+<p>进入<code>.deploy_git</code>文件夹
+（<code>.deploy_git</code>是隐藏文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
+<p>进入<code>.git</code>文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
+<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
+<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
+<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
+<p>然后重新整理思路</p>
+<p>删除本地的<code>.deploy_git</code>目录</p>
+<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
+<p>打开github查看，问题解决！</p>
 ]]></content>
       <categories>
-        <category>网络安全</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>网络安全</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从零开始搭建自己的博客</title>
+    <url>/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>博客</strong>：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。</p>
+</blockquote>
+<h1 id="前言">前言</h1>
+<p>对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。</p>
+<p>在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用
+Hexo 框架搭建我的个人博客。</p>
+<span id="more"></span>
+<h1 id="hexo-框架介绍">Hexo 框架介绍</h1>
+<p>Hexo 是一个快速，简单和强大的博客框架。你用<a
+href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，
+Hexo 会在几秒钟内生成具有漂亮主题的静态网页。</p>
+<h2 id="选择-hexo-的原因">选择 Hexo 的原因</h2>
+<ul>
+<li>速度极快：Node.js
+所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
+<li>支持MarkDown：Hexo 支持 GitHub Flavored Markdown
+的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
+<li>一键部署：只需一条指令即可部署到 GitHub Pages, Heroku
+或其他平台。</li>
+<li>插件和可扩展性：这个也是hexo很强大的一个地方，强大的 API
+带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成。</li>
+</ul>
+<h1 id="hexo博客框架搭建步骤">Hexo博客框架搭建步骤</h1>
+<h2 id="node.js-安装">Node.js 安装</h2>
+<p>Hexo 是使用 Node.js 开发的，所以我们安装 Hexo 之前需要先安装 Node.js
+环境。</p>
+<p>Node.js 是什么？简单的说 Node.js 就是运行在服务端的 JavaScript
+。安装了 Node.js 环境，就可以不用依赖浏览器就可以运行 js
+代码，其实它也是基于 Chrome 引擎开发的一个开源项目。简单理解， Node.js
+对于 js 代码的作用类似 Python 解释器对于 Python 代码的作用。</p>
+<p>这里注意，不是说博客框架必须用 Node.js
+来开发，博客框架本质上是一个网站，可以用任何语言开发，也有用 Python 的
+Flask/Django 或者 Java 开发的博客框架，只是没有 Hexo 这么流行。</p>
+<p>Windows：进入<a
+href="https://nodejs.org/en/">Node.js</a>官网点击下载，下载完成后，傻瓜式下一步即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/nodejs%E5%AE%98%E7%BD%91.png" /></p>
+<p>Linux：使用以下两行代码进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure>
+<p>安装完成之后，输入以下两行命令查看版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h2 id="git-安装">Git 安装</h2>
+<p>Git
+是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的
+hexo 博客文章，上传到 GitHub 的工具。</p>
+<p>Windows：进入<a href="https://git-scm.com/">Git
+官网</a>点击下载即可，下载完成之后会有一个 Git Bush 的命令行工具用来使用
+Git</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/git%E5%AE%98%E7%BD%91.png" /></p>
+<p>Linux：对于Linux来说更加简单，只需要输入一行代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<p>输入以下代码查看版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<h2 id="hexo-安装">Hexo 安装</h2>
+<p>前文中已经成功安装了 Node.js 和 Git 后，就可以进行 Hexo
+的安装了，我们需要先创建一个文件夹 Blog
+（用来存放你的个人博客的文件），然后进入该文件夹，右键打开 Git Bush</p>
+<p>输入以下命令进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成之后，使用以下命令查看版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<p>接下来进行 Hexo 的初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>在初始化结束之后，我们能看到 Blog 文件夹多出以下文件</p>
+<ul>
+<li>node_modules: 依赖包</li>
+<li>public：公共文件夹，用于存放生产的站点文件</li>
+<li>scaffolds：模板文件夹</li>
+<li>source：资源文件夹，用来存放内容</li>
+<li>themes：主题文件夹</li>
+<li>_config.yml：博客的配置文件</li>
+<li>package.json ：应用程序的信息</li>
+</ul>
+<p>在这之后，我们启动本地博客服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>然后打开游览器输入 http://localhost:4000
+就可以看到生成的个人博客了。</p>
+<p>到此为止，我们已经完成了 Hexo 的简单部署。</p>
+<h2 id="hexo-主题美化">Hexo 主题美化</h2>
+<p>在第一次初始化的时候 Hexo 已经帮我们写了一篇名为 Hello World
+的文章，默认的主题比较丑，既然是我们的个人博客，我们肯定想要其更加美观，更有意思，更有个性，所以我们需要安装各种不同风格的主题。</p>
+<h4 id="找到合适的-hexo-主题">找到合适的 Hexo 主题</h4>
+<p>Hexo 官网上</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -921,142 +967,6 @@ HTML 标签做缩进，否则将影响格式。</p>
       </tags>
   </entry>
   <entry>
-    <title>从零开始搭建自己的博客</title>
-    <url>/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</url>
-    <content><![CDATA[<blockquote>
-<p><strong>博客</strong>：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。</p>
-<p>在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用
-Hexo 框架搭建我的个人博客。</p>
-<span id="more"></span>
-<h1 id="hexo-框架介绍">Hexo 框架介绍</h1>
-<p>Hexo 是一个快速，简单和强大的博客框架。你用<a
-href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，
-Hexo 会在几秒钟内生成具有漂亮主题的静态网页。</p>
-<h2 id="选择-hexo-的原因">选择 Hexo 的原因</h2>
-<ul>
-<li>速度极快：Node.js
-所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
-<li>支持MarkDown：Hexo 支持 GitHub Flavored Markdown
-的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
-<li>一键部署：只需一条指令即可部署到 GitHub Pages, Heroku
-或其他平台。</li>
-<li>插件和可扩展性：这个也是hexo很强大的一个地方，强大的 API
-带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成。</li>
-</ul>
-<h1 id="hexo博客框架搭建步骤">Hexo博客框架搭建步骤</h1>
-<h2 id="node.js-安装">Node.js 安装</h2>
-<p>Hexo 是使用 Node.js 开发的，所以我们安装 Hexo 之前需要先安装 Node.js
-环境。</p>
-<p>Node.js 是什么？简单的说 Node.js 就是运行在服务端的 JavaScript
-。安装了 Node.js 环境，就可以不用依赖浏览器就可以运行 js
-代码，其实它也是基于 Chrome 引擎开发的一个开源项目。简单理解， Node.js
-对于 js 代码的作用类似 Python 解释器对于 Python 代码的作用。</p>
-<p>这里注意，不是说博客框架必须用 Node.js
-来开发，博客框架本质上是一个网站，可以用任何语言开发，也有用 Python 的
-Flask/Django 或者 Java 开发的博客框架，只是没有 Hexo 这么流行。</p>
-<p>Windows：进入<a
-href="https://nodejs.org/en/">Node.js</a>官网点击下载，下载完成后，傻瓜式下一步即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/nodejs%E5%AE%98%E7%BD%91.png" /></p>
-<p>Linux：使用以下两行代码进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure>
-<p>安装完成之后，输入以下两行命令查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<h2 id="git-安装">Git 安装</h2>
-<p>Git
-是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的
-hexo 博客文章，上传到 GitHub 的工具。</p>
-<p>Windows：进入<a href="https://git-scm.com/">Git
-官网</a>点击下载即可，下载完成之后会有一个 Git Bush 的命令行工具用来使用
-Git</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/git%E5%AE%98%E7%BD%91.png" /></p>
-<p>Linux：对于Linux来说更加简单，只需要输入一行代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<p>输入以下代码查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<h2 id="hexo-安装">Hexo 安装</h2>
-<p>前文中已经成功安装了 Node.js 和 Git 后，就可以进行 Hexo
-的安装了，我们需要先创建一个文件夹 Blog
-（用来存放你的个人博客的文件），然后进入该文件夹，右键打开 Git Bush</p>
-<p>输入以下命令进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成之后，使用以下命令查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<p>接下来进行 Hexo 的初始化</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>在初始化结束之后，我们能看到 Blog 文件夹多出以下文件</p>
-<ul>
-<li>node_modules: 依赖包</li>
-<li>public：公共文件夹，用于存放生产的站点文件</li>
-<li>scaffolds：模板文件夹</li>
-<li>source：资源文件夹，用来存放内容</li>
-<li>themes：主题文件夹</li>
-<li>_config.yml：博客的配置文件</li>
-<li>package.json ：应用程序的信息</li>
-</ul>
-<p>在这之后，我们启动本地博客服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>结果如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>然后打开游览器输入 http://localhost:4000
-就可以看到生成的个人博客了。</p>
-<p>到此为止，我们已经完成了 Hexo 的简单部署。</p>
-<h2 id="hexo-主题美化">Hexo 主题美化</h2>
-<p>在第一次初始化的时候 Hexo 已经帮我们写了一篇名为 Hello World
-的文章，默认的主题比较丑，既然是我们的个人博客，我们肯定想要其更加美观，更有意思，更有个性，所以我们需要安装各种不同风格的主题。</p>
-<h4 id="找到合适的-hexo-主题">找到合适的 Hexo 主题</h4>
-<p>Hexo 官网上</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
-    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
-    <content><![CDATA[<h1
-id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
-<h2 id="问题描述">问题描述</h2>
-<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
-<span id="more"></span>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
-<h2 id="原因">原因</h2>
-<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
-<h2 id="解决步骤">解决步骤</h2>
-<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
-<p>进入<code>.deploy_git</code>文件夹
-（<code>.deploy_git</code>是隐藏文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
-<p>进入<code>.git</code>文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
-<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
-<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
-<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
-<p>然后重新整理思路</p>
-<p>删除本地的<code>.deploy_git</code>目录</p>
-<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
-<p>打开github查看，问题解决！</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一个特殊的人</title>
     <url>/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
@@ -1076,6 +986,113 @@ id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Git
       </categories>
       <tags>
         <tag>一生所爱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows与网络基础-04-安装GNS3软件环境</title>
+    <url>/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1
+id="windows与网络基础-04-安装gns3软件环境">windows与网络基础-04-安装GNS3软件环境</h1>
+<h2 id="准备工作">准备工作</h2>
+<ol type="1">
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
+<li>WinPcap版本：WinPcap_4_1_3</li>
+<li>Wireshark版本：Wireshark-win64-4.0.0</li>
+</ol>
+<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
+<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
+<span id="more"></span>
+<h3 id="winpcap安装">WinPcap安装</h3>
+<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
+<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
+<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
+<p><code>Automatically start the WinPcap driver at boot time</code>
+是将WinPcap设置为自启</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
+<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
+<h3 id="wireshark安装">Wireshark安装</h3>
+<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
+<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
+<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
+<p>这里是阅读协议内容，直接点击下一步。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
+<p>这里选择默认安装即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
+<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
+勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
+<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
+<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
+<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
+<p>然后开始安装<code>Wireshark</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
+<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
+<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
+<p>然后默认即可，点击<code>install</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
+<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
+<p>等待片刻后<code>Wireshark</code>安装完成</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
+<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
+<h3 id="gns3安装部署">GNS3安装部署</h3>
+<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
+<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
+<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
+<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
+<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
+<p>然后等待安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
+<p>安装完成之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
+<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
+<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
+<p>到此我们的<code>GNS3</code>就安装成功了。</p>
+<h3 id="导入路由器c3460">导入路由器C3460</h3>
+<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
+<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
       </tags>
   </entry>
 </search>
