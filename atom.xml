@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-17T12:05:43.058Z</updated>
+  <updated>2022-10-20T11:28:38.822Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Windows与网络基础-06-虚拟机的基本操作</title>
+    <link href="http://example.com/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://example.com/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-06-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</id>
+    <published>2022-10-18T15:03:28.000Z</published>
+    <updated>2022-10-20T11:28:38.822Z</updated>
+    
+    
+    <summary type="html">&lt;h1
+id=&quot;windows与网络基础-06-虚拟机的基本操作&quot;&gt;Windows与网络基础-06-虚拟机的基本操作&lt;/h1&gt;
+&lt;h2 id=&quot;虚拟机菜单栏&quot;&gt;虚拟机菜单栏&lt;/h2&gt;
+&lt;p&gt;虚拟机的菜单栏一共有6个选项卡，分别是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件&lt;/li&gt;
+&lt;li&gt;编辑&lt;/li&gt;
+&lt;li&gt;查看&lt;/li&gt;
+&lt;li&gt;虚拟机&lt;/li&gt;
+&lt;li&gt;选项卡&lt;/li&gt;
+&lt;li&gt;帮助&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="网络安全" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows与网络基础-05-安装eNSP软件环境</title>
+    <link href="http://example.com/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"/>
+    <id>http://example.com/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</id>
+    <published>2022-10-18T11:00:49.000Z</published>
+    <updated>2022-10-18T15:40:48.629Z</updated>
+    
+    
+    <summary type="html">&lt;h1
+id=&quot;windows与网络基础-05-安装ensp软件环境&quot;&gt;Windows与网络基础-05-安装eNSP软件环境&lt;/h1&gt;
+&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;主机系统：Windows 10 专业版 21H2&lt;/li&gt;
+&lt;li&gt;虚拟机版本：VMware Workstation 16 Pro&lt;/li&gt;
+&lt;li&gt;VirtualBox版本：VirtualBox-5.2.44-139111-Win&lt;/li&gt;
+&lt;li&gt;eNSP版本：eNSP-1.3.00.100&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="网络安全" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>windows与网络基础-04-安装GNS3软件环境</title>
-    <link href="http://example.com/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"/>
-    <id>http://example.com/2022/10/13/windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</id>
+    <link href="http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"/>
+    <id>http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</id>
     <published>2022-10-13T11:45:46.000Z</published>
-    <updated>2022-10-17T12:05:43.058Z</updated>
+    <updated>2022-10-18T12:03:45.540Z</updated>
     
     
     <summary type="html">&lt;h1
@@ -33,9 +90,7 @@ id=&quot;windows与网络基础-04-安装gns3软件环境&quot;&gt;windows与网
 &lt;li&gt;GNS3版本：GNS3-2.2.34-all-in-one-regular&lt;/li&gt;
 &lt;li&gt;WinPcap版本：WinPcap_4_1_3&lt;/li&gt;
 &lt;li&gt;Wireshark版本：Wireshark-win64-4.0.0&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;在windows下安装gns3的步骤&quot;&gt;在Windows下安装GNS3的步骤&lt;/h2&gt;
-&lt;p&gt;在安装&lt;code&gt;GNS3&lt;/code&gt;软件环境之前首先要安装&lt;code&gt;WinPcap&lt;/code&gt;和&lt;code&gt;Wireshark&lt;/code&gt;&lt;/p&gt;</summary>
+&lt;/ol&gt;</summary>
     
     
     
