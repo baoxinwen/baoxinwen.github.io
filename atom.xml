@@ -140,36 +140,6 @@ id=&quot;windows与网络基础-05-安装ensp软件环境&quot;&gt;Windows与网
   </entry>
   
   <entry>
-    <title>Windows与网络基础-04-安装GNS3软件环境</title>
-    <link href="http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"/>
-    <id>http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</id>
-    <published>2022-10-13T11:45:46.000Z</published>
-    <updated>2022-10-24T11:12:23.874Z</updated>
-    
-    
-    <summary type="html">&lt;h1
-id=&quot;windows与网络基础-04-安装gns3软件环境&quot;&gt;Windows与网络基础-04-安装GNS3软件环境&lt;/h1&gt;
-&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;主机系统：Windows 10 专业版 21H2&lt;/li&gt;
-&lt;li&gt;虚拟机版本：VMware Workstation 16 Pro&lt;/li&gt;
-&lt;li&gt;GNS3版本：GNS3-2.2.34-all-in-one-regular&lt;/li&gt;
-&lt;li&gt;WinPcap版本：WinPcap_4_1_3&lt;/li&gt;
-&lt;li&gt;Wireshark版本：Wireshark-win64-4.0.0&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="网络安全" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="Windows与网络基础" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>DVWA靶场搭建</title>
     <link href="http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/"/>
     <id>http://example.com/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/</id>

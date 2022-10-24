@@ -1,61 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo添加鼠标点击效果</title>
-    <url>/2022/10/24/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C/</url>
-    <content><![CDATA[<h1 id="鼠标点击特效">鼠标点击特效</h1>
-<p>从各个站点里搜罗了以下四个比较常用的鼠标点击特效：</p>
-<ul>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-1">礼花特效</a></li>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-2">爆炸特效</a></li>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-3">浮出爱心</a></li>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-4">浮出文字</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="效果图">效果图</h2>
-<p><a
-href="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"><img data-src="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"
-alt="img" /></a></p>
-<h2 id="具体步骤">具体步骤</h2>
-<ol type="1">
-<li><p>点击下方按钮下载相应的脚本，并置于 themes 目录下：</p>
-<p><a
-href="https://script-1256884783.file.myqcloud.com/cursor/fireworks.js">礼花特效</a>
-<a
-href="https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js">爆炸特效</a>
-<a
-href="https://script-1256884783.file.myqcloud.com/cursor/love.min.js">浮出爱心</a>
-<a
-href="https://script-1256884783.file.myqcloud.com/cursor/text.js">浮出文字</a></p>
-<p>如果没有 cursor 这个目录，手动创建一下。</p></li>
-<li><p>然后在主题自定义布局文件 themes_custom.swig 中添加如下内容：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_custom\custom.<span class="property">swig</span>&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">cursor_effect</span> == <span class="string">&quot;fireworks&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/fireworks.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;explosion&quot;</span> %&#125;</span><br><span class="line">  &lt;canvas <span class="keyword">class</span>=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/js/cursor/explosion.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;love&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/love.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;text&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/text.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>如果没有 _custom 文件夹或 custom.swig 文件，手动创建一下。</p></li>
-<li><p>并且在主题布局文件 themes_layout.swig 中添加这一行（在 body
-尾部）：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_layout.swig      ...</span><br><span class="line">      &#123;% include &#x27;_third-party/exturl.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/bookmark.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/copy-code.swig&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">+     &#123;% include &#x27;_custom/custom.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>在主题配置文件中添加以下代码：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">themes\next\_config.yml# mouse click effect: fireworks | explosion | love | text</span><br><span class="line">cursor_effect: fireworks</span><br></pre></td></tr></table></figure>
-<p>这样即可在配置文件中一键快速切换鼠标点击特效。</p></li>
-</ol>
-<p>完成啦！重新生成部署一下博客吧。</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-        <category>博客美化</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-        <tag>博客美化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>DVWA靶场搭建</title>
     <url>/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<h1 id="前言">前言</h1>
@@ -127,6 +72,61 @@ href="https://github.com/digininja/DVWA/archive/master.zip">DVWA官网</a></p>
       <tags>
         <tag>网络安全</tag>
         <tag>漏洞防范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo添加鼠标点击效果</title>
+    <url>/2022/10/24/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C/</url>
+    <content><![CDATA[<h1 id="鼠标点击特效">鼠标点击特效</h1>
+<p>从各个站点里搜罗了以下四个比较常用的鼠标点击特效：</p>
+<ul>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-1">礼花特效</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-2">爆炸特效</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-3">浮出爱心</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-4">浮出文字</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="效果图">效果图</h2>
+<p><a
+href="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"><img data-src="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"
+alt="img" /></a></p>
+<h2 id="具体步骤">具体步骤</h2>
+<ol type="1">
+<li><p>点击下方按钮下载相应的脚本，并置于 themes 目录下：</p>
+<p><a
+href="https://script-1256884783.file.myqcloud.com/cursor/fireworks.js">礼花特效</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js">爆炸特效</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/love.min.js">浮出爱心</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/text.js">浮出文字</a></p>
+<p>如果没有 cursor 这个目录，手动创建一下。</p></li>
+<li><p>然后在主题自定义布局文件 themes_custom.swig 中添加如下内容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_custom\custom.<span class="property">swig</span>&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">cursor_effect</span> == <span class="string">&quot;fireworks&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/fireworks.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;explosion&quot;</span> %&#125;</span><br><span class="line">  &lt;canvas <span class="keyword">class</span>=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/js/cursor/explosion.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;love&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/love.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;text&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/text.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>如果没有 _custom 文件夹或 custom.swig 文件，手动创建一下。</p></li>
+<li><p>并且在主题布局文件 themes_layout.swig 中添加这一行（在 body
+尾部）：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_layout.swig      ...</span><br><span class="line">      &#123;% include &#x27;_third-party/exturl.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/bookmark.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/copy-code.swig&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">+     &#123;% include &#x27;_custom/custom.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在主题配置文件中添加以下代码：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">themes\next\_config.yml# mouse click effect: fireworks | explosion | love | text</span><br><span class="line">cursor_effect: fireworks</span><br></pre></td></tr></table></figure>
+<p>这样即可在配置文件中一键快速切换鼠标点击特效。</p></li>
+</ol>
+<p>完成啦！重新生成部署一下博客吧。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+        <category>博客美化</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>
@@ -886,114 +886,6 @@ HTML 标签做缩进，否则将影响格式。</p>
       </tags>
   </entry>
   <entry>
-    <title>Windows与网络基础-04-安装GNS3软件环境</title>
-    <url>/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1
-id="windows与网络基础-04-安装gns3软件环境">Windows与网络基础-04-安装GNS3软件环境</h1>
-<h2 id="准备工作">准备工作</h2>
-<ol type="1">
-<li>主机系统：Windows 10 专业版 21H2</li>
-<li>虚拟机版本：VMware Workstation 16 Pro</li>
-<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
-<li>WinPcap版本：WinPcap_4_1_3</li>
-<li>Wireshark版本：Wireshark-win64-4.0.0</li>
-</ol>
-<span id="more"></span>
-<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
-<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
-<h3 id="winpcap安装">WinPcap安装</h3>
-<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
-<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
-<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
-<p><code>Automatically start the WinPcap driver at boot time</code>
-是将WinPcap设置为自启</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
-<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
-<h3 id="wireshark安装">Wireshark安装</h3>
-<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
-<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
-<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
-<p>这里是阅读协议内容，直接点击下一步。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
-<p>这里选择默认安装即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
-<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
-勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
-<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
-<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
-<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
-<p>然后开始安装<code>Wireshark</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
-<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
-<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
-<p>然后默认即可，点击<code>install</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
-<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
-<p>等待片刻后<code>Wireshark</code>安装完成</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
-<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
-<h3 id="gns3安装部署">GNS3安装部署</h3>
-<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
-<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
-<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
-<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
-<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
-<p>然后等待安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
-<p>安装完成之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
-<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
-<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
-<p>到此我们的<code>GNS3</code>就安装成功了。</p>
-<h3 id="导入路由器c3460">导入路由器C3460</h3>
-<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
-<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-        <category>Windows与网络基础</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows与网络基础-05-安装eNSP软件环境</title>
     <url>/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h1
@@ -1515,6 +1407,46 @@ Autoexec.nt 文件中设置 <em>TEMP</em> 环境变量。</p></li>
       </tags>
   </entry>
   <entry>
+    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
+    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
+    <content><![CDATA[<h1
+id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
+<h2 id="问题描述">问题描述</h2>
+<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
+<span id="more"></span>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
+<h2 id="原因">原因</h2>
+<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
+<h2 id="解决步骤">解决步骤</h2>
+<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+<p>进入<code>.deploy_git</code>文件夹
+（<code>.deploy_git</code>是隐藏文件夹）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
+<p>进入<code>.git</code>文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
+<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
+<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
+<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
+<p>然后重新整理思路</p>
+<p>删除本地的<code>.deploy_git</code>目录</p>
+<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
+<p>打开github查看，问题解决！</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从零开始搭建自己的博客</title>
     <url>/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</url>
     <content><![CDATA[<blockquote>
@@ -1630,46 +1562,6 @@ Git</p>
       </categories>
       <tags>
         <tag>一生所爱</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
-    <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
-    <content><![CDATA[<h1
-id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Github后文件夹名大小写引起的问题</h1>
-<h2 id="问题描述">问题描述</h2>
-<p>最近一直在使用<code>Hexo</code>搭建博客，然后将其部署到GIthub上，然而今天写完博客上传之后，发现<code>Tags</code>和<code>Categories</code>页面变为404了，点击对应的Tag或Categories时会出现路径无法找到从而跳转到404页面，然后我在本地使用<code>hexo s</code>进行预览，发现一切正常。</p>
-<span id="more"></span>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/404%E9%A1%B5%E9%9D%A2.png" /></p>
-<h2 id="原因">原因</h2>
-<p>然而我最近为了规范项目的目录，将项目的文件名全都改成了小写，本地预览是没有问题的，但是提交到远程仓库之后，问题就出现了：git默认是不区分大小写的，此即便文件夹的大小写发生了变更，git也会表现出置之不理，导致无法找到路径。</p>
-<h2 id="解决方案">解决方案</h2>
-<p>我的解决思路是先调整git的配置文件，使其大小写敏感，然后删除git项目中已经存在的大写文件夹，最终使用<code>Hexo</code>重新生成并部署</p>
-<h2 id="解决步骤">解决步骤</h2>
-<p>进入到Hexo项目的文件夹中，比如Hexo项目文件夹名称为blog：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
-<p>进入<code>.deploy_git</code>文件夹
-（<code>.deploy_git</code>是隐藏文件夹）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .deploy_git</span><br></pre></td></tr></table></figure>
-<p>进入<code>.git</code>文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd .git</span><br></pre></td></tr></table></figure>
-<p>打开目录下的<code>config</code>文件并修改<code>ignorecase = true</code>为<code>ignorecase = false</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br></pre></td></tr></table></figure>
-<p>接下来进入github中，在web模式下删除所有大写文件夹</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/github%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%A4%B9.png" /></p>
-<p>之后在项目根目录下执行命令重新生成文件并部署到Github上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<p>之后等待更新后重新加载发现还是404页面并且GitHub里面已经删除的大写文件夹又重新恢复了</p>
-<p>然后重新整理思路</p>
-<p>删除本地的<code>.deploy_git</code>目录</p>
-<p>再次运行<code>hexo d</code>提交，hexo会重置git仓库，并重新生成所有文件!</p>
-<p>打开github查看，问题解决！</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
