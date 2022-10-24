@@ -75,164 +75,58 @@ href="https://github.com/digininja/DVWA/archive/master.zip">DVWA官网</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Windows与网络基础-05-安装eNSP软件环境</title>
-    <url>/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1
-id="windows与网络基础-05-安装ensp软件环境">Windows与网络基础-05-安装eNSP软件环境</h1>
-<h2 id="准备工作">准备工作</h2>
-<ol type="1">
-<li>主机系统：Windows 10 专业版 21H2</li>
-<li>虚拟机版本：VMware Workstation 16 Pro</li>
-<li>VirtualBox版本：VirtualBox-5.2.44-139111-Win</li>
-<li>eNSP版本：eNSP-1.3.00.100</li>
-</ol>
+    <title>Hexo添加鼠标点击效果</title>
+    <url>/2022/10/24/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C/</url>
+    <content><![CDATA[<h1 id="鼠标点击特效">鼠标点击特效</h1>
+<p>从各个站点里搜罗了以下四个比较常用的鼠标点击特效：</p>
+<ul>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-1">礼花特效</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-2">爆炸特效</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-3">浮出爱心</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-4">浮出文字</a></li>
+</ul>
 <span id="more"></span>
-<h2 id="在windows下安装ensp的步骤">在Windows下安装eNSP的步骤</h2>
-<p>在安装<code>eNSP</code>之前首先要安装<code>VirtualBox</code></p>
-<p>安装原因：<strong>华为模拟器里面所有的设备全部都是采用虚拟机的方式存在</strong></p>
-<h3 id="virtualbox安装">VirtualBox安装</h3>
-<p>安装过程比较简单，这里我们点击<code>下一步</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装1.png" style="zoom:50%;" /></p>
-<p>在这里选择要在其中安装<code>VirtualBox</code>的目录，将路径改成自己想要存放的目录，然后点击<code>下一步</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装2.png" style="zoom:50%;" /></p>
-<p>这里我们勾选所需选项，之后点击<code>下一步</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装3.png" style="zoom:50%;" /></p>
-<p>此处出现警告，不用惊慌，点击是继续安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装4.png" style="zoom:50%;" /></p>
-<p>这里点击安装即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装5.png" style="zoom:50%;" /></p>
-<p>然后等待安装完成</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装6.png" style="zoom:50%;" /></p>
-<p>在安装过程中可能出现以下情况，这里选择安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装7.png" style="zoom:50%;" /></p>
-<p>然后我们取消勾选运行<code>VirtualBox</code>的选项，点击完成，到此<code>VirtualBox</code>的安装已经完成了</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装8.png" style="zoom:50%;" /></p>
-<h3 id="ensp安装">eNSP安装</h3>
-<p>在<code>VirtualBox</code>安装完成之后，我们开始进行<code>eNSP</code>的安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装1.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装2.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装3.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装4.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装5.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装6.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装7.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装8.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装9.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装10.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装11.png" style="zoom:50%;" /></p>
+<h2 id="效果图">效果图</h2>
+<p><a
+href="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"><img data-src="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"
+alt="img" /></a></p>
+<h2 id="具体步骤">具体步骤</h2>
+<ol type="1">
+<li><p>点击下方按钮下载相应的脚本，并置于 themes 目录下：</p>
+<p><a
+href="https://script-1256884783.file.myqcloud.com/cursor/fireworks.js">礼花特效</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js">爆炸特效</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/love.min.js">浮出爱心</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/text.js">浮出文字</a></p>
+<p>如果没有 cursor 这个目录，手动创建一下。</p></li>
+<li><p>然后在主题自定义布局文件 themes_custom.swig 中添加如下内容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_custom\custom.<span class="property">swig</span>&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">cursor_effect</span> == <span class="string">&quot;fireworks&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/fireworks.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;explosion&quot;</span> %&#125;</span><br><span class="line">  &lt;canvas <span class="keyword">class</span>=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/js/cursor/explosion.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;love&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/love.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;text&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/text.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>如果没有 _custom 文件夹或 custom.swig 文件，手动创建一下。</p></li>
+<li><p>并且在主题布局文件 themes_layout.swig 中添加这一行（在 body
+尾部）：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_layout.swig      ...</span><br><span class="line">      &#123;% include &#x27;_third-party/exturl.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/bookmark.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/copy-code.swig&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">+     &#123;% include &#x27;_custom/custom.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在主题配置文件中添加以下代码：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">themes\next\_config.yml# mouse click effect: fireworks | explosion | love | text</span><br><span class="line">cursor_effect: fireworks</span><br></pre></td></tr></table></figure>
+<p>这样即可在配置文件中一键快速切换鼠标点击特效。</p></li>
+</ol>
+<p>完成啦！重新生成部署一下博客吧。</p>
 ]]></content>
       <categories>
-        <category>网络安全</category>
+        <category>博客搭建</category>
+        <category>博客美化</category>
       </categories>
       <tags>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows与网络基础-04-安装GNS3软件环境</title>
-    <url>/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h1
-id="windows与网络基础-04-安装gns3软件环境">windows与网络基础-04-安装GNS3软件环境</h1>
-<h2 id="准备工作">准备工作</h2>
-<ol type="1">
-<li>主机系统：Windows 10 专业版 21H2</li>
-<li>虚拟机版本：VMware Workstation 16 Pro</li>
-<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
-<li>WinPcap版本：WinPcap_4_1_3</li>
-<li>Wireshark版本：Wireshark-win64-4.0.0</li>
-</ol>
-<span id="more"></span>
-<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
-<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
-<h3 id="winpcap安装">WinPcap安装</h3>
-<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
-<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
-<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
-<p><code>Automatically start the WinPcap driver at boot time</code>
-是将WinPcap设置为自启</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
-<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
-<h3 id="wireshark安装">Wireshark安装</h3>
-<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
-<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
-<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
-<p>这里是阅读协议内容，直接点击下一步。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
-<p>这里选择默认安装即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
-<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
-勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
-<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
-<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
-<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
-<p>然后开始安装<code>Wireshark</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
-<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
-<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
-<p>然后默认即可，点击<code>install</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
-<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
-<p>等待片刻后<code>Wireshark</code>安装完成</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
-<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
-<h3 id="gns3安装部署">GNS3安装部署</h3>
-<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
-<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
-<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
-<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
-<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
-<p>然后等待安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
-<p>安装完成之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
-<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
-<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
-<p>到此我们的<code>GNS3</code>就安装成功了。</p>
-<h3 id="导入路由器c3460">导入路由器C3460</h3>
-<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
-<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>
@@ -992,6 +886,169 @@ great!</h4>
       </tags>
   </entry>
   <entry>
+    <title>Windows与网络基础-04-安装GNS3软件环境</title>
+    <url>/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1
+id="indows与网络基础-04-安装gns3软件环境">indows与网络基础-04-安装GNS3软件环境</h1>
+<h2 id="准备工作">准备工作</h2>
+<ol type="1">
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
+<li>WinPcap版本：WinPcap_4_1_3</li>
+<li>Wireshark版本：Wireshark-win64-4.0.0</li>
+</ol>
+<span id="more"></span>
+<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
+<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
+<h3 id="winpcap安装">WinPcap安装</h3>
+<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
+<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
+<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
+<p><code>Automatically start the WinPcap driver at boot time</code>
+是将WinPcap设置为自启</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
+<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
+<h3 id="wireshark安装">Wireshark安装</h3>
+<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
+<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
+<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
+<p>这里是阅读协议内容，直接点击下一步。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
+<p>这里选择默认安装即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
+<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
+勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
+<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
+<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
+<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
+<p>然后开始安装<code>Wireshark</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
+<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
+<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
+<p>然后默认即可，点击<code>install</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
+<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
+<p>等待片刻后<code>Wireshark</code>安装完成</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
+<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
+<h3 id="gns3安装部署">GNS3安装部署</h3>
+<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
+<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
+<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
+<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
+<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
+<p>然后等待安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
+<p>安装完成之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
+<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
+<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
+<p>到此我们的<code>GNS3</code>就安装成功了。</p>
+<h3 id="导入路由器c3460">导入路由器C3460</h3>
+<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
+<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+        <category>Windows与网络基础</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows与网络基础-05-安装eNSP软件环境</title>
+    <url>/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h1
+id="windows与网络基础-05-安装ensp软件环境">Windows与网络基础-05-安装eNSP软件环境</h1>
+<h2 id="准备工作">准备工作</h2>
+<ol type="1">
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>VirtualBox版本：VirtualBox-5.2.44-139111-Win</li>
+<li>eNSP版本：eNSP-1.3.00.100</li>
+</ol>
+<span id="more"></span>
+<h2 id="在windows下安装ensp的步骤">在Windows下安装eNSP的步骤</h2>
+<p>在安装<code>eNSP</code>之前首先要安装<code>VirtualBox</code></p>
+<p>安装原因：<strong>华为模拟器里面所有的设备全部都是采用虚拟机的方式存在</strong></p>
+<h3 id="virtualbox安装">VirtualBox安装</h3>
+<p>安装过程比较简单，这里我们点击<code>下一步</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装1.png" style="zoom:50%;" /></p>
+<p>在这里选择要在其中安装<code>VirtualBox</code>的目录，将路径改成自己想要存放的目录，然后点击<code>下一步</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装2.png" style="zoom:50%;" /></p>
+<p>这里我们勾选所需选项，之后点击<code>下一步</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装3.png" style="zoom:50%;" /></p>
+<p>此处出现警告，不用惊慌，点击是继续安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装4.png" style="zoom:50%;" /></p>
+<p>这里点击安装即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装5.png" style="zoom:50%;" /></p>
+<p>然后等待安装完成</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装6.png" style="zoom:50%;" /></p>
+<p>在安装过程中可能出现以下情况，这里选择安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装7.png" style="zoom:50%;" /></p>
+<p>然后我们取消勾选运行<code>VirtualBox</code>的选项，点击完成，到此<code>VirtualBox</code>的安装已经完成了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装8.png" style="zoom:50%;" /></p>
+<h3 id="ensp安装">eNSP安装</h3>
+<p>在<code>VirtualBox</code>安装完成之后，我们开始进行<code>eNSP</code>的安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装1.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装2.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装3.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装4.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装5.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装6.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装7.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装8.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装9.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装10.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装11.png" style="zoom:50%;" /></p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+        <category>Windows与网络基础</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>“Hexo部署到Github后文件夹名大小写引起的问题”</title>
     <url>/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/</url>
     <content><![CDATA[<h1
@@ -1029,6 +1086,417 @@ id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Git
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows与网络基础-07-Windows基本命令-目录文件操作</title>
+    <url>/2022/10/20/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-07-Windows%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><strong>目标：</strong></p>
+<p>掌握windwos系统文件及目录操作的一些命令</p>
+<p>掌握windwos网络相关的命令</p>
+<p>Window输入命令：使用命令提示符对话框<strong>cmd</strong></p>
+<span id="more"></span>
+<h1 id="命令行语法项">命令行语法项</h1>
+<p>下表描述用于指示命令行语法的表示法。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">表示法</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">不含方括号或大括号的文本</td>
+<td style="text-align: left;">必须按所显示键入的项。</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;"><code>&lt;Text inside angle brackets&gt;</code></td>
+<td style="text-align: left;">必须为其提供值的占位符。</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;"><code>[Text inside square brackets]</code></td>
+<td style="text-align: left;">可选项。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>&#123;Text inside braces&#125;</code></td>
+<td style="text-align: left;">一组必需的项。 你必须选择一个。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">竖线 <code>( \| )</code></td>
+<td style="text-align: left;">互斥项的分隔符。 你必须选择一个。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">省略号 <code>(…)</code></td>
+<td style="text-align: left;">可重复使用多次的项。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="cd">CD</h1>
+<ul>
+<li>语法</li>
+<li>注解</li>
+<li>示例</li>
+<li>其他参考</li>
+</ul>
+<blockquote>
+<p>适用范围：Windows Server 2022、Windows Server 2019、Windows Server
+2016、Windows Server 2012 R2、Windows Server 2012</p>
+</blockquote>
+<p>显示当前目录的名称，或更改当前目录。 如果仅与驱动器号 (，
+<code>cd C:</code>) ， <code>cd C:</code>
+将显示指定驱动器中的当前目录的名称。 如果不带参数使用，
+<strong>cd</strong> 将显示当前驱动器和目录。</p>
+<blockquote>
+<p>备注：此命令与 chdir 命令相同。</p>
+</blockquote>
+<h2 id="语法">语法</h2>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [/<span class="type">d</span>] [&lt;<span class="type">drive</span>&gt;:][&lt;<span class="type">path</span>&gt;]</span><br><span class="line"><span class="built_in">cd</span> [<span class="type">..</span>]</span><br><span class="line"><span class="built_in">chdir</span> [/<span class="type">d</span>] [&lt;<span class="type">drive</span>&gt;:][&lt;<span class="type">path</span>&gt;]</span><br><span class="line"><span class="built_in">chdir</span> [<span class="type">..</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="参数">参数</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">/d</td>
+<td style="text-align: left;">更改驱动器的当前驱动器以及当前目录。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>&lt;drive&gt;:</code></td>
+<td style="text-align: left;">指定要显示或更改驱动器的
+(（如果不同于当前驱动器) 。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>&lt;path&gt;</code></td>
+<td style="text-align: left;">指定要显示或更改的目录的路径。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[..]</td>
+<td style="text-align: left;">指定要更改为父文件夹。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/?</td>
+<td style="text-align: left;">在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="注解">注解</h2>
+<p>如果启用了命令扩展，则以下条件适用于 <strong>cd</strong> 命令：</p>
+<ul>
+<li><p>当前目录字符串将转换为使用与磁盘上的名称相同的大小写。 例如，
+<code>cd c:\temp</code> 将当前目录设置为
+C：（如果磁盘上是这种情况）。</p></li>
+<li><p>空格不被视为分隔符，因此 <code>&lt;path&gt;</code>
+可以包含不带引号的空格。 例如：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> username\programs\start menu</span><br></pre></td></tr></table></figure>
+<p>相当于：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;username\programs\start menu&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果禁用扩展，则引号是必需的。</p></li>
+<li><p>若要禁用命令扩展，请键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">cmd /e:off</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="示例">示例</h2>
+<p>若要返回到根目录，请返回驱动器的目录层次结构的顶部：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span>\</span><br></pre></td></tr></table></figure>
+<p>更改驱动器上不同于你位于的驱动器上的默认目录：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [&lt;<span class="type">drive</span>&gt;:[&lt;<span class="type">directory</span>&gt;]]</span><br></pre></td></tr></table></figure>
+<p>若要验证对目录的更改，请键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> [&lt;<span class="type">drive</span>&gt;:]</span><br></pre></td></tr></table></figure>
+<h1 id="dir">dir</h1>
+<ul>
+<li>语法</li>
+<li>示例</li>
+<li>其他参考</li>
+</ul>
+<p>显示目录的文件和子目录的列表。
+如果未使用参数，此命令将显示磁盘的卷标签和序列号，然后是磁盘上的目录和文件列表，
+(包括其名称和上次修改的日期和时间) 。
+对于文件，此命令显示名称扩展名和大小（以字节为单位）。
+此命令还显示列出的文件和目录总数、其累积大小以及磁盘上剩余的可用空间
+(字节) 。</p>
+<p><strong>dir</strong> 命令还可以使用不同的参数从 Windows
+恢复控制台运行。 有关详细信息，请参阅<a
+href="https://learn.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference">Windows恢复环境
+(WinRE)</a>。</p>
+<h2 id="语法-1">语法</h2>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dir</span> [&lt;<span class="type">drive</span>&gt;:][&lt;<span class="type">path</span>&gt;][&lt;<span class="type">filename</span>&gt;] [<span class="type">...</span>] [/<span class="type">p</span>] [/<span class="type">q</span>] [/<span class="type">w</span>] [/<span class="type">d</span>] [/<span class="type">a</span>[[:]&lt;<span class="type">attributes</span>&gt;]][/<span class="type">o</span>[[:]&lt;<span class="type">sortorder</span>&gt;]] [/<span class="type">t</span>[[:]&lt;<span class="type">timefield</span>&gt;]] [/<span class="type">s</span>] [/<span class="type">b</span>] [/<span class="type">l</span>] [/<span class="type">n</span>] [/<span class="type">x</span>] [/<span class="type">c</span>] [/<span class="number">4</span>] [/<span class="type">r</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="参数-1">参数</h3>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td
+style="text-align: left;"><code>[&lt;drive&gt;:][&lt;path&gt;]</code></td>
+<td style="text-align: left;">指定要在其中查看列表的驱动器和目录。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[&lt;filename&gt;]</code></td>
+<td
+style="text-align: left;">指定要在其中查看列表的特定文件或文件组。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/p</td>
+<td style="text-align: left;">一次显示一个列表的一个屏幕。
+若要查看下一个屏幕，请按任意键。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/q</td>
+<td style="text-align: left;">显示文件所有权信息。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/W</td>
+<td
+style="text-align: left;">以宽格式显示列表，每行包含多达五个文件名或目录名称。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/d</td>
+<td style="text-align: left;">以 <strong>/w</strong>
+相同的格式显示列表，但文件按列排序。</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">/a[[：]<code>&lt;attributes&gt;</code>]</td>
+<td style="text-align: left;">仅显示具有指定属性的目录和文件的名称。
+如果不使用此参数，该命令将显示除隐藏文件和系统文件之外的所有文件的名称。
+如果在未指定任何
+<em>属性</em>的情况下使用此参数，该命令将显示所有文件的名称，包括隐藏文件和系统文件。
+可能的 <em>属性值</em> 列表包括：<strong>d</strong> -
+目录<strong>h</strong> - 隐藏文件<strong>s</strong> -
+系统文件<strong>l</strong> - 重新分析点<strong>r</strong> -
+只读文件<strong>a</strong> - 准备存档的文件<strong>i</strong> -
+非内容索引文件可以使用这些值的任何组合，但不要使用空格分隔值。
+（可选）可以使用冒号 (：) 分隔符，也可以使用连字符 (-)
+作为前缀来表示“not”。 例如，使用 <strong>-s</strong>
+属性不会显示系统文件。</td>
+</tr>
+<tr class="even">
+<td
+style="text-align: left;">/o[[：]<code>&lt;sortorder&gt;</code>]</td>
+<td style="text-align: left;">根据 <em>sortorder</em>
+对输出进行排序，它可以是以下值的任意组合：<strong>n</strong> -
+按名称按字母顺序排列<strong>e</strong> -
+按扩展名按字母顺序排列<strong>g</strong> -
+首先对目录进行分组<strong>s</strong> - 按大小，最先小<strong>d</strong>
+-
+按日期/时间，最早<strong>-</strong>使用前缀反转排序顺序按列出这些值的顺序处理多个值。
+不要使用空格分隔多个值，但可以选择使用冒号 (：) 。如果未指定
+<em>sortorder</em> ， <strong>dir /o</strong>
+按字母顺序列出目录，后跟按字母顺序排序的文件。</td>
+</tr>
+<tr class="odd">
+<td
+style="text-align: left;">/t[[：]<code>&lt;timefield&gt;</code>]</td>
+<td style="text-align: left;">指定要显示或用于排序的时间字段。 可用的
+<em>时间字段</em> 值为：<strong>c</strong> - 创建<strong>a</strong> -
+上次访问<strong>w</strong> - 上次写入</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/s</td>
+<td
+style="text-align: left;">列出指定目录和所有子目录中指定文件名的每个匹配项。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/b</td>
+<td style="text-align: left;">显示目录和文件的裸列表，没有其他信息。
+<strong>/b</strong> 参数替代 <strong>/w</strong>。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/l</td>
+<td
+style="text-align: left;">使用小写显示未排序的目录名称和文件名。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/n</td>
+<td
+style="text-align: left;">在屏幕最右侧显示具有文件名的长列表格式。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/x</td>
+<td style="text-align: left;">显示为非 8dot3 文件名生成的短名称。 显示与
+<strong>/n</strong> 的显示相同，但短名称在长名称之前插入。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/c</td>
+<td style="text-align: left;">以文件大小显示千位分隔符。
+此选项为默认行为。 使用 <strong>/-c</strong> 隐藏分隔符。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/4</td>
+<td style="text-align: left;">以四位数格式显示年份。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/r</td>
+<td style="text-align: left;">显示文件的备用数据流。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/?</td>
+<td style="text-align: left;">在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="注解-1">注解</h4>
+<ul>
+<li><p>若要使用多个 <em>文件名</em>
+参数，请使用空格、逗号或分号分隔每个文件名。</p></li>
+<li><p>可以使用通配符 (***** 或 <strong>？</strong>)
+来表示文件名的一个或多个字符，以及显示文件或子目录的子集。</p></li>
+<li><p>可以使用通配符 *****替换任意字符串字符，例如：</p>
+<ul>
+<li><code>dir *.txt</code> 列出当前目录中以.txt开头的所有文件，例如
+.txt、.txt1 .txt_old。</li>
+<li><code>dir read *.txt</code>
+列出以读取开头的当前目录中的所有文件，以及以.txt开头的扩展，例如.txt、.txt1
+或.txt_old。</li>
+<li><code>dir read *.*</code>
+列出以任何扩展名开头的当前目录中的所有文件。</li>
+</ul>
+<p>星号通配符始终使用短文件名映射，因此可能会获得意外结果。
+例如，以下目录包含两个文件 (t.txt2 和 t97.txt) ：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">C:\test&gt;<span class="built_in">dir</span> /x</span><br><span class="line">Volume <span class="keyword">in</span> drive C has no label.</span><br><span class="line">Volume Serial Number is B86A<span class="literal">-EF32</span></span><br><span class="line"></span><br><span class="line">Directory of C:\test</span><br><span class="line"></span><br><span class="line"><span class="number">11</span>/<span class="number">30</span>/<span class="number">2004</span>  <span class="number">01</span>:<span class="number">40</span> PM &lt;<span class="built_in">DIR</span>&gt;  .</span><br><span class="line"><span class="number">11</span>/<span class="number">30</span>/<span class="number">2004</span>  <span class="number">01</span>:<span class="number">40</span> PM &lt;<span class="built_in">DIR</span>&gt; ..</span><br><span class="line"><span class="number">11</span>/<span class="number">30</span>/<span class="number">2004</span>  <span class="number">11</span>:<span class="number">05</span> AM <span class="number">0</span> T97B4~<span class="number">1</span>.TXT t.txt2</span><br><span class="line"><span class="number">11</span>/<span class="number">30</span>/<span class="number">2004</span>  <span class="number">01</span>:<span class="number">16</span> PM <span class="number">0</span> t97.txt</span><br></pre></td></tr></table></figure>
+<p>你可能需要键入 <code>dir t97\*</code> 将返回文件t97.txt。 但是，键入
+<code>dir t97\*</code> 将返回这两个文件，因为星号通配符使用其短名称映射
+<em>T97B4~1.TXT</em>匹配文件 t.txt2 到t97.txt。 同样，键入
+<code>del t97\*</code> 将删除这两个文件。</p></li>
+<li><p>可以使用问号 (？) 作为名称中单个字符的替代项。 例如，键入
+<code>dir read???.txt</code>
+列表当前目录中以读取开头且后跟最多三个字符的.txt扩展名的文件。
+这包括Read.txt、Read1.txt、Read12.txt、Read123.txt和Readme1.txt，但不包括Readme12.txt。</p></li>
+<li><p>如果在<em>属性</em>中使用 <strong>/a</strong>
+具有多个值，则此命令仅显示具有所有指定属性的文件的名称。 例如，如果使用
+<strong>/a和-h</strong> 作为属性 (使用或 <code>/a:r-h``/ar-h</code>)
+，则此命令将仅显示不隐藏的只读文件的名称。</p></li>
+<li><p>如果指定多个 <em>排序程序</em>
+值，则此命令按第一个条件对文件名进行排序，然后按第二个条件等进行排序。
+例如，如果将 <strong>/o</strong> 与<em>排序排序
+(</em><code>/o:e-s``/oe-s</code>) 的 <strong>e</strong> 和
+<strong>-s</strong>
+参数一起使用，则此命令会按扩展名对目录和文件的名称进行排序，并首先显示最终结果。
+按扩展名排序的字母顺序会导致没有扩展名的文件名首先出现，然后显示目录名称，然后使用扩展名的文件名。</p></li>
+<li><p>如果使用重定向符号 (<code>&gt;</code>)
+将此命令的输出发送到文件，或者如果使用管道 (<code>|</code>)
+将此命令的输出发送到另一个命令，则必须使用
+<code>/a:-d</code><strong>/b</strong> 仅列出文件名。 可以将
+<em>文件名</em> 与 <strong>/b</strong> 和 <strong>/s</strong>
+一起使用，以指定此命令是搜索当前目录及其子目录来查找与文件名匹配的所有
+<em>文件名</em>。
+对于找到的每个文件名，此命令仅列出驱动器号、目录名称、文件名和文件扩展名
+(每行一个路径) 。 在使用管道将此命令的输出发送到另一个命令之前，应在
+Autoexec.nt 文件中设置 <em>TEMP</em> 环境变量。</p></li>
+</ul>
+<h2 id="示例-1">示例</h2>
+<p>若要按字母顺序显示所有目录，按宽格式显示，并在每个屏幕后暂停，请确保根目录是当前目录，然后键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dir</span> /s/w/o/p</span><br></pre></td></tr></table></figure>
+<p>输出列出了根目录、子目录和根目录中的文件，包括扩展。
+此命令还会列出树中每个子目录中的子目录名称和文件名。</p>
+<p>若要更改前面的示例，以便 <strong>dir</strong>
+显示文件名和扩展名，但省略目录名称，请键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dir</span> /s/w/o/p/a:<span class="literal">-d</span></span><br></pre></td></tr></table></figure>
+<p>若要打印目录列表，请键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dir</span> &gt; prn</span><br></pre></td></tr></table></figure>
+<p>指定 <strong>prn</strong> 时，目录列表将发送到附加到 LPT1
+端口的打印机。 如果打印机附加到其他端口，则必须将 <strong>prn</strong>
+替换为正确的端口的名称。</p>
+<p>还可以将 <strong>dir</strong> 命令的输出重定向到文件，方法是将
+<strong>prn</strong> 替换为文件名。 还可以键入路径。 例如，若要将
+<strong>dir</strong> 输出定向到记录目录中的文件dir.doc，请键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dir</span> &gt; \records\dir.doc</span><br></pre></td></tr></table></figure>
+<p>如果dir.doc不存在， <strong>则 dir</strong> 会创建该目录，除非
+<strong>记录</strong> 目录不存在。 在这种情况下，将显示以下消息：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">File creation error</span><br></pre></td></tr></table></figure>
+<p>若要在驱动器 C
+上的所有目录中显示具有.txt扩展名的所有文件名的列表，请键入：</p>
+<p>复制</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dir</span> c:\*.txt /w/o/s/p</span><br></pre></td></tr></table></figure>
+<p><strong>dir</strong>
+命令以宽格式显示每个目录中匹配文件名的按字母顺序排列的列表，每次屏幕填充时都会暂停，直到按任何键继续。</p>
+<h1 id="mkdir">mkdir</h1>
+<ul>
+<li>语法</li>
+<li>其他参考</li>
+</ul>
+<p>创建目录或子目录。 默认情况下启用的命令扩展允许你使用单个
+<strong>mkdir</strong> 命令在指定路径中创建中间目录。</p>
+<blockquote>
+<p>备注：此命令与 md 命令相同。</p>
+</blockquote>
+<h2 id="语法-2">语法</h2>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir [&lt;drive&gt;:]&lt;path&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="参数-2">参数</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>&lt;drive&gt;</code>:</td>
+<td style="text-align: left;">指定要在其上创建新目录的驱动器。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>&lt;path&gt;</code></td>
+<td style="text-align: left;">指定新目录的名称和位置。
+任何单个路径的最大长度由文件系统确定。 这是必需参数。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">/?</td>
+<td style="text-align: left;">在命令提示符下显示帮助。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="示例-2">示例</h3>
+<p>若要在当前目录中创建名为 <em>Directory1</em> 的目录，请键入：</p>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir Directory1</span><br></pre></td></tr></table></figure>
+<p>若要在启用了命令扩展的情况下在根目录中创建目录树 *Taxes，请键入：</p>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir \Taxes\Property\Current</span><br></pre></td></tr></table></figure>
+<p>如前面的示例所示，若要在根目录中创建目录树
+*Taxes，但禁用了命令扩展，请键入以下命令序列：</p>
+<p>复制</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir \Taxes</span><br><span class="line">mkdir \Taxes\Property</span><br><span class="line">mkdir \Taxes\Property\Current</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+        <category>Windows与网络基础</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
@@ -1080,6 +1548,7 @@ Workstation Pro的官方使用手册</a>。</p>
 ]]></content>
       <categories>
         <category>网络安全</category>
+        <category>Windows与网络基础</category>
       </categories>
       <tags>
         <tag>网络安全</tag>
