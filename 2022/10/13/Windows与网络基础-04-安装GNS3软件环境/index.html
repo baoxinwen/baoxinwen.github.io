@@ -22,28 +22,71 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这是一篇加密文章，涉及隐私或付费服务，请通过留言或邮箱联系我获取密码！">
+    <meta name="description" content="Windows与网络基础-04-安装GNS3软件环境 准备工作  主机系统：Windows 10 专业版 21H2 虚拟机版本：VMware Workstation 16 Pro GNS3版本：GNS3-2.2.34-all-in-one-regular WinPcap版本：WinPcap_4_1_3 Wireshark版本：Wireshark-win64-4.0.0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个特殊的人">
-<meta property="og:url" content="http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/index.html">
+<meta property="og:title" content="Windows与网络基础-04-安装GNS3软件环境">
+<meta property="og:url" content="http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="包黑蛋">
-<meta property="og:description" content="这是一篇加密文章，涉及隐私或付费服务，请通过留言或邮箱联系我获取密码！">
+<meta property="og:description" content="Windows与网络基础-04-安装GNS3软件环境 准备工作  主机系统：Windows 10 专业版 21H2 虚拟机版本：VMware Workstation 16 Pro GNS3版本：GNS3-2.2.34-all-in-one-regular WinPcap版本：WinPcap_4_1_3 Wireshark版本：Wireshark-win64-4.0.0">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-17T12:51:22.000Z">
-<meta property="article:modified_time" content="2022-10-03T14:02:56.542Z">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png">
+<meta property="article:published_time" content="2022-10-13T11:45:46.000Z">
+<meta property="article:modified_time" content="2022-10-24T11:12:23.874Z">
 <meta property="article:author" content="Bao Xinwen">
-<meta property="article:tag" content="一生所爱">
+<meta property="article:tag" content="网络安全">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png">
 
 
-<link rel="canonical" href="http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/">
+<link rel="canonical" href="http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/","path":"2022/09/17/一个特殊的人/","title":"一个特殊的人"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/","path":"2022/10/13/Windows与网络基础-04-安装GNS3软件环境/","title":"Windows与网络基础-04-安装GNS3软件环境"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>一个特殊的人 | 包黑蛋</title>
+<title>Windows与网络基础-04-安装GNS3软件环境 | 包黑蛋</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -135,7 +178,6 @@
   </div>
 
   <aside class="sidebar">
-      
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
@@ -150,7 +192,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA"><span class="nav-number">1.</span> <span class="nav-text">一个特殊的人</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85gns3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">Windows与网络基础-04-安装GNS3软件环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8windows%E4%B8%8B%E5%AE%89%E8%A3%85gns3%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.</span> <span class="nav-text">在Windows下安装GNS3的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#winpcap%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.1.</span> <span class="nav-text">WinPcap安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wireshark%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.2.</span> <span class="nav-text">Wireshark安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gns3%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2"><span class="nav-number">1.2.3.</span> <span class="nav-text">GNS3安装部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E8%B7%AF%E7%94%B1%E5%99%A8c3460"><span class="nav-number">1.2.4.</span> <span class="nav-text">导入路由器C3460</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -256,7 +298,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/baoxinwen3.png">
@@ -269,12 +311,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="一个特殊的人 | 包黑蛋">
+      <meta itemprop="name" content="Windows与网络基础-04-安装GNS3软件环境 | 包黑蛋">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          一个特殊的人<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          Windows与网络基础-04-安装GNS3软件环境<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -285,14 +327,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-09-17 20:51:22" itemprop="dateCreated datePublished" datetime="2022-09-17T20:51:22+08:00">2022-09-17</time>
+      <time title="创建时间：2022-10-13 19:45:46" itemprop="dateCreated datePublished" datetime="2022-10-13T19:45:46+08:00">2022-10-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-03 22:02:56" itemprop="dateModified" datetime="2022-10-03T22:02:56+08:00">2022-10-03</time>
+      <time title="修改时间：2022-10-24 19:12:23" itemprop="dateModified" datetime="2022-10-24T19:12:23+08:00">2022-10-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -300,7 +342,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%B7%AF%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">路路</span></a>
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" itemprop="url" rel="index"><span itemprop="name">网络安全</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Windows与网络基础</span></a>
         </span>
     </span>
 
@@ -336,24 +382,125 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
-  <script id="hbeData" type="hbeData" data-hmacdigest="7265566d0fb98cd1334c95de578ba69a320473ee50e0666cfd6e0ea8870d5968">9e60957532baee991e944ab8c631029a28a17d109efc5ce194ca8fede1e603715ff1f07acad538a387ce87f092b78f912025b975a376360f9b453f5767a1df94d508aac796a2d375624a59eda2a989c675ff819f2004840b2cc18635e3d2163c9dc4214555e25237f701c832532d3857b030e3a2f14a43136e7b677c3190710cfeb7edef7b535292783bb3a243ab394e0c64f7224dcc5e4198ffc21ee123f9b38d670c22d58313c1672a18d11500f28e8c95dde805f32b503323f434e38410f934168c189966e4c94ba48d7a514cc43d254ca5290703ca476f5b1aa2eea322c9010fde3e7e3bef12db2ea3a3aba5be733b98696575405fc53537e78a1f3a5db0b87acda7b2886ce6478337191dbcc7d7da123d3c86e35f4baf130e3121dbbd8c370a9b9df5b7b9466027420538d2a5b1dfa41b142fe24747fd8c69195c9c4f901ef7fe3a25d92fe5ab411e8f902a8e8447f2bbb598db6fa6af3361c49585d31b14e598251864c77040ba121203e73b47eaa43c9b0c4e4ea106fbabbc9c3f79f0044c62369ef6c5f2e9dbc65b3d988eb9123d9fa6f52592ecc259a63f7e009820f494764359c76e256dde90d99441c7555e5bb4dcc6ad23d89d34754f7c4ef8dba5f6bfe5336dbccb78bd26ce4b1f7bb9f25541770c38a96aaaef48a420aea46f33b34ac760b6066c0ceda269bb683c3fa2a8b2787560e536f24c358f17217c86446289ad73aa22d674a666c68ac0b79d2cfb6e07b6f2d16b53e7f9054d62e27920a913805cafb06f2c5880e1e01dacdd90a830c3cecb0a329cebc6380edef6d85c0826ad2f7233a86d2013eaaeb9b91fca621054f07e4b61eff7431645297e46857ea460ec7ba18f0178cc2a1b8a72b7f8c2309bdd523b45f6569a6680c0937f646087c7c4677da71f2f5b52352b814b05a7056db3fc640cc6a1678df78d7ad620e6c9a6d9915120bf5f2b78394fa07970ec6530407a55329c7021480c2a79b31548908b7af53162690e56844704e7b9e071d86b89770b5b1ee8712c9ddd334c6459d695f75d370f3e0027415c779b68bf04dbb7fbbcd510214b673461c907ae2493e669cbfc6b4b7b524ec9ab9f55d0a830399423a26a470aa77feef9654c9b90653954c9906f9f14d2d0406b0a2fbff2f88a11674d66274e15eb19ad597bf57bc2aac8032dda03c4e219d64fd3e454bb4001eecfd9b20fff4e0023303f977aa3a6a824dc57e895c4b615fe688944fcbcf4755f2fa73ab5b4c76a7930c0a5e4563bb6f578c781c152e54d950dd5679cca3b347b3b2c69610b9c30f80ac7ce0de57ede27454f260a318a1d720eb379e6cec3f64bed03661d8ddf229007a8b8c84a98a6d6446120dd9d0c8851b36e829835c81c493838c91079fd83ddd8343e4ee58bd548c0bf7a74264cc66beaffafb775d5a112a5060d5369d37ecfc77a82f44073cfcde76e15017fb6a2f4b8394d140afdc3a57fba444f310f87f0a7d0326a9b9e4d9218bf3fabfb7c000ee5c30c52faa8aa7d1a2e45a9995c40c721fe57a4211a0a5c65eb285f97176c80f0853554189bfacddc8bb6dfee182bd8c04ec486fe6108f5c82a21989364b30110d6c00ae6d53ba628c6e2d0921781ada1ae9673e703e4dacad27b100f07e49786b44cd6fdc739fa5a54ae1730688a094254f55e97b32fb4741da3e533826cb4d150b11ea0d276d689b5c0194e6f353290eb22988be222c872da8ea9201211afc3bbf5c869f4523b2ee8287425839fb0cd68be49ad14383cd6311ec92933deff26de77d253a4e3d338480125b2d97aebd5cdf28cc7e0c970c2413753c6a227918df1aee09ee4061bca34e3e32215bb54986247ce259a34bcaeb301eb4b7a579c9f48afe2e87886cae6e2924c1aa57ede9400e4a9195b9db3097dd1edd4881fe51c0d5b91b670de52fbc39dba3e3d064d20ccfd7c3ec6205b46807a513816f4982d591c870d9484b0eb3d62d3c81a80932793f2ea228a5c61415a018aba1fbb92036a24360c741697c6786aa5ef50865603b03ce5d73bb19d275c08033107adc24fa0b33c9fd7980a3224ac4598f0d281bb5b54e44de7f1eae80f3a528392ab698b4895e2430f02b40840f9fd0240f9673e947cf5fa3fbea8f96270616fd4b54114a5d1ce88e03eabcf44c85b117ed0533eda75df1a049ab8655300870d5fbfa161330841ce0eba17401967855b609e1ddb777c13789abc2ed390aa84d66072036ffb22c88ab9d3b0a1852b783546837d75de9646aef5311ac6a6dc59deae8149b4cefae4b3e2a0ef28da3512eafff8bc249dac384d1ceaadacfdefc27a488c35e0fce9c036aef007cd2e4746cddae1861a6374db9475487c468b67aff90a982b12cf1a8a8b632481887f3e56e0452992a8666de18bd7c7f3cb87ec8761480e2b3f53de176812d711c64f8c6a09d16dcedcfae062c6de208894e55415a950508264c4b42726b8ede4e20a0fc4ef964577f1d27fc626e268de94d0055fc8dacfa25998e1164e79b2692da47f6de6bb187888912ba7b467291cf3f5ac24f4901b2829227bb3b6ba793da1e4c33a1d49c70c9598d6f626f780d6f36b72c0645448b481386ca97c633e3b98a19eeea63adc388a0270a4f152c3f261b02d65421eb3e5961800f9ac91b7168b3f5a5e27442519ec952cd30b485de9981298bf510a01550d092152acd0f00d2441da4574eef34a3a976815a5b688988f4805f8adfd27d817c0b2ebb18d83979de2001df198f2dac70e99e9f40cfb550888ace13f580e30586f8739d0316f3d5822c7f4a7fbf36c52bc33471e55076f1828bd7f53b465391546d5bffae2c3e18b994418ced4c09c66ff6b050c29f59da42eb23f67c1b0b8c1c811b56648891d8be084ee567fd37efc9bc65d69fff7f897346731a97de32a415ecbc66bfb12bafe99831c3d1a9749a527b3862564b7400f07108593887e29d11c62a006bb32d58a33d6e9a88a78896943af077bc68164be6388fa31e2249bc64237f9ee71a6eb7d27870984729a2255bf699586fbebf8229ae22bc9d78c6d54e6ae7395d455282cfd1aff00bee191d5d5c14e4e95d7b6566043b575cb60e93f0314841838e06bf12b91e9854e8653a73f9135945093cb9dea30c0ae692663f106470deeb2f2c5914bc454b77fd395d26dde0a73f1096a2983f8eba28b6ebf1d0d447bd21c67ca7acc94af2808fdd8b0ea210774e73355dfd309e3d6af5daa77796d3521a1f6c76ced529f310a9d395b3dfd470bf97718718b65eb9f9d5221344dc0e165f67309f07fdca684aacd5e42e9eeacabadc875924f679e67bc984a671c4c21490adb78b4cd720eeff2f38370763796a2a22482b9cf8c74990e9eabff144d898412a8e30a8a192c0d0b48cdfc1a56705167ac7109c51810988bc04af56bd85839fcf1f908ae129b2ae49407441315354167153020f260ecb44808b3e499ad5c1890487fee7c48802da861be66c62b5d389ba230ba920e0747d54c8cbfac02c4017aebc7ba57e4144124d56554c4401ca44abbcecf7258d1d6715ba1a8f5031a52725cdc9dc508a49af9da36eb89e75259fd711e13c89f3d3c4fb23a6bc64514d24849bd90177f4a25574dd9d7a1c9e538cb26ee45e0a4ba49e95ac875888b34b56db3a32c1089f17c74f8e9c65c9419e9b6f2f6126d5dc142eb946d594a555e48a3026743f1dd77c33c36920640f06e2f3f3517519c529d46ac96bf7321573955f284f781645fe1e5122e9dbcaf694715413d15c5a776fee1f59225964f7f43a5be3073612e951eb2bc587cbb026f19da76df515582abc034e945324cf4cf015fab83e5dffb1d64827b0adedc3aa3ab41bda9feb6ff7e97781be7bfc2c7341226e1bbacf6f2b51e33586b772eaa7839f461aa07af27d3dbd94c7c4c2783ec62d451342b1e84b129ee65fc9d74940154d760a13f7ec97f48d20dd80432abaeb019546d9f85bb398db95e01929d3c948d40552e08377b7f75e051c33758d25faee699c5fd43489460f50a742f095f6109bf67cbe5ca96b8af46a1fab8599dd34493f508f6135bb10d461dd8871d3811e2d57a15dae69d8a0a6081c2a1571ccfc83b3249f86bfbf64f6eb506c579ca51d7e4ecea9b05e06c029ba7a17f2af721d72c523c1a09aa3cc2cb40bee609a3fdc871de8eabb261c4af0627c70d34a20ac6d8346870bb66890dd21f53ac3a3d8bfcf188ca6eaedf87be303a3a4eb0310ac3c72c1160841cfb2454d8b67727ed875b8a4d2ba350464beee4148967f9d2f3dcc5aab16b7019eb277701335a0c8a46ae8c095be6f5053cf4225a1c3ed743883c8bb8e8ef41b33dd28d3cafceba54e9a7992264b82cf7e9c5ba83353a6eece31a3c87e68d841e5f25f9154c767cacb9dd3ab56943e539850c638109216de9bef209eb0bcd71688c7d94d13cd597edb65fd9da1b58f30c76bd3810d9e5c391cd863680c05cb228d31cb6b8432f8b7305b1c4127c510f80d838c4afe0b5dd7e1d14e6a9de86f418bf51931d6d5f03af660c4be2be2947635ff4954f524d6712913ee522a78fac036f292c07ff9b1b13d1682ab97777811e35fa20075e5f12c1e63ea7adde55f373edb1c7ae12fe2218134a29c55550a59f7abaf082f85fa95a00f5c04cc49bc18c58cb8cab4728563f514baca299ce50b134adf39fd036d629d390cb8ae51b4c8fd820d8aa8460936bd87a38c080d22a5c374da25b2941e9879c3ffe98316eeac03ba728e129191b1c1ed1c1670e818a64b8cd18d0a3e5a27d60ffa954dbac91508f9dadb8aa6576c688aa99effcd14910d4642e141a72d7d10e54e2740814d9c4364f5b4beaa7cb0ac9f72c968d8c3d397fb65dcb1d72f89e3de2ef7eb011d663429be24af60bf9821162aa616fcde763a1eeb2b0e725cbadeb5ab1a00f5530422d66eb17c55aa8fa17eee41e9745dd013c479a257623b168fc1ca4677f93e9a3550f217c8761f667364723b236602108b5c7f685c86e715367c3e46b1bc54a7bf2da9dec0156d575f4c727b1a41d10e1b9680c3927c5be5a0fceeb6c6ddc92a6edf58b6edc819582105fce73b49f211f9e30470e5a86e9a24fd17ff1436e6dcbd5a69f2bcafba02c86ba13af5ea763f65fb9a5d7d2699810e558b8b7c05e627475678888fc4ed5748b875b8521ea3c996013285916d9cc23ba56a6ba300a82b0a354dd34372e93f52c546f98b0973c58d997f05b39f3c8f7a8c9f3ea9e300c5fcc18ec9a29a270891bcfcacd0dd1cc055e39a2734c0b40a83e6421938b33147c9c1ce94d9ab731583e36a2a0a3f9394306f0cf4afd8abe0b27ec31848e165d42b6fd3bc8d38be2425c47036c31ab28cc1724b6cfe61745376848c26f689fa67e375430c1e1bdb8e66942</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-flip">
-      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="当前文章暂不对外可见，请输入密码后查看！">当前文章暂不对外可见，请输入密码后查看！</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <h1
+id="windows与网络基础-04-安装gns3软件环境">Windows与网络基础-04-安装GNS3软件环境</h1>
+<h2 id="准备工作">准备工作</h2>
+<ol type="1">
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
+<li>WinPcap版本：WinPcap_4_1_3</li>
+<li>Wireshark版本：Wireshark-win64-4.0.0</li>
+</ol>
+<span id="more"></span>
+<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
+<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
+<h3 id="winpcap安装">WinPcap安装</h3>
+<p><a target="_blank" rel="noopener" href="https://www.winpcap.org/">WinPcap 官网</a></p>
+<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
+<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
+<p><code>Automatically start the WinPcap driver at boot time</code>
+是将WinPcap设置为自启</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
+<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
+<h3 id="wireshark安装">Wireshark安装</h3>
+<p><a target="_blank" rel="noopener" href="https://www.wireshark.org/">Wireshark 官网</a></p>
+<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
+<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
+<p>这里是阅读协议内容，直接点击下一步。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
+<p>这里选择默认安装即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
+<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
+勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
+<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
+<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
+<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
+<p>然后开始安装<code>Wireshark</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
+<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
+<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
+<p>然后默认即可，点击<code>install</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
+<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
+<p>等待片刻后<code>Wireshark</code>安装完成</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
+<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
+<h3 id="gns3安装部署">GNS3安装部署</h3>
+<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
+<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
+<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
+<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
+<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
+<p>然后等待安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
+<p>安装完成之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
+<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
+<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
+<p>到此我们的<code>GNS3</code>就安装成功了。</p>
+<h3 id="导入路由器c3460">导入路由器C3460</h3>
+<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
+<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
+
     </div>
 
     
     
     
       
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+        <div class="popular-posts-date">2022-10-18</div>
+      <div class="popular-posts-title"><a href="2022/10/18/Windows与网络基础-05-安装eNSP软件环境/" rel="bookmark">Windows与网络基础-05-安装eNSP软件环境</a></div>
+        <div class="popular-posts-excerpt"><p><h1
+id="windows与网络基础-05-安装ensp软件环境">Windows与网络基础-05-安装eNSP软件环境</h1>
+<h2 id="准备工作">准备工作</h2>
+<ol type="1">
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>VirtualBox版本：VirtualBox-5.2.44-139111-Win</li>
+<li>eNSP版本：eNSP-1.3.00.100</li>
+</ol></p></div>
+    </li>
+  </ul>
 
 
     <footer class="post-footer">
@@ -403,20 +550,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1/" rel="tag"><i class="fa fa-tag"></i> 一生所爱</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"><i class="fa fa-tag"></i> 网络安全</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="prev" title="Markdown基本语法（二）">
-                  <i class="fa fa-chevron-left"></i> Markdown基本语法（二）
+                <a href="/2022/10/06/DVWA%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/" rel="prev" title="DVWA靶场搭建">
+                  <i class="fa fa-chevron-left"></i> DVWA靶场搭建
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/10/03/%E2%80%9CHexo%E9%83%A8%E7%BD%B2%E5%88%B0Github%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99%E5%BC%95%E8%B5%B7%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%9D/" rel="next" title="“Hexo部署到Github后文件夹名大小写引起的问题”">
-                  “Hexo部署到Github后文件夹名大小写引起的问题” <i class="fa fa-chevron-right"></i>
+                <a href="/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/" rel="next" title="Windows与网络基础-05-安装eNSP软件环境">
+                  Windows与网络基础-05-安装eNSP软件环境 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -443,11 +590,11 @@
     </label>
     <select class="lang-select" data-canonical="" aria-label="选择语言">
       
-        <option value="zh-CN" data-href="/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/" selected="">
+        <option value="zh-CN" data-href="/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/" selected="">
+        <option value="en" data-href="/en/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/" selected="">
           English
         </option>
       
@@ -539,11 +686,11 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"48809b6cb4106c02810ed2977dec045b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"406b53c5fda374cbb5838eee04fb5605"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 
