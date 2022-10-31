@@ -22,25 +22,38 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Bao Xinwen">
-<meta property="og:type" content="website">
-<meta property="og:title" content="包黑蛋">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+    <meta name="description" content="第二章 线性表 线性表的链式表示和实现 结点在存储器中的位置是随意的，即逻辑上相邻的数据元素在物理上并不一定相邻 线性表的链式表示又称为非顺序映像或链式映像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法-02-线性表">
+<meta property="og:url" content="http://example.com/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/index.html">
 <meta property="og:site_name" content="包黑蛋">
-<meta property="og:description" content="Bao Xinwen">
+<meta property="og:description" content="第二章 线性表 线性表的链式表示和实现 结点在存储器中的位置是随意的，即逻辑上相邻的数据元素在物理上并不一定相邻 线性表的链式表示又称为非顺序映像或链式映像">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_1.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_2.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_3.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_4.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_5.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_6.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_7.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_8.png">
+<meta property="og:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_9.png">
+<meta property="article:published_time" content="2022-10-27T14:59:08.000Z">
+<meta property="article:modified_time" content="2022-10-31T14:59:37.271Z">
 <meta property="article:author" content="Bao Xinwen">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_1.png">
 
 
-<link rel="canonical" href="http://example.com/page/2/">
+<link rel="canonical" href="http://example.com/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/","path":"2022/10/27/数据结构与算法-02-线性表/","title":"数据结构与算法-02-线性表"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>包黑蛋</title>
+<title>数据结构与算法-02-线性表 | 包黑蛋</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -74,7 +87,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">包黑蛋</h1>
+      <p class="site-title">包黑蛋</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -133,7 +146,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -146,6 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">第二章 线性表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.1.</span> <span class="nav-text">线性表的链式表示和实现</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,17 +254,18 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/baoxinwen3.png">
@@ -263,13 +278,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 包黑蛋">
+      <meta itemprop="name" content="数据结构与算法-02-线性表 | 包黑蛋">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/" class="post-title-link" itemprop="url">一个特殊的人</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          数据结构与算法-02-线性表<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/_posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -279,14 +294,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-09-17 20:51:22" itemprop="dateCreated datePublished" datetime="2022-09-17T20:51:22+08:00">2022-09-17</time>
+      <time title="创建时间：2022-10-27 22:59:08" itemprop="dateCreated datePublished" datetime="2022-10-27T22:59:08+08:00">2022-10-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-03 22:02:56" itemprop="dateModified" datetime="2022-10-03T22:02:56+08:00">2022-10-03</time>
+      <time title="修改时间：2022-10-31 22:59:37" itemprop="dateModified" datetime="2022-10-31T22:59:37+08:00">2022-10-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -294,18 +309,25 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%B7%AF%E8%B7%AF/" itemprop="url" rel="index"><span itemprop="name">路路</span></a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
         </span>
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.2k</span>
+      <span>966</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -323,140 +345,263 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          这是一篇加密文章，涉及隐私或付费服务，请通过留言或邮箱联系我获取密码！
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/baoxinwen3.png">
-      <meta itemprop="name" content="Bao Xinwen">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="包黑蛋">
-      <meta itemprop="description" content="Bao Xinwen">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 包黑蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/" class="post-title-link" itemprop="url">Markdown基本语法（二）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-05 22:32:02" itemprop="dateCreated datePublished" datetime="2022-04-05T22:32:02+08:00">2022-04-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="markdown-代码语法">Markdown 代码语法</h1>
-<p>要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。</p>
+        <h1 id="第二章-线性表">第二章 线性表</h1>
+<h2 id="线性表的链式表示和实现">线性表的链式表示和实现</h2>
+<p>结点在存储器中的位置是随意的，即逻辑上相邻的数据元素在物理上并不一定相邻</p>
+<p>线性表的链式表示又称为<strong>非顺序映像</strong>或<strong>链式映像</strong></p>
+<span id="more"></span>
+<ol type="1">
+<li><p>存储特点</p>
+<ul>
+<li><p>线性表中数据元素（结点）在存储器中的位置是任意的，即逻辑上相邻的数据元素在物理上不一定相邻</p></li>
+<li><p>访问只能通过头指针进入链表，并通过每个结点的指针域依次向后顺序扫描其余结点，所以寻找第一个结点和最后一个结点所花费的时间不等</p>
+<blockquote>
+<p>这种存取元素的方式被称为<strong>顺序存取法</strong>。顺序表是<strong>随机存取</strong>，链表是<strong>顺序存取</strong>。</p>
+</blockquote></li>
+</ul>
+<p>例1：</p>
+<p>线性表：（赵、钱、孙、李、周、吴、郑、王）</p>
+<ul>
+<li><p>顺序表</p>
 <table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 40%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
+<tr>
+<th>
+<p>存储地址</p>
+</th>
+<th>
+<p>存储状态</p>
+</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>At the command prompt, type</code>nano<code>.</code></td>
-<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
-<td>At the command prompt, type <code>nano</code>.</td>
+<tr>
+<td>
+<p>0031</p>
+</td>
+<td>
+<p>赵</p>
+</td>
 </tr>
-</tbody>
+<tr>
+<td>
+<p>0033</p>
+</td>
+<td>
+<p>钱</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0035</p>
+</td>
+<td>
+<p>孙</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0037</p>
+</td>
+<td>
+<p>李</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0039</p>
+</td>
+<td>
+<p>周</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0041</p>
+</td>
+<td>
+<p>吴</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0043</p>
+</td>
+<td>
+<p>郑</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0045</p>
+</td>
+<td>
+<p>王</p>
+</td>
+</tr>
+</table></li>
+<li><p>链表</p>
+<table>
+<tr>
+<th rowspan="2">
+<p>存储地址</p>
+</th>
+<th colspan="2">
+<p>结点</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>数据域</p>
+</td>
+<td>
+<p>指针域</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0001</p>
+</td>
+<td>
+<p>李</p>
+</td>
+<td>
+<p>0043</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0007</p>
+</td>
+<td>
+<p>钱</p>
+</td>
+<td>
+<p>0013</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0013</p>
+</td>
+<td>
+<p>孙</p>
+</td>
+<td>
+<p>0001</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0019</p>
+</td>
+<td>
+<p>王</p>
+</td>
+<td>
+<p>NULL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0025</p>
+</td>
+<td>
+<p>吴</p>
+</td>
+<td>
+<p>0037</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0031（头指针H）</p>
+</td>
+<td>
+<p>赵</p>
+</td>
+<td>
+<p>0007</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0037</p>
+</td>
+<td>
+<p>郑</p>
+</td>
+<td>
+<p>0019</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0043</p>
+</td>
+<td>
+<p>周</p>
+</td>
+<td>
+<p>0025</p>
+</td>
+</tr>
 </table>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<p>单链表是由头指针唯一确定，因此单链表可以用头指针的名字来命名。</p></li>
+</ul>
+<p>例2：</p>
+<p>26个英文小写字母表的链式存储结构</p>
+<ul>
+<li>逻辑结构：（a，b，......，z）</li>
+<li>链式存储结构：</li>
+</ul>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_1.png" style="zoom: 33%;" /></p>
+<p>各结点由两个域组成：</p>
+<ul>
+<li>数据域：存储元素数值数据</li>
+<li>指针域：存储直接后继结点的存储位置</li>
+</ul></li>
+<li><p>与链式存储有关的术语</p>
+<ul>
+<li>结点：数据元素的存储映像。由数据域和指针域两部分组成</li>
+<li>链表：n个结点由指针链组成一个链表，它是线性表的链式存储映像，成为线性表的链式存储结构</li>
+</ul>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_2.png" style="zoom: 33%;" /></p></li>
+<li><p>单链表、双链表、循环链表</p>
+<ul>
+<li><p>结点只有一个指针域的链表，称为<strong>单链表</strong>或者<strong>线性链表</strong></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_3.png" style="zoom: 33%;" /></p></li>
+<li><p>结点有两个指针域的链表，称为双链表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_4.png" style="zoom: 33%;" /></p></li>
+<li><p>首位相接的链表成为循环链表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_5.png" style="zoom: 33%;" /></p></li>
+<li><p>头指针、头结点和首元结点</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_6.png" style="zoom: 33%;" /></p>
+<ul>
+<li>头指针：是指向链表中第一个结点的指针。</li>
+<li>首元结点：是指链表中存储第一个数据元素的结点。</li>
+<li>头结点：是在链表的首元结点之前附设的一个结点。</li>
+</ul></li>
+</ul></li>
+<li><p>讨论</p>
+<ul>
+<li><p>讨论1：如何表示空表？</p>
+<ul>
+<li><p>无头结点时，头指针为空时表示空表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_7.png" style="zoom:33%;" /></p></li>
+<li><p>有头结点时，当头结点的指针域为空时表示空表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_8.png" style="zoom:33%;" /></p></li>
+</ul></li>
+<li><p>讨论2：在链表中设置头结点有什么好处？</p>
+<ul>
+<li><p>便于首元结点的处理</p>
+<p>首元结点的地址保存在头结点的指针域中，所以在链表的第一个位置上的操作和其他位置一致，无须进行特殊处理</p></li>
+<li><p>便于空表和非空表的统一处理</p>
+<p>无论链表是否为空，头指针都是指向头结点的非空指针，因此空表和非空表的处理也就统一了</p></li>
+</ul></li>
+<li><p>讨论3：头结点的数据域内装的是什么？</p>
+<p>头结点的数据域可以为空，也可存放线性表长度等附加信息，但此结点不能计入链表长度值。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_9.png" style="zoom:33%;" /></p></li>
+</ul></li>
+</ol>
+
     </div>
 
     
@@ -466,223 +611,66 @@
 
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="Bao Xinwen 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="Bao Xinwen 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
 </div>
 
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
 
+  <div class="social-list">
 
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.png">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
 
-    
+          <span class="label">WeChat</span>
+        </a>
+      </div>
 
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/baoxinwen3.png">
-      <meta itemprop="name" content="Bao Xinwen">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="包黑蛋">
-      <meta itemprop="description" content="Bao Xinwen">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 包黑蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Markdown基本语法（一）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-04 22:44:18" itemprop="dateCreated datePublished" datetime="2022-04-04T22:44:18+08:00">2022-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>5.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
 </div>
 
-        </div>
-      </header>
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          </div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="markdown-基本语法一">Markdown 基本语法（一）</h1>
-<p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出
-HTML、PDF 以及本身的 .md
-格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等。</p>
-<p>在线体验一下 <a
-target="_blank" rel="noopener" href="https://markdown.com.cn/editor/">Markdown在线编辑器</a>。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/baoxinwen3.png">
-      <meta itemprop="name" content="Bao Xinwen">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="包黑蛋">
-      <meta itemprop="description" content="Bao Xinwen">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 包黑蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/" class="post-title-link" itemprop="url">从零开始搭建自己的博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-03 01:09:51" itemprop="dateCreated datePublished" datetime="2022-04-03T01:09:51+08:00">2022-04-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p><strong>博客</strong>：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。</p>
-<p>在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用
-Hexo 框架搭建我的个人博客。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-01-%E7%BB%AA%E8%AE%BA/" rel="prev" title="数据结构与算法-01-绪论">
+                  <i class="fa fa-chevron-left"></i> 数据结构与算法-01-绪论
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      
-
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -690,10 +678,9 @@ Hexo 框架搭建我的个人博客。</p>
 
 
 
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
 
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -707,11 +694,11 @@ Hexo 框架搭建我的个人博客。</p>
     </label>
     <select class="lang-select" data-canonical="" aria-label="选择语言">
       
-        <option value="zh-CN" data-href="/page/2/index.html" selected="">
+        <option value="zh-CN" data-href="/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/page/2/index.html" selected="">
+        <option value="en" data-href="/en/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/" selected="">
           English
         </option>
       
@@ -803,11 +790,11 @@ Hexo 框架搭建我的个人博客。</p>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/page/2/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://example.com/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"c853ec00cc9d13bc22336b7d45d1416e"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"baoxinwen","repo":"Comment-system","client_id":"82c3c05df624d702dfd6","client_secret":"1520eb92562c32c03c1b8bdad721ee98c543b488","admin_user":"baoxinwen","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"33bfddc0316f3e3958427d9312d586e3"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 

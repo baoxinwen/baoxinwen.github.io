@@ -75,6 +75,516 @@ href="https://github.com/digininja/DVWA/archive/master.zip">DVWA官网</a></p>
       </tags>
   </entry>
   <entry>
+    <title>Hexo添加鼠标点击效果</title>
+    <url>/2022/10/24/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C/</url>
+    <content><![CDATA[<h1 id="鼠标点击特效">鼠标点击特效</h1>
+<p>从各个站点里搜罗了以下四个比较常用的鼠标点击特效：</p>
+<ul>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-1">礼花特效</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-2">爆炸特效</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-3">浮出爱心</a></li>
+<li><a
+href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-4">浮出文字</a></li>
+</ul>
+<span id="more"></span>
+<h2 id="效果图">效果图</h2>
+<p><a
+href="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"><img data-src="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"
+alt="img" /></a></p>
+<h2 id="具体步骤">具体步骤</h2>
+<ol type="1">
+<li><p>点击下方按钮下载相应的脚本，并置于 themes 目录下：</p>
+<p><a
+href="https://script-1256884783.file.myqcloud.com/cursor/fireworks.js">礼花特效</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js">爆炸特效</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/love.min.js">浮出爱心</a>
+<a
+href="https://script-1256884783.file.myqcloud.com/cursor/text.js">浮出文字</a></p>
+<p>如果没有 cursor 这个目录，手动创建一下。</p></li>
+<li><p>然后在主题自定义布局文件 themes_custom.swig 中添加如下内容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_custom\custom.<span class="property">swig</span>&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">cursor_effect</span> == <span class="string">&quot;fireworks&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/fireworks.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;explosion&quot;</span> %&#125;</span><br><span class="line">  &lt;canvas <span class="keyword">class</span>=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/js/cursor/explosion.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;love&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/love.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;text&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/text.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>如果没有 _custom 文件夹或 custom.swig 文件，手动创建一下。</p></li>
+<li><p>并且在主题布局文件 themes_layout.swig 中添加这一行（在 body
+尾部）：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_layout.swig      ...</span><br><span class="line">      &#123;% include &#x27;_third-party/exturl.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/bookmark.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/copy-code.swig&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">+     &#123;% include &#x27;_custom/custom.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在主题配置文件中添加以下代码：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">themes\next\_config.yml# mouse click effect: fireworks | explosion | love | text</span><br><span class="line">cursor_effect: fireworks</span><br></pre></td></tr></table></figure>
+<p>这样即可在配置文件中一键快速切换鼠标点击特效。</p></li>
+</ol>
+<p>完成啦！重新生成部署一下博客吧。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+        <category>博客美化</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>博客美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown基本语法（二）</title>
+    <url>/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="markdown-代码语法">Markdown 代码语法</h1>
+<p>要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>At the command prompt, type</code>nano<code>.</code></td>
+<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
+<td>At the command prompt, type <code>nano</code>.</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="转义反引号">转义反引号</h2>
+<p>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(````)中。</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 39%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown语法</th>
+<th>HTML</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Use `code` in your Markdown file.</code></td>
+<td><code>&lt;code&gt;Use</code>code<code>in your Markdown file.&lt;/code&gt;</code></td>
+<td><code>Use</code>code<code>in your Markdown file.</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码块">代码块</h2>
+<p>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Note:</strong>
+要创建不用缩进的代码块，请使用围栏式代码块（fenced code blocks)</p>
+<h1 id="markdown-分隔线语法">Markdown 分隔线语法</h1>
+<p>要创建分隔线，请在单独一行上使用三个或多个星号
+(<code>***</code>)、破折号 (<code>---</code>) 或下划线
+(<code>___</code>) ，并且不能包含其他内容。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">_________________</span><br></pre></td></tr></table></figure>
+<p>以上三个分隔线的渲染效果看起来都一样：</p>
+<hr />
+<h2 id="分隔线horizontal-rule用法最佳实践">分隔线（Horizontal
+Rule）用法最佳实践</h2>
+<p>为了兼容性，请在分隔线的前后均添加空白行。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Try to put a blank line before...---...and after a horizontal rule.</code></td>
+<td><code>Without blank lines, this would be a heading.---Don't do this!</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-链接语法">Markdown 链接语法</h1>
+<p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 "超链接title")</code></p>
+<p>对应的HTML代码：<code>&lt;a href="超链接地址" title="超链接title"&gt;超链接显示名&lt;/a&gt;</code></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn)。</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>这是一个链接 <a
+href="https://markdown.com.cn/">Markdown语法</a>。</p>
+<h2 id="给链接增加-title">给链接增加 Title</h2>
+<p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)。</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>这是一个链接 <a
+href="https://markdown.com.cn/">Markdown语法</a>。</p>
+<h2 id="网址和email地址">网址和Email地址</h2>
+<p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p><a href="https://markdown.com.cn/">https://markdown.com.cn</a> <a
+href="mailto:fake@example.com">fake@example.com</a></p>
+<h2 id="带格式化的链接">带格式化的链接</h2>
+<p>强调链接, 在链接语法前后增加星号。
+要将链接表示为代码，请在方括号中添加反引号。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">I love supporting the **[EFF](https://eff.org)**.</span><br><span class="line">This is the *[Markdown Guide](https://www.markdownguide.org)*.</span><br><span class="line">See the section on [`code`](#code).</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>I love supporting the <strong><a
+href="https://eff.org/">EFF</a></strong>. This is the <em><a
+href="https://www.markdownguide.org/">Markdown Guide</a></em>. See the
+section on <a
+href="https://markdown.com.cn/basic-syntax/links.html#code"><code>code</code></a>.</p>
+<h2 id="引用类型链接">引用类型链接</h2>
+<p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
+<h3 id="链接的第一部分格式">链接的第一部分格式</h3>
+<p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
+<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
+<p>以下示例格式对于链接的第一部分效果相同：</p>
+<ul>
+<li><code>[hobbit-hole][1]</code></li>
+<li><code>[hobbit-hole] [1]</code></li>
+</ul>
+<h3 id="链接的第二部分格式">链接的第二部分格式</h3>
+<p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<ol type="1">
+<li>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如<code>[label]:</code>）。</li>
+<li>链接的URL，可以选择将其括在尖括号中。</li>
+<li>链接的可选标题，可以将其括在双引号，单引号或括号中。</li>
+</ol>
+<p>以下示例格式对于链接的第二部分效果相同：</p>
+<ul>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle 'Hobbit lifestyles'</code></li>
+<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle (Hobbit lifestyles)</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; "Hobbit lifestyles"</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; 'Hobbit lifestyles'</code></li>
+<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; (Hobbit lifestyles)</code></li>
+</ul>
+<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
+<h3 id="链接最佳实践">链接最佳实践</h3>
+<p>不同的 Markdown
+应用程序处理URL中间的空格方式不一样。为了兼容性，请尽量使用%20代替空格。</p>
+<table>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>✅ Do this</th>
+<th>❌ Don't do this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[link](https://www.example.com/my%20great%20page)</code></td>
+<td><code>[link](https://www.example.com/my great page)</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="markdown-图片语法">Markdown 图片语法</h1>
+<p>要添加图像，请使用感叹号 (<code>!</code>),
+然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 "图片title")</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src="图片链接" alt="图片alt" title="图片title"&gt;</code></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">![这是图片](/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;)</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<figure>
+<img data-src="https://markdown.com.cn/assets/img/philly-magic-garden.9c0b4415.jpg"
+alt="这是图片" />
+<figcaption aria-hidden="true">这是图片</figcaption>
+</figure>
+<h2 id="链接图片">链接图片</h2>
+<p>给图片增加链接，请将图像的Markdown
+括在方括号中，然后将链接添加在圆括号中。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[![沙漠中的岩石图片](/assets/img/shiprock.jpg &quot;Shiprock&quot;)](https://markdown.com.cn)</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p><a href="https://markdown.com.cn/"><img data-src="https://markdown.com.cn/assets/img/shiprock.c3b9a023.jpg"
+alt="沙漠中的岩石图片" /></a></p>
+<h1 id="markdown-转义字符语法">Markdown 转义字符语法</h1>
+<p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符
+ 。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\* Without the backslash, this would be a bullet in an unordered list.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下：</p>
+<p>* Without the backslash, this would be a bullet in an unordered
+list.</p>
+<h2 id="可做转义的字符">可做转义的字符</h2>
+<p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。</p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Character</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>\</td>
+<td>backslash</td>
+</tr>
+<tr class="even">
+<td>`</td>
+<td>backtick (see also <a
+href="https://markdown.com.cn/basic-syntax/escaping-characters.html#escaping-backticks">escaping
+backticks in code</a>)</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>asterisk</td>
+</tr>
+<tr class="even">
+<td>_</td>
+<td>underscore</td>
+</tr>
+<tr class="odd">
+<td>{ }</td>
+<td>curly braces</td>
+</tr>
+<tr class="even">
+<td>[ ]</td>
+<td>brackets</td>
+</tr>
+<tr class="odd">
+<td>( )</td>
+<td>parentheses</td>
+</tr>
+<tr class="even">
+<td>#</td>
+<td>pound sign</td>
+</tr>
+<tr class="odd">
+<td>+</td>
+<td>plus sign</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>minus sign (hyphen)</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>dot</td>
+</tr>
+<tr class="even">
+<td>!</td>
+<td>exclamation mark</td>
+</tr>
+<tr class="odd">
+<td>|</td>
+<td>pipe (see also <a
+href="https://markdown.com.cn/extended-syntax/escaping-pipe-characters-in-tables.html">escaping
+pipe in tables</a>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="特殊字符自动转义">特殊字符自动转义</h2>
+<p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和
+<code>&amp;</code> 。 <code>&lt;</code>
+符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML
+实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是
+<code>&lt;</code> 和 <code>&amp;</code>。</p>
+<p><code>&amp;</code>
+符号其实很容易让写作网页文件的人感到困扰，如果你要打「AT&amp;T」
+，你必须要写成「<code>AT&amp;T</code>」 ，还得转换网址内的
+<code>&amp;</code> 符号，如果你要链接到：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;q=larry+bird</span><br></pre></td></tr></table></figure>
+<p>你必须要把网址转成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;amp;q=larry+bird</span><br></pre></td></tr></table></figure>
+<p>才能放到链接标签的 <code>href</code>
+属性里。不用说也知道这很容易忘记，这也可能是 HTML
+标准检查所检查到的错误中，数量最多的。</p>
+<p>Markdown 允许你直接使用这些符号，它帮你自动转义字符。如果你使用
+<code>&amp;</code> 符号的作为 HTML
+实体的一部分，那么它不会被转换，而在其它情况下，它则会被转换成
+<code>&amp;</code>。所以你如果要在文件中插入一个著作权的符号，你可以这样写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&amp;copy;</span><br></pre></td></tr></table></figure>
+<p>Markdown 将不会对这段文字做修改，但是如果你这样写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;T</span><br></pre></td></tr></table></figure>
+<p>Markdown 就会将它转为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;amp;T</span><br></pre></td></tr></table></figure>
+<p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 支持 <a
+href="https://markdown.com.cn/basic-syntax/#内联-html">行内 HTML</a>
+，如果你使用 <code>&lt;</code> 符号作为 HTML 标签的分隔符，那 Markdown
+也不会对它做任何转换，但是如果你是写：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &lt; 5</span><br></pre></td></tr></table></figure>
+<p>Markdown 将会把它转换为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &amp;lt; 5</span><br></pre></td></tr></table></figure>
+<p>需要特别注意的是，在 Markdown 的块级元素和内联元素中，
+<code>&lt;</code> 和 <code>&amp;</code> 两个符号都会被自动转换成 HTML
+实体，这项特性让你可以很容易地用 Markdown 写 HTML。（在 HTML
+语法中，你要手动把所有的 <code>&lt;</code> 和 <code>&amp;</code>
+都转换为 HTML 实体。）</p>
+<h1 id="markdown-内嵌-html-标签">Markdown 内嵌 HTML 标签</h1>
+<p>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML
+本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML
+标签添加到 Markdown 文本中即可。</p>
+<h2 id="行级內联标签">行级內联标签</h2>
+<p>HTML 的行级內联标签如
+<code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code>
+不受限制，可以在 Markdown
+的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown
+格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的
+<code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code>
+标签，可以直接使用这些标签，而不用 Markdown
+提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用
+HTML 标签更方便些。</p>
+<p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown
+的语法是可以解析的。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.</span><br></pre></td></tr></table></figure>
+<p>渲染效果如下:</p>
+<p>This <strong>word</strong> is bold. This <em>word</em> is italic.</p>
+<h2 id="区块标签">区块标签</h2>
+<p>区块元素──比如
+<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code>
+等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用
+tab 或是空白来缩进。Markdown
+会自动识别这区块元素，避免在区块标签前后加上没有必要的
+<code>&lt;p&gt;</code> 标签。</p>
+<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">This is a regular paragraph.</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;Foo&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">This is another regular paragraph.</span><br></pre></td></tr></table></figure>
+<p>请注意，Markdown 语法在 HTML
+区块标签中将不会被进行处理。例如，你无法在 HTML 区块内使用 Markdown
+形式的<code>*强调*</code>。</p>
+<h3 id="html-用法最佳实践">HTML 用法最佳实践</h3>
+<p>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加
+HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持
+HTML 标签的子集。</p>
+<p>对于 HTML 的块级元素
+<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>
+和 <code>&lt;p&gt;</code>，请在其前后使用空行（blank
+lines）与其它内容进行分隔。尽量不要使用制表符（tabs）或空格（spaces）对
+HTML 标签做缩进，否则将影响格式。</p>
+<p>在 HTML 块级标签内不能使用 Markdown 语法。例如
+<code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Markdown基本语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows与网络基础-04-安装GNS3软件环境</title>
+    <url>/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="准备工作">准备工作</h2>
+<ol type="1">
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
+<li>WinPcap版本：WinPcap_4_1_3</li>
+<li>Wireshark版本：Wireshark-win64-4.0.0</li>
+</ol>
+<span id="more"></span>
+<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
+<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
+<h3 id="winpcap安装">WinPcap安装</h3>
+<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
+<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
+<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
+<p><code>Automatically start the WinPcap driver at boot time</code>
+是将WinPcap设置为自启</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
+<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
+<h3 id="wireshark安装">Wireshark安装</h3>
+<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
+<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
+<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
+<p>这里是阅读协议内容，直接点击下一步。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
+<p>这里选择默认安装即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
+<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
+勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
+<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
+<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
+<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
+<p>然后开始安装<code>Wireshark</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
+<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
+<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
+<p>然后默认即可，点击<code>install</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
+<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
+<p>等待片刻后<code>Wireshark</code>安装完成</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
+<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
+<h3 id="gns3安装部署">GNS3安装部署</h3>
+<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
+<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
+<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
+<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
+<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
+<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
+<p>然后等待安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
+<p>安装完成之后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
+<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
+<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
+<p>到此我们的<code>GNS3</code>就安装成功了。</p>
+<h3 id="导入路由器c3460">导入路由器C3460</h3>
+<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
+<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+        <category>Windows与网络基础</category>
+      </categories>
+      <tags>
+        <tag>网络安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown基本语法（一）</title>
     <url>/2022/04/04/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="markdown-基本语法一">Markdown 基本语法（一）</h1>
@@ -482,407 +992,56 @@ great!</h4>
       </tags>
   </entry>
   <entry>
-    <title>Hexo添加鼠标点击效果</title>
-    <url>/2022/10/24/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%95%88%E6%9E%9C/</url>
-    <content><![CDATA[<h1 id="鼠标点击特效">鼠标点击特效</h1>
-<p>从各个站点里搜罗了以下四个比较常用的鼠标点击特效：</p>
-<ul>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-1">礼花特效</a></li>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-2">爆炸特效</a></li>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-3">浮出爱心</a></li>
-<li><a
-href="http://yearito.cn/posts/hexo-theme-beautify.html#鼠标点击特效-4">浮出文字</a></li>
-</ul>
-<span id="more"></span>
-<h2 id="效果图">效果图</h2>
-<p><a
-href="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"><img data-src="http://yearito-1256884783.image.myqcloud.com/hexo-theme-beautify/cursor-text.gif"
-alt="img" /></a></p>
-<h2 id="具体步骤">具体步骤</h2>
+    <title>Windows与网络基础-05-安装eNSP软件环境</title>
+    <url>/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="准备工作">准备工作</h2>
 <ol type="1">
-<li><p>点击下方按钮下载相应的脚本，并置于 themes 目录下：</p>
-<p><a
-href="https://script-1256884783.file.myqcloud.com/cursor/fireworks.js">礼花特效</a>
-<a
-href="https://script-1256884783.file.myqcloud.com/cursor/explosion.min.js">爆炸特效</a>
-<a
-href="https://script-1256884783.file.myqcloud.com/cursor/love.min.js">浮出爱心</a>
-<a
-href="https://script-1256884783.file.myqcloud.com/cursor/text.js">浮出文字</a></p>
-<p>如果没有 cursor 这个目录，手动创建一下。</p></li>
-<li><p>然后在主题自定义布局文件 themes_custom.swig 中添加如下内容：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_custom\custom.<span class="property">swig</span>&#123;# 鼠标点击特效 #&#125;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">cursor_effect</span> == <span class="string">&quot;fireworks&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/fireworks.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;explosion&quot;</span> %&#125;</span><br><span class="line">  &lt;canvas <span class="keyword">class</span>=<span class="string">&quot;fireworks&quot;</span> style=<span class="string">&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot;</span> &gt;&lt;/canvas&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/js/cursor/explosion.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;love&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/love.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% elseif theme.<span class="property">cursor_effect</span> == <span class="string">&quot;text&quot;</span> %&#125;</span><br><span class="line">  &lt;script <span class="keyword">async</span> src=<span class="string">&quot;/js/cursor/text.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>如果没有 _custom 文件夹或 custom.swig 文件，手动创建一下。</p></li>
-<li><p>并且在主题布局文件 themes_layout.swig 中添加这一行（在 body
-尾部）：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">themes\next\layout\_layout.swig      ...</span><br><span class="line">      &#123;% include &#x27;_third-party/exturl.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/bookmark.swig&#x27; %&#125;</span><br><span class="line">      &#123;% include &#x27;_third-party/copy-code.swig&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">+     &#123;% include &#x27;_custom/custom.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>在主题配置文件中添加以下代码：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">themes\next\_config.yml# mouse click effect: fireworks | explosion | love | text</span><br><span class="line">cursor_effect: fireworks</span><br></pre></td></tr></table></figure>
-<p>这样即可在配置文件中一键快速切换鼠标点击特效。</p></li>
+<li>主机系统：Windows 10 专业版 21H2</li>
+<li>虚拟机版本：VMware Workstation 16 Pro</li>
+<li>VirtualBox版本：VirtualBox-5.2.44-139111-Win</li>
+<li>eNSP版本：eNSP-1.3.00.100</li>
 </ol>
-<p>完成啦！重新生成部署一下博客吧。</p>
+<span id="more"></span>
+<h2 id="在windows下安装ensp的步骤">在Windows下安装eNSP的步骤</h2>
+<p>在安装<code>eNSP</code>之前首先要安装<code>VirtualBox</code></p>
+<p>安装原因：<strong>华为模拟器里面所有的设备全部都是采用虚拟机的方式存在</strong></p>
+<h3 id="virtualbox安装">VirtualBox安装</h3>
+<p>安装过程比较简单，这里我们点击<code>下一步</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装1.png" style="zoom:50%;" /></p>
+<p>在这里选择要在其中安装<code>VirtualBox</code>的目录，将路径改成自己想要存放的目录，然后点击<code>下一步</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装2.png" style="zoom:50%;" /></p>
+<p>这里我们勾选所需选项，之后点击<code>下一步</code></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装3.png" style="zoom:50%;" /></p>
+<p>此处出现警告，不用惊慌，点击是继续安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装4.png" style="zoom:50%;" /></p>
+<p>这里点击安装即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装5.png" style="zoom:50%;" /></p>
+<p>然后等待安装完成</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装6.png" style="zoom:50%;" /></p>
+<p>在安装过程中可能出现以下情况，这里选择安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装7.png" style="zoom:50%;" /></p>
+<p>然后我们取消勾选运行<code>VirtualBox</code>的选项，点击完成，到此<code>VirtualBox</code>的安装已经完成了</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装8.png" style="zoom:50%;" /></p>
+<h3 id="ensp安装">eNSP安装</h3>
+<p>在<code>VirtualBox</code>安装完成之后，我们开始进行<code>eNSP</code>的安装</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装1.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装2.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装3.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装4.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装5.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装6.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装7.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装8.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装9.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装10.png" style="zoom:50%;" />
+<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装11.png" style="zoom:50%;" /></p>
 ]]></content>
       <categories>
-        <category>博客搭建</category>
-        <category>博客美化</category>
+        <category>网络安全</category>
+        <category>Windows与网络基础</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
-        <tag>博客美化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown基本语法（二）</title>
-    <url>/2022/04/05/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="markdown-代码语法">Markdown 代码语法</h1>
-<p>要将单词或短语表示为代码，请将其包裹在反引号 (```) 中。</p>
-<table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 40%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>At the command prompt, type</code>nano<code>.</code></td>
-<td><code>At the command prompt, type &lt;code&gt;nano&lt;/code&gt;.</code></td>
-<td>At the command prompt, type <code>nano</code>.</td>
-</tr>
-</tbody>
-</table>
-<span id="more"></span>
-<h2 id="转义反引号">转义反引号</h2>
-<p>如果你要表示为代码的单词或短语中包含一个或多个反引号，则可以通过将单词或短语包裹在双反引号(````)中。</p>
-<table>
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 39%" />
-<col style="width: 28%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Markdown语法</th>
-<th>HTML</th>
-<th>预览效果</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>Use `code` in your Markdown file.</code></td>
-<td><code>&lt;code&gt;Use</code>code<code>in your Markdown file.&lt;/code&gt;</code></td>
-<td><code>Use</code>code<code>in your Markdown file.</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="代码块">代码块</h2>
-<p>要创建代码块，请将代码块的每一行缩进至少四个空格或一个制表符。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>Note:</strong>
-要创建不用缩进的代码块，请使用围栏式代码块（fenced code blocks)</p>
-<h1 id="markdown-分隔线语法">Markdown 分隔线语法</h1>
-<p>要创建分隔线，请在单独一行上使用三个或多个星号
-(<code>***</code>)、破折号 (<code>---</code>) 或下划线
-(<code>___</code>) ，并且不能包含其他内容。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">***</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">_________________</span><br></pre></td></tr></table></figure>
-<p>以上三个分隔线的渲染效果看起来都一样：</p>
-<hr />
-<h2 id="分隔线horizontal-rule用法最佳实践">分隔线（Horizontal
-Rule）用法最佳实践</h2>
-<p>为了兼容性，请在分隔线的前后均添加空白行。</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>✅ Do this</th>
-<th>❌ Don't do this</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>Try to put a blank line before...---...and after a horizontal rule.</code></td>
-<td><code>Without blank lines, this would be a heading.---Don't do this!</code></td>
-</tr>
-</tbody>
-</table>
-<h1 id="markdown-链接语法">Markdown 链接语法</h1>
-<p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
-<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 "超链接title")</code></p>
-<p>对应的HTML代码：<code>&lt;a href="超链接地址" title="超链接title"&gt;超链接显示名&lt;/a&gt;</code></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn)。</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>这是一个链接 <a
-href="https://markdown.com.cn/">Markdown语法</a>。</p>
-<h2 id="给链接增加-title">给链接增加 Title</h2>
-<p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">这是一个链接 [Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)。</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>这是一个链接 <a
-href="https://markdown.com.cn/">Markdown语法</a>。</p>
-<h2 id="网址和email地址">网址和Email地址</h2>
-<p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p><a href="https://markdown.com.cn/">https://markdown.com.cn</a> <a
-href="mailto:fake@example.com">fake@example.com</a></p>
-<h2 id="带格式化的链接">带格式化的链接</h2>
-<p>强调链接, 在链接语法前后增加星号。
-要将链接表示为代码，请在方括号中添加反引号。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">I love supporting the **[EFF](https://eff.org)**.</span><br><span class="line">This is the *[Markdown Guide](https://www.markdownguide.org)*.</span><br><span class="line">See the section on [`code`](#code).</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>I love supporting the <strong><a
-href="https://eff.org/">EFF</a></strong>. This is the <em><a
-href="https://www.markdownguide.org/">Markdown Guide</a></em>. See the
-section on <a
-href="https://markdown.com.cn/basic-syntax/links.html#code"><code>code</code></a>.</p>
-<h2 id="引用类型链接">引用类型链接</h2>
-<p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
-<h3 id="链接的第一部分格式">链接的第一部分格式</h3>
-<p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
-<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
-<p>以下示例格式对于链接的第一部分效果相同：</p>
-<ul>
-<li><code>[hobbit-hole][1]</code></li>
-<li><code>[hobbit-hole] [1]</code></li>
-</ul>
-<h3 id="链接的第二部分格式">链接的第二部分格式</h3>
-<p>引用类型链接的第二部分使用以下属性设置格式：</p>
-<ol type="1">
-<li>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如<code>[label]:</code>）。</li>
-<li>链接的URL，可以选择将其括在尖括号中。</li>
-<li>链接的可选标题，可以将其括在双引号，单引号或括号中。</li>
-</ol>
-<p>以下示例格式对于链接的第二部分效果相同：</p>
-<ul>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle</code></li>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"</code></li>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle 'Hobbit lifestyles'</code></li>
-<li><code>[1]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle (Hobbit lifestyles)</code></li>
-<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; "Hobbit lifestyles"</code></li>
-<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; 'Hobbit lifestyles'</code></li>
-<li><code>[1]: &lt;https://en.wikipedia.org/wiki/Hobbit#Lifestyle&gt; (Hobbit lifestyles)</code></li>
-</ul>
-<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
-<h3 id="链接最佳实践">链接最佳实践</h3>
-<p>不同的 Markdown
-应用程序处理URL中间的空格方式不一样。为了兼容性，请尽量使用%20代替空格。</p>
-<table>
-<colgroup>
-<col style="width: 52%" />
-<col style="width: 47%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>✅ Do this</th>
-<th>❌ Don't do this</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>[link](https://www.example.com/my%20great%20page)</code></td>
-<td><code>[link](https://www.example.com/my great page)</code></td>
-</tr>
-</tbody>
-</table>
-<h1 id="markdown-图片语法">Markdown 图片语法</h1>
-<p>要添加图像，请使用感叹号 (<code>!</code>),
-然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
-<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 "图片title")</code>。</p>
-<p>对应的HTML代码：<code>&lt;img src="图片链接" alt="图片alt" title="图片title"&gt;</code></p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">![这是图片](/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;)</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<figure>
-<img data-src="https://markdown.com.cn/assets/img/philly-magic-garden.9c0b4415.jpg"
-alt="这是图片" />
-<figcaption aria-hidden="true">这是图片</figcaption>
-</figure>
-<h2 id="链接图片">链接图片</h2>
-<p>给图片增加链接，请将图像的Markdown
-括在方括号中，然后将链接添加在圆括号中。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">[![沙漠中的岩石图片](/assets/img/shiprock.jpg &quot;Shiprock&quot;)](https://markdown.com.cn)</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p><a href="https://markdown.com.cn/"><img data-src="https://markdown.com.cn/assets/img/shiprock.c3b9a023.jpg"
-alt="沙漠中的岩石图片" /></a></p>
-<h1 id="markdown-转义字符语法">Markdown 转义字符语法</h1>
-<p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符
- 。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\* Without the backslash, this would be a bullet in an unordered list.</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下：</p>
-<p>* Without the backslash, this would be a bullet in an unordered
-list.</p>
-<h2 id="可做转义的字符">可做转义的字符</h2>
-<p>以下列出的字符都可以通过使用反斜杠字符从而达到转义目的。</p>
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 86%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Character</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>\</td>
-<td>backslash</td>
-</tr>
-<tr class="even">
-<td>`</td>
-<td>backtick (see also <a
-href="https://markdown.com.cn/basic-syntax/escaping-characters.html#escaping-backticks">escaping
-backticks in code</a>)</td>
-</tr>
-<tr class="odd">
-<td>*</td>
-<td>asterisk</td>
-</tr>
-<tr class="even">
-<td>_</td>
-<td>underscore</td>
-</tr>
-<tr class="odd">
-<td>{ }</td>
-<td>curly braces</td>
-</tr>
-<tr class="even">
-<td>[ ]</td>
-<td>brackets</td>
-</tr>
-<tr class="odd">
-<td>( )</td>
-<td>parentheses</td>
-</tr>
-<tr class="even">
-<td>#</td>
-<td>pound sign</td>
-</tr>
-<tr class="odd">
-<td>+</td>
-<td>plus sign</td>
-</tr>
-<tr class="even">
-<td>-</td>
-<td>minus sign (hyphen)</td>
-</tr>
-<tr class="odd">
-<td>.</td>
-<td>dot</td>
-</tr>
-<tr class="even">
-<td>!</td>
-<td>exclamation mark</td>
-</tr>
-<tr class="odd">
-<td>|</td>
-<td>pipe (see also <a
-href="https://markdown.com.cn/extended-syntax/escaping-pipe-characters-in-tables.html">escaping
-pipe in tables</a>)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="特殊字符自动转义">特殊字符自动转义</h2>
-<p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和
-<code>&amp;</code> 。 <code>&lt;</code>
-符号用于起始标签，<code>&amp;</code> 符号则用于标记 HTML
-实体，如果你只是想要使用这些符号，你必须要使用实体的形式，像是
-<code>&lt;</code> 和 <code>&amp;</code>。</p>
-<p><code>&amp;</code>
-符号其实很容易让写作网页文件的人感到困扰，如果你要打「AT&amp;T」
-，你必须要写成「<code>AT&amp;T</code>」 ，还得转换网址内的
-<code>&amp;</code> 符号，如果你要链接到：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;q=larry+bird</span><br></pre></td></tr></table></figure>
-<p>你必须要把网址转成：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http://images.google.com/images?num=30&amp;amp;q=larry+bird</span><br></pre></td></tr></table></figure>
-<p>才能放到链接标签的 <code>href</code>
-属性里。不用说也知道这很容易忘记，这也可能是 HTML
-标准检查所检查到的错误中，数量最多的。</p>
-<p>Markdown 允许你直接使用这些符号，它帮你自动转义字符。如果你使用
-<code>&amp;</code> 符号的作为 HTML
-实体的一部分，那么它不会被转换，而在其它情况下，它则会被转换成
-<code>&amp;</code>。所以你如果要在文件中插入一个著作权的符号，你可以这样写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&amp;copy;</span><br></pre></td></tr></table></figure>
-<p>Markdown 将不会对这段文字做修改，但是如果你这样写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;T</span><br></pre></td></tr></table></figure>
-<p>Markdown 就会将它转为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AT&amp;amp;T</span><br></pre></td></tr></table></figure>
-<p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 支持 <a
-href="https://markdown.com.cn/basic-syntax/#内联-html">行内 HTML</a>
-，如果你使用 <code>&lt;</code> 符号作为 HTML 标签的分隔符，那 Markdown
-也不会对它做任何转换，但是如果你是写：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &lt; 5</span><br></pre></td></tr></table></figure>
-<p>Markdown 将会把它转换为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4 &amp;lt; 5</span><br></pre></td></tr></table></figure>
-<p>需要特别注意的是，在 Markdown 的块级元素和内联元素中，
-<code>&lt;</code> 和 <code>&amp;</code> 两个符号都会被自动转换成 HTML
-实体，这项特性让你可以很容易地用 Markdown 写 HTML。（在 HTML
-语法中，你要手动把所有的 <code>&lt;</code> 和 <code>&amp;</code>
-都转换为 HTML 实体。）</p>
-<h1 id="markdown-内嵌-html-标签">Markdown 内嵌 HTML 标签</h1>
-<p>对于 Markdown 涵盖范围之外的标签，都可以直接在文件里面用 HTML
-本身。如需使用 HTML，不需要额外标注这是 HTML 或是 Markdown，只需 HTML
-标签添加到 Markdown 文本中即可。</p>
-<h2 id="行级內联标签">行级內联标签</h2>
-<p>HTML 的行级內联标签如
-<code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code>
-不受限制，可以在 Markdown
-的段落、列表或是标题里任意使用。依照个人习惯，甚至可以不用 Markdown
-格式，而采用 HTML 标签来格式化。例如：如果比较喜欢 HTML 的
-<code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code>
-标签，可以直接使用这些标签，而不用 Markdown
-提供的链接或是图片语法。当你需要更改元素的属性时（例如为文本指定颜色或更改图像的宽度），使用
-HTML 标签更方便些。</p>
-<p>HTML 行级內联标签和区块标签不同，在內联标签的范围内， Markdown
-的语法是可以解析的。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">This **word** is bold. This &lt;em&gt;word&lt;/em&gt; is italic.</span><br></pre></td></tr></table></figure>
-<p>渲染效果如下:</p>
-<p>This <strong>word</strong> is bold. This <em>word</em> is italic.</p>
-<h2 id="区块标签">区块标签</h2>
-<p>区块元素──比如
-<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code>
-等标签，必须在前后加上空行，以便于内容区分。而且这些元素的开始与结尾标签，不可以用
-tab 或是空白来缩进。Markdown
-会自动识别这区块元素，避免在区块标签前后加上没有必要的
-<code>&lt;p&gt;</code> 标签。</p>
-<p>例如，在 Markdown 文件里加上一段 HTML 表格：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">This is a regular paragraph.</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;Foo&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">This is another regular paragraph.</span><br></pre></td></tr></table></figure>
-<p>请注意，Markdown 语法在 HTML
-区块标签中将不会被进行处理。例如，你无法在 HTML 区块内使用 Markdown
-形式的<code>*强调*</code>。</p>
-<h3 id="html-用法最佳实践">HTML 用法最佳实践</h3>
-<p>出于安全原因，并非所有 Markdown 应用程序都支持在 Markdown 文档中添加
-HTML。如有疑问，请查看相应 Markdown 应用程序的手册。某些应用程序只支持
-HTML 标签的子集。</p>
-<p>对于 HTML 的块级元素
-<code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>
-和 <code>&lt;p&gt;</code>，请在其前后使用空行（blank
-lines）与其它内容进行分隔。尽量不要使用制表符（tabs）或空格（spaces）对
-HTML 标签做缩进，否则将影响格式。</p>
-<p>在 HTML 块级标签内不能使用 Markdown 语法。例如
-<code>&lt;p&gt;italic and **bold**&lt;/p&gt;</code> 将不起作用。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>Markdown基本语法</tag>
+        <tag>网络安全</tag>
       </tags>
   </entry>
   <entry>
@@ -938,155 +1097,10 @@ Workstation Pro的官方使用手册</a>。</p>
       </tags>
   </entry>
   <entry>
-    <title>Windows与网络基础-04-安装GNS3软件环境</title>
-    <url>/2022/10/13/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-04-%E5%AE%89%E8%A3%85GNS3%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h2 id="准备工作">准备工作</h2>
-<ol type="1">
-<li>主机系统：Windows 10 专业版 21H2</li>
-<li>虚拟机版本：VMware Workstation 16 Pro</li>
-<li>GNS3版本：GNS3-2.2.34-all-in-one-regular</li>
-<li>WinPcap版本：WinPcap_4_1_3</li>
-<li>Wireshark版本：Wireshark-win64-4.0.0</li>
-</ol>
-<span id="more"></span>
-<h2 id="在windows下安装gns3的步骤">在Windows下安装GNS3的步骤</h2>
-<p>在安装<code>GNS3</code>软件环境之前首先要安装<code>WinPcap</code>和<code>Wireshark</code></p>
-<h3 id="winpcap安装">WinPcap安装</h3>
-<p><a href="https://www.winpcap.org/">WinPcap 官网</a></p>
-<p>点击上方链接进入官网之后，点击<code>Download</code>，然后选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap官网.png" style="zoom: 25%;" /></p>
-<p>然后安装过程是傻瓜式的，基本一路<code>Next</code>就行了</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装1.png" style="zoom: 50%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>I Agree</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装2.png" style="zoom:50%;" /></p>
-<p><code>Automatically start the WinPcap driver at boot time</code>
-是将WinPcap设置为自启</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装3.png" style="zoom:50%;" /></p>
-<p>然后等待安装完成，最后点击<code>FInish</code>即可完成安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/WinPcap安装4.png" style="zoom:50%;" /></p>
-<h3 id="wireshark安装">Wireshark安装</h3>
-<p><a href="https://www.wireshark.org/">Wireshark 官网</a></p>
-<p>点击上方链接进入<code>Wireshark</code>官网，点击<code>Download</code>，选择对应版本进行下载</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark官网.png" style="zoom:25%;" /></p>
-<p><code>Wireshark</code>的安装要比<code>WinPcap</code>稍微复杂一点，刚开始也是一路next</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装1.png" style="zoom:50%;" /></p>
-<p>这里是阅读协议内容，直接点击下一步。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装2.png" style="zoom:50%;" /></p>
-<p>这里选择默认安装即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装3.png" style="zoom:50%;" /></p>
-<p>在这里把<code>Wireshark Desktop Icon</code>和<code>Wireshark Quick Launch Icon</code>
-勾选上，前者是创建桌面图标，后者是创建快速启动方式图标。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装4.png" style="zoom:50%;" /></p>
-<p>在这里选择要在其中安装<code>Wireshark</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装5.png" style="zoom:50%;" /></p>
-<p>这里需要安装Npcap，如果电脑上已安装的可以忽略</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装6.png" style="zoom:50%;" /></p>
-<p><code>Npcap</code>和<code>USBPcap</code> 只需要安装其中之一即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装7.png" style="zoom:50%;" /></p>
-<p>然后开始安装<code>Wireshark</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装8.png" style="zoom:50%;" /></p>
-<p>然后安装到后期阶段会提示安装<code>Npcap</code></p>
-<p>首先阅读协议内容，直接点击<code>I Agree</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装1.png" style="zoom:50%;" /></p>
-<p>然后默认即可，点击<code>install</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装2.png" style="zoom:50%;" /></p>
-<p>然后等待安装，安装完成之后点击<code>Next</code>，再点击<code>Finish</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装3.png" style="zoom:50%;" /></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Npcap安装4.png" style="zoom:50%;" /></p>
-<p>等待片刻后<code>Wireshark</code>安装完成</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/Wireshark安装9.png" style="zoom:50%;" /></p>
-<p>Wireshark安装完成后需要重启，第一选项是立即重启，第二选项是稍后重启，根据自己的需求选择重启。</p>
-<h3 id="gns3安装部署">GNS3安装部署</h3>
-<p>在<strong>WinPcap</strong>和<strong>Wireshark</strong>安装完成之后，我们开始进行<code>GNS3</code>的安装</p>
-<p>在弹出安装向导界面之后，直接点击<code>Next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装1.png" style="zoom: 80%;" /></p>
-<p>这里是阅读协议内容，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装2.png" style="zoom:80%;" /></p>
-<p>这里不需要进行修改，直接点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装3.png" style="zoom:80%;" /></p>
-<p>在这里我们取消<code>WinPCAP</code>和<code>Wireshark</code>的勾选，之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装4.png" style="zoom:80%;" /></p>
-<p>在这里选择要在其中安装<code>GNS3</code>的目录，将路径改成自己想要存放的目录，然后点击<code>next</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装5.png" style="zoom:80%;" /></p>
-<p>然后等待安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装6.png" style="zoom:80%;" /></p>
-<p>安装完成之后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装7.png" style="zoom:80%;" /></p>
-<p>在这里我们选择No，这里是问我们是否需要免费的许可证，价值200美元，然后点击<code>Next</code>。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装8.png" style="zoom:80%;" /></p>
-<p>这里我们勾选<code>Start GNS3</code>，然后点击<code>Finish</code>之后<code>GNS3</code>会直接打开。</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS3安装9.png" style="zoom:80%;" /></p>
-<p>到此我们的<code>GNS3</code>就安装成功了。</p>
-<h3 id="导入路由器c3460">导入路由器C3460</h3>
-<p>为了后续的学习与使用，我们要学会如何使用GNS3导入路由器c3640</p>
-<p>必须将c3640文件夹放在英文路径下，即路径不能带中文</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入1.png" style="zoom: 33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入2.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入3.png" style="zoom: 33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入4.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入5.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入6.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入7.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入8.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入9.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入10.png" style="zoom: 50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入11.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入12.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入13.png" style="zoom:33%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/GNS导入14.png" style="zoom:33%;" /></p>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-        <category>Windows与网络基础</category>
-      </categories>
-      <tags>
-        <tag>网络安全</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows与网络基础-05-安装eNSP软件环境</title>
-    <url>/2022/10/18/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-05-%E5%AE%89%E8%A3%85eNSP%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h2 id="准备工作">准备工作</h2>
-<ol type="1">
-<li>主机系统：Windows 10 专业版 21H2</li>
-<li>虚拟机版本：VMware Workstation 16 Pro</li>
-<li>VirtualBox版本：VirtualBox-5.2.44-139111-Win</li>
-<li>eNSP版本：eNSP-1.3.00.100</li>
-</ol>
-<span id="more"></span>
-<h2 id="在windows下安装ensp的步骤">在Windows下安装eNSP的步骤</h2>
-<p>在安装<code>eNSP</code>之前首先要安装<code>VirtualBox</code></p>
-<p>安装原因：<strong>华为模拟器里面所有的设备全部都是采用虚拟机的方式存在</strong></p>
-<h3 id="virtualbox安装">VirtualBox安装</h3>
-<p>安装过程比较简单，这里我们点击<code>下一步</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装1.png" style="zoom:50%;" /></p>
-<p>在这里选择要在其中安装<code>VirtualBox</code>的目录，将路径改成自己想要存放的目录，然后点击<code>下一步</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装2.png" style="zoom:50%;" /></p>
-<p>这里我们勾选所需选项，之后点击<code>下一步</code></p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装3.png" style="zoom:50%;" /></p>
-<p>此处出现警告，不用惊慌，点击是继续安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装4.png" style="zoom:50%;" /></p>
-<p>这里点击安装即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装5.png" style="zoom:50%;" /></p>
-<p>然后等待安装完成</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装6.png" style="zoom:50%;" /></p>
-<p>在安装过程中可能出现以下情况，这里选择安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装7.png" style="zoom:50%;" /></p>
-<p>然后我们取消勾选运行<code>VirtualBox</code>的选项，点击完成，到此<code>VirtualBox</code>的安装已经完成了</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/VirtualBox安装8.png" style="zoom:50%;" /></p>
-<h3 id="ensp安装">eNSP安装</h3>
-<p>在<code>VirtualBox</code>安装完成之后，我们开始进行<code>eNSP</code>的安装</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装1.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装2.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装3.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装4.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装5.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装6.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装7.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装8.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装9.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装10.png" style="zoom:50%;" />
-<img data-src="https://baoxinwen.github.io/cloudimg/blogimg/eNSP安装11.png" style="zoom:50%;" /></p>
+    <title>Windows与网络基础-08-Windows基本命令-文本操作</title>
+    <url>/2022/10/25/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-08-Windows%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1
+id="windows与网络基础-08-windows基本命令-文本操作">Windows与网络基础-08-Windows基本命令-文本操作</h1>
 ]]></content>
       <categories>
         <category>网络安全</category>
@@ -1137,17 +1151,99 @@ id="hexo部署到github后文件夹名大小写引起的问题">Hexo部署到Git
       </tags>
   </entry>
   <entry>
-    <title>Windows与网络基础-08-Windows基本命令-文本操作</title>
-    <url>/2022/10/25/Windows%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80-08-Windows%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h1
-id="windows与网络基础-08-windows基本命令-文本操作">Windows与网络基础-08-Windows基本命令-文本操作</h1>
+    <title>从零开始搭建自己的博客</title>
+    <url>/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>博客</strong>：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。</p>
+</blockquote>
+<h1 id="前言">前言</h1>
+<p>对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。</p>
+<p>在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用
+Hexo 框架搭建我的个人博客。</p>
+<span id="more"></span>
+<h1 id="hexo-框架介绍">Hexo 框架介绍</h1>
+<p>Hexo 是一个快速，简单和强大的博客框架。你用<a
+href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，
+Hexo 会在几秒钟内生成具有漂亮主题的静态网页。</p>
+<h2 id="选择-hexo-的原因">选择 Hexo 的原因</h2>
+<ul>
+<li>速度极快：Node.js
+所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
+<li>支持MarkDown：Hexo 支持 GitHub Flavored Markdown
+的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
+<li>一键部署：只需一条指令即可部署到 GitHub Pages, Heroku
+或其他平台。</li>
+<li>插件和可扩展性：这个也是hexo很强大的一个地方，强大的 API
+带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成。</li>
+</ul>
+<h1 id="hexo博客框架搭建步骤">Hexo博客框架搭建步骤</h1>
+<h2 id="node.js-安装">Node.js 安装</h2>
+<p>Hexo 是使用 Node.js 开发的，所以我们安装 Hexo 之前需要先安装 Node.js
+环境。</p>
+<p>Node.js 是什么？简单的说 Node.js 就是运行在服务端的 JavaScript
+。安装了 Node.js 环境，就可以不用依赖浏览器就可以运行 js
+代码，其实它也是基于 Chrome 引擎开发的一个开源项目。简单理解， Node.js
+对于 js 代码的作用类似 Python 解释器对于 Python 代码的作用。</p>
+<p>这里注意，不是说博客框架必须用 Node.js
+来开发，博客框架本质上是一个网站，可以用任何语言开发，也有用 Python 的
+Flask/Django 或者 Java 开发的博客框架，只是没有 Hexo 这么流行。</p>
+<p>Windows：进入<a
+href="https://nodejs.org/en/">Node.js</a>官网点击下载，下载完成后，傻瓜式下一步即可</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/nodejs%E5%AE%98%E7%BD%91.png" /></p>
+<p>Linux：使用以下两行代码进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure>
+<p>安装完成之后，输入以下两行命令查看版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h2 id="git-安装">Git 安装</h2>
+<p>Git
+是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的
+hexo 博客文章，上传到 GitHub 的工具。</p>
+<p>Windows：进入<a href="https://git-scm.com/">Git
+官网</a>点击下载即可，下载完成之后会有一个 Git Bush 的命令行工具用来使用
+Git</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/git%E5%AE%98%E7%BD%91.png" /></p>
+<p>Linux：对于Linux来说更加简单，只需要输入一行代码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<p>输入以下代码查看版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<h2 id="hexo-安装">Hexo 安装</h2>
+<p>前文中已经成功安装了 Node.js 和 Git 后，就可以进行 Hexo
+的安装了，我们需要先创建一个文件夹 Blog
+（用来存放你的个人博客的文件），然后进入该文件夹，右键打开 Git Bush</p>
+<p>输入以下命令进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装完成之后，使用以下命令查看版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<p>接下来进行 Hexo 的初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>在初始化结束之后，我们能看到 Blog 文件夹多出以下文件</p>
+<ul>
+<li>node_modules: 依赖包</li>
+<li>public：公共文件夹，用于存放生产的站点文件</li>
+<li>scaffolds：模板文件夹</li>
+<li>source：资源文件夹，用来存放内容</li>
+<li>themes：主题文件夹</li>
+<li>_config.yml：博客的配置文件</li>
+<li>package.json ：应用程序的信息</li>
+</ul>
+<p>在这之后，我们启动本地博客服务</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>然后打开游览器输入 http://localhost:4000
+就可以看到生成的个人博客了。</p>
+<p>到此为止，我们已经完成了 Hexo 的简单部署。</p>
+<h2 id="hexo-主题美化">Hexo 主题美化</h2>
+<p>在第一次初始化的时候 Hexo 已经帮我们写了一篇名为 Hello World
+的文章，默认的主题比较丑，既然是我们的个人博客，我们肯定想要其更加美观，更有意思，更有个性，所以我们需要安装各种不同风格的主题。</p>
+<h4 id="找到合适的-hexo-主题">找到合适的 Hexo 主题</h4>
+<p>Hexo 官网上</p>
 ]]></content>
       <categories>
-        <category>网络安全</category>
-        <category>Windows与网络基础</category>
+        <category>学习</category>
       </categories>
       <tags>
-        <tag>网络安全</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -2299,102 +2395,6 @@ ERRORLEVEL</strong>
       </tags>
   </entry>
   <entry>
-    <title>从零开始搭建自己的博客</title>
-    <url>/2022/04/03/%E2%80%9C%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%80%9D/</url>
-    <content><![CDATA[<blockquote>
-<p><strong>博客</strong>：其实博客的正式名称是网络日记，见名知意，是使用特定软件在网络上出版发表和张贴个人文章的人，或者是一种由个人管理不定期更新文章的网站。</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>对我来说，我希望有一个监督自己工作、记录自己生活和学习过程的工具，但是对比于第三方博客来说，个人博客可以按照自己的主观想法去任意设计、任意管理，也不用担忧自己发布的文章随时面临被删甚至被关闭的风险，个人博客更具有自主权。</p>
-<p>在搭建博客之前，我关于使用何种框架搭建犹豫了许久，最终我决定了使用
-Hexo 框架搭建我的个人博客。</p>
-<span id="more"></span>
-<h1 id="hexo-框架介绍">Hexo 框架介绍</h1>
-<p>Hexo 是一个快速，简单和强大的博客框架。你用<a
-href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，
-Hexo 会在几秒钟内生成具有漂亮主题的静态网页。</p>
-<h2 id="选择-hexo-的原因">选择 Hexo 的原因</h2>
-<ul>
-<li>速度极快：Node.js
-所带来的超快生成速度，让上百个页面在几秒内瞬间完成渲染。</li>
-<li>支持MarkDown：Hexo 支持 GitHub Flavored Markdown
-的所有功能，甚至可以整合 Octopress 的大多数插件。</li>
-<li>一键部署：只需一条指令即可部署到 GitHub Pages, Heroku
-或其他平台。</li>
-<li>插件和可扩展性：这个也是hexo很强大的一个地方，强大的 API
-带来无限的可能，与数种模板引擎（EJS，Pug，Nunjucks）和工具（Babel，PostCSS，Less/Sass）轻易集成。</li>
-</ul>
-<h1 id="hexo博客框架搭建步骤">Hexo博客框架搭建步骤</h1>
-<h2 id="node.js-安装">Node.js 安装</h2>
-<p>Hexo 是使用 Node.js 开发的，所以我们安装 Hexo 之前需要先安装 Node.js
-环境。</p>
-<p>Node.js 是什么？简单的说 Node.js 就是运行在服务端的 JavaScript
-。安装了 Node.js 环境，就可以不用依赖浏览器就可以运行 js
-代码，其实它也是基于 Chrome 引擎开发的一个开源项目。简单理解， Node.js
-对于 js 代码的作用类似 Python 解释器对于 Python 代码的作用。</p>
-<p>这里注意，不是说博客框架必须用 Node.js
-来开发，博客框架本质上是一个网站，可以用任何语言开发，也有用 Python 的
-Flask/Django 或者 Java 开发的博客框架，只是没有 Hexo 这么流行。</p>
-<p>Windows：进入<a
-href="https://nodejs.org/en/">Node.js</a>官网点击下载，下载完成后，傻瓜式下一步即可</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/nodejs%E5%AE%98%E7%BD%91.png" /></p>
-<p>Linux：使用以下两行代码进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure>
-<p>安装完成之后，输入以下两行命令查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<h2 id="git-安装">Git 安装</h2>
-<p>Git
-是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的
-hexo 博客文章，上传到 GitHub 的工具。</p>
-<p>Windows：进入<a href="https://git-scm.com/">Git
-官网</a>点击下载即可，下载完成之后会有一个 Git Bush 的命令行工具用来使用
-Git</p>
-<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/git%E5%AE%98%E7%BD%91.png" /></p>
-<p>Linux：对于Linux来说更加简单，只需要输入一行代码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<p>输入以下代码查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<h2 id="hexo-安装">Hexo 安装</h2>
-<p>前文中已经成功安装了 Node.js 和 Git 后，就可以进行 Hexo
-的安装了，我们需要先创建一个文件夹 Blog
-（用来存放你的个人博客的文件），然后进入该文件夹，右键打开 Git Bush</p>
-<p>输入以下命令进行安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>安装完成之后，使用以下命令查看版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<p>接下来进行 Hexo 的初始化</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p>在初始化结束之后，我们能看到 Blog 文件夹多出以下文件</p>
-<ul>
-<li>node_modules: 依赖包</li>
-<li>public：公共文件夹，用于存放生产的站点文件</li>
-<li>scaffolds：模板文件夹</li>
-<li>source：资源文件夹，用来存放内容</li>
-<li>themes：主题文件夹</li>
-<li>_config.yml：博客的配置文件</li>
-<li>package.json ：应用程序的信息</li>
-</ul>
-<p>在这之后，我们启动本地博客服务</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>结果如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>然后打开游览器输入 http://localhost:4000
-就可以看到生成的个人博客了。</p>
-<p>到此为止，我们已经完成了 Hexo 的简单部署。</p>
-<h2 id="hexo-主题美化">Hexo 主题美化</h2>
-<p>在第一次初始化的时候 Hexo 已经帮我们写了一篇名为 Hello World
-的文章，默认的主题比较丑，既然是我们的个人博客，我们肯定想要其更加美观，更有意思，更有个性，所以我们需要安装各种不同风格的主题。</p>
-<h4 id="找到合适的-hexo-主题">找到合适的 Hexo 主题</h4>
-<p>Hexo 官网上</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一个特殊的人</title>
     <url>/2022/09/17/%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E4%BA%BA/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">
@@ -2677,6 +2677,273 @@ S(n)=O(1)原地工作
 <p><span class="math display">\[
 S(n)=O(n)
 \]</span></p></li>
+</ul></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构与算法-02-线性表</title>
+    <url>/2022/10/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-02-%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
+    <content><![CDATA[<h1 id="第二章-线性表">第二章 线性表</h1>
+<h2 id="线性表的链式表示和实现">线性表的链式表示和实现</h2>
+<p>结点在存储器中的位置是随意的，即逻辑上相邻的数据元素在物理上并不一定相邻</p>
+<p>线性表的链式表示又称为<strong>非顺序映像</strong>或<strong>链式映像</strong></p>
+<span id="more"></span>
+<ol type="1">
+<li><p>存储特点</p>
+<ul>
+<li><p>线性表中数据元素（结点）在存储器中的位置是任意的，即逻辑上相邻的数据元素在物理上不一定相邻</p></li>
+<li><p>访问只能通过头指针进入链表，并通过每个结点的指针域依次向后顺序扫描其余结点，所以寻找第一个结点和最后一个结点所花费的时间不等</p>
+<blockquote>
+<p>这种存取元素的方式被称为<strong>顺序存取法</strong>。顺序表是<strong>随机存取</strong>，链表是<strong>顺序存取</strong>。</p>
+</blockquote></li>
+</ul>
+<p>例1：</p>
+<p>线性表：（赵、钱、孙、李、周、吴、郑、王）</p>
+<ul>
+<li><p>顺序表</p>
+<table>
+<tr>
+<th>
+<p>存储地址</p>
+</th>
+<th>
+<p>存储状态</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>0031</p>
+</td>
+<td>
+<p>赵</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0033</p>
+</td>
+<td>
+<p>钱</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0035</p>
+</td>
+<td>
+<p>孙</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0037</p>
+</td>
+<td>
+<p>李</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0039</p>
+</td>
+<td>
+<p>周</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0041</p>
+</td>
+<td>
+<p>吴</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0043</p>
+</td>
+<td>
+<p>郑</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0045</p>
+</td>
+<td>
+<p>王</p>
+</td>
+</tr>
+</table></li>
+<li><p>链表</p>
+<table>
+<tr>
+<th rowspan="2">
+<p>存储地址</p>
+</th>
+<th colspan="2">
+<p>结点</p>
+</th>
+</tr>
+<tr>
+<td>
+<p>数据域</p>
+</td>
+<td>
+<p>指针域</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0001</p>
+</td>
+<td>
+<p>李</p>
+</td>
+<td>
+<p>0043</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0007</p>
+</td>
+<td>
+<p>钱</p>
+</td>
+<td>
+<p>0013</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0013</p>
+</td>
+<td>
+<p>孙</p>
+</td>
+<td>
+<p>0001</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0019</p>
+</td>
+<td>
+<p>王</p>
+</td>
+<td>
+<p>NULL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0025</p>
+</td>
+<td>
+<p>吴</p>
+</td>
+<td>
+<p>0037</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0031（头指针H）</p>
+</td>
+<td>
+<p>赵</p>
+</td>
+<td>
+<p>0007</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0037</p>
+</td>
+<td>
+<p>郑</p>
+</td>
+<td>
+<p>0019</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0043</p>
+</td>
+<td>
+<p>周</p>
+</td>
+<td>
+<p>0025</p>
+</td>
+</tr>
+</table>
+<p>单链表是由头指针唯一确定，因此单链表可以用头指针的名字来命名。</p></li>
+</ul>
+<p>例2：</p>
+<p>26个英文小写字母表的链式存储结构</p>
+<ul>
+<li>逻辑结构：（a，b，......，z）</li>
+<li>链式存储结构：</li>
+</ul>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_1.png" style="zoom: 33%;" /></p>
+<p>各结点由两个域组成：</p>
+<ul>
+<li>数据域：存储元素数值数据</li>
+<li>指针域：存储直接后继结点的存储位置</li>
+</ul></li>
+<li><p>与链式存储有关的术语</p>
+<ul>
+<li>结点：数据元素的存储映像。由数据域和指针域两部分组成</li>
+<li>链表：n个结点由指针链组成一个链表，它是线性表的链式存储映像，成为线性表的链式存储结构</li>
+</ul>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_2.png" style="zoom: 33%;" /></p></li>
+<li><p>单链表、双链表、循环链表</p>
+<ul>
+<li><p>结点只有一个指针域的链表，称为<strong>单链表</strong>或者<strong>线性链表</strong></p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_3.png" style="zoom: 33%;" /></p></li>
+<li><p>结点有两个指针域的链表，称为双链表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_4.png" style="zoom: 33%;" /></p></li>
+<li><p>首位相接的链表成为循环链表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_5.png" style="zoom: 33%;" /></p></li>
+<li><p>头指针、头结点和首元结点</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_6.png" style="zoom: 33%;" /></p>
+<ul>
+<li>头指针：是指向链表中第一个结点的指针。</li>
+<li>首元结点：是指链表中存储第一个数据元素的结点。</li>
+<li>头结点：是在链表的首元结点之前附设的一个结点。</li>
+</ul></li>
+</ul></li>
+<li><p>讨论</p>
+<ul>
+<li><p>讨论1：如何表示空表？</p>
+<ul>
+<li><p>无头结点时，头指针为空时表示空表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_7.png" style="zoom:33%;" /></p></li>
+<li><p>有头结点时，当头结点的指针域为空时表示空表</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_8.png" style="zoom:33%;" /></p></li>
+</ul></li>
+<li><p>讨论2：在链表中设置头结点有什么好处？</p>
+<ul>
+<li><p>便于首元结点的处理</p>
+<p>首元结点的地址保存在头结点的指针域中，所以在链表的第一个位置上的操作和其他位置一致，无须进行特殊处理</p></li>
+<li><p>便于空表和非空表的统一处理</p>
+<p>无论链表是否为空，头指针都是指向头结点的非空指针，因此空表和非空表的处理也就统一了</p></li>
+</ul></li>
+<li><p>讨论3：头结点的数据域内装的是什么？</p>
+<p>头结点的数据域可以为空，也可存放线性表长度等附加信息，但此结点不能计入链表长度值。</p>
+<p><img data-src="https://baoxinwen.github.io/cloudimg/blogimg/数据结构与算法-02_9.png" style="zoom:33%;" /></p></li>
 </ul></li>
 </ol>
 ]]></content>
